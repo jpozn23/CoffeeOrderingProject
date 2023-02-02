@@ -14,5 +14,20 @@ namespace CoffeeOrderingApp
         {
             InitializeComponent();
         }
+
+        async private void LogInButton_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new CustomerHomePage());
+        }
+
+        async private void SignUpButton_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new SignUpPage());
+        }
+
+        async private void ViewMenuButton_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new MenuPage());
+        }
     }
 }

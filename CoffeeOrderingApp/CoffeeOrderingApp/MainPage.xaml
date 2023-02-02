@@ -1,24 +1,29 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="CoffeeOrderingApp.MainPage">
+             x:Class="CoffeeOrderingApp.MainPage"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="White">
 
     <StackLayout>
-        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
-            <Label Text="Welcome to Xamarin.Forms!" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+        <Label Text="Coffee Ordering App" FontSize="40" HorizontalTextAlignment="Center" Padding="10,50,10,10"/>
+        <Image Source="coffee" />
+        <Frame Margin="30,0,30,0" HeightRequest="280">
+            <StackLayout>
+                <Label Text="Lets Get Started..." FontSize="20" Padding="0,0,0,10"/>
+                <Entry x:Name="Username" Placeholder="Username" />
+                <Entry x:Name="Password" Placeholder="Password" IsPassword="True" />
+                <Button x:Name="LogInButton" Clicked="LogInButton_Clicked"
+                        Text="Log In" TextColor="White" FontSize="15"
+                        HeightRequest="45"/>
+                <Button x:Name="SignUpButton" Clicked="SignUpButton_Clicked" 
+                        Text="Sign Up" TextColor="White" FontSize="15"
+                        HeightRequest="45"/>
+                <Button x:Name="ViewMenuButton" Clicked="ViewMenuButton_Clicked" 
+                        Text="View Menu" TextColor="White" FontSize="15"
+                        HeightRequest="45"/>
+            </StackLayout>
         </Frame>
-        <Label Text="Start developing now" FontSize="Title" Padding="30,10,30,10"/>
-        <Label Text="Make changes to your XAML file and save to see your UI update in the running app with XAML Hot Reload. Give it a try!" FontSize="16" Padding="30,0,30,0"/>
-        <Label FontSize="16" Padding="30,24,30,0">
-            <Label.FormattedText>
-                <FormattedString>
-                    <FormattedString.Spans>
-                        <Span Text="Learn more at "/>
-                        <Span Text="https://aka.ms/xamarin-quickstart" FontAttributes="Bold"/>
-                    </FormattedString.Spans>
-                </FormattedString>
-            </Label.FormattedText>
-        </Label>
+        
     </StackLayout>
-
 </ContentPage>
