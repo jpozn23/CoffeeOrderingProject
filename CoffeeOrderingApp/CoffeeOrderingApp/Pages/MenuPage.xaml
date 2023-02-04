@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="CoffeeOrderingApp.MenuPage">
-    <ContentPage.Content>
+             x:Class="CoffeeOrderingApp.MenuPage" >
+    <ContentPage.Content >
         <StackLayout>
-            <Label Text="Menu Page" FontSize="30" />
+            <Label Text="Menu" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

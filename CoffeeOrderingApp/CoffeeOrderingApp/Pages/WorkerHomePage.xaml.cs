@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace CoffeeOrderingApp
+namespace CoffeeOrderingApp.Pages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class SignUpPage : ContentPage
+    public partial class WorkerHomePage : ContentPage
     {
-        public SignUpPage()
+        public WorkerHomePage()
         {
             InitializeComponent();
         }
