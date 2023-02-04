@@ -7,9 +7,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoffeeOrderingApp.Android",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoffeeOrderingApp.iOS", "CoffeeOrderingApp\CoffeeOrderingApp.iOS\CoffeeOrderingApp.iOS.csproj", "{2E316C45-C938-4172-89FA-5B3E1BB63337}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoffeeOrderingApp", "CoffeeOrderingApp\CoffeeOrderingApp\CoffeeOrderingApp.csproj", "{574308FD-75D2-47BA-A0B3-4C206190ECBC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoffeeOrderingApp", "CoffeeOrderingApp\CoffeeOrderingApp\CoffeeOrderingApp.csproj", "{574308FD-75D2-47BA-A0B3-4C206190ECBC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject", "TestProject\TestProject.csproj", "{29C04519-6AA0-41C3-891B-C28A1F54E8B9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestProject", "TestProject\TestProject.csproj", "{29C04519-6AA0-41C3-891B-C28A1F54E8B9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
