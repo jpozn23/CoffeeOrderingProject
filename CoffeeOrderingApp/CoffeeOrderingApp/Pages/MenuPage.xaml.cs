@@ -16,5 +16,10 @@ namespace CoffeeOrderingApp
         {
             InitializeComponent();
         }
+
+        async private void BackToHomeButton_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new MainPage());
+        }
     }
 }
