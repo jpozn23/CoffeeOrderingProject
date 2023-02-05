@@ -9,19 +9,20 @@
         <Image Source="coffee" HeightRequest="125" Margin="0,20,0,0"  />
         <Label Text="Coffee Ordering App" FontSize="38" HorizontalTextAlignment="Center" Margin="10,-20,10,30" Padding="0"/>
 
-        <Frame Margin="30,20,30,70" HeightRequest="300" BackgroundColor="white">
+        <Frame Margin="30,20,30,70" HeightRequest="290" BackgroundColor="white">
             <StackLayout>
                 <Label Text="Login" FontSize="20" Padding="0,0,0,10"/>
                 <Entry x:Name="Username" Placeholder="Username" />
                 <Entry x:Name="Password" Placeholder="Password" IsPassword="True" />
                 <Button x:Name="LogInButton" Clicked="LogInButton_Clicked" Text="Login" 
-                        TextColor="White" FontSize="15" HeightRequest="50"/>
+                        TextColor="White" FontSize="15" HeightRequest="45"
+                        BackgroundColor="#33b249"/>
                 <Button x:Name="SignUpButton" Clicked="SignUpButton_Clicked" 
                         Text="Sign Up" TextColor="White" FontSize="15"
-                        HeightRequest="50"/>
+                        HeightRequest="45" BackgroundColor="#4681f4"/>
                 <Button x:Name="ViewMenuButton" Clicked="ViewMenuButton_Clicked" 
                         Text="View Menu" TextColor="White" FontSize="15"
-                        HeightRequest="50"/>
+                        HeightRequest="45" BackgroundColor="SlateGray"/>
 
 
             </StackLayout>

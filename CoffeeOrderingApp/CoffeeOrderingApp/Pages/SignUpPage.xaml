@@ -23,7 +23,7 @@
                 </StackLayout>
                 <Button x:Name="SignUpButton" Clicked="SignUpButton_Clicked" 
                         Text="Sign Up" TextColor="White" FontSize="15"
-                        HeightRequest="50"/>
+                        HeightRequest="50" BackgroundColor="#33b249"/>
             </StackLayout>
         </Frame>
 
