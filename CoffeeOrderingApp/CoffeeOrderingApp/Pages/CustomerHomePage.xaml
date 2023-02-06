@@ -3,8 +3,41 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CoffeeOrderingApp.CustomerHomePage">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Customer Home Page" />
+        <StackLayout BackgroundColor="WhiteSmoke">
+            <Label Text="Welcome Back!" HorizontalTextAlignment="Center"
+                   Margin="5,25,5,15" FontSize="35" />
+            <Label Text="Let's Get Started" HorizontalTextAlignment="Center"
+                   FontSize="25"/>
+
+            <Frame CornerRadius="5" Margin="10,40,10,5" HeightRequest="70">
+                <StackLayout Orientation="Horizontal">
+                    <Image Source="order_history_img" HeightRequest="70" />
+                    <Button x:Name="OrderHistoryButton" Clicked="OrderHistoryButton_Clicked"
+                            Text="Order History" WidthRequest="290" FontSize="18"
+                            FontAttributes="Bold" Margin="0,-15,0,-15"
+                            BackgroundColor="White"/>
+                </StackLayout>
+            </Frame>
+
+            <Frame CornerRadius="5" Margin="10,10,10,5">
+                <StackLayout Orientation="Horizontal">
+                    <Image Source="add_img" HeightRequest="70" Margin="-5,-5,0,0" />
+                    <Button x:Name="AddItemButton" Clicked="AddItemButton_Clicked"
+                            Text="Add Item To Order" WidthRequest="290" FontSize="18"
+                            FontAttributes="Bold" Margin="0,-15,0,-15"
+                            BackgroundColor="White"/>
+                </StackLayout>
+            </Frame>
+
+            <Frame CornerRadius="5" Margin="10,10,10,0">
+                <StackLayout Orientation="Horizontal">
+                    <Image Source="shoppingcart_img" HeightRequest="70" />
+                    <Button x:Name="ShoppingCartButton" Clicked="ShoppingCartButton_Clicked"
+                            Text="View Shopping Cart" WidthRequest="290" FontSize="18"
+                            FontAttributes="Bold" Margin="0,-15,0,-15"
+                            BackgroundColor="White"/>
+                </StackLayout>
+            </Frame>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

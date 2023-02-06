@@ -24,7 +24,6 @@
                         Text="View Menu" TextColor="White" FontSize="15"
                         HeightRequest="45" BackgroundColor="SlateGray"/>
 
-
             </StackLayout>
         </Frame>
 

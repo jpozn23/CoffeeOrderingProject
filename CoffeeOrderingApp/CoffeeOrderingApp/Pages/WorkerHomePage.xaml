@@ -4,8 +4,22 @@
              x:Class="CoffeeOrderingApp.Pages.WorkerHomePage"
              BackgroundColor="White">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Worker Home Page" />
+        <StackLayout Orientation="Vertical">
+            <Label Text="Current Order Details" FontSize="30" 
+                   HorizontalTextAlignment="Center" Margin="0,15,0,0" />
+            <Frame BackgroundColor="white" HeightRequest="320" Margin="5">
+                <Label Text="Order Details" />
+            </Frame>
+            <Button x:Name="CompleteOrderButton" Clicked="CompleteOrderButton_Clicked"
+                    Text="Complete Order" Margin="5,0,5,0" HeightRequest="50"
+                    BackgroundColor="#33b249" TextColor="White"/>
+            <Button x:Name="ViewOrdersInQueueButton" Clicked="ViewOrdersInQueueButton_Clicked"
+                    Text="View Orders" Margin="5,0,5,0" HeightRequest="50"
+                    BackgroundColor="LightSlateGray" TextColor="White"/>
+            <Button x:Name="CancelOrderButton" Clicked="CancelOrderButton_Clicked"
+                    Text="Cancel Order" Margin="5,0,5,0" HeightRequest="50"
+                    BackgroundColor="#FF4433" TextColor="White"/>
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
