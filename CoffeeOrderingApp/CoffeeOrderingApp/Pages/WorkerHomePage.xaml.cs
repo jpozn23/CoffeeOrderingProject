@@ -16,5 +16,21 @@ namespace CoffeeOrderingApp.Pages
         {
             InitializeComponent();
         }
+
+
+        private void CompleteOrderButton_Clicked(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CancelOrderButton_Clicked(object sender, EventArgs e)
+        {
+
+        }
+
+        async private void ViewOrdersInQueueButton_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new WorkerOrderPage());
+        }
     }
 }

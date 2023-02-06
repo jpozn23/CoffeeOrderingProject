@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CoffeeOrderingApp.Pages;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,9 +18,9 @@ namespace CoffeeOrderingApp
             InitializeComponent();
         }
 
-        private void SignUpButton_Clicked(object sender, EventArgs e)
+        async private void SignUpButton_Clicked(object sender, EventArgs e)
         {
-            
+            await Navigation.PushAsync(new WorkerHomePage());
         }
 
     }

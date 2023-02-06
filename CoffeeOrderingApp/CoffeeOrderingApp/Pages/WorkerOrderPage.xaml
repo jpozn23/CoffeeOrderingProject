@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CoffeeOrderingApp.Pages.WorkerOrderPage"
+             BackgroundColor="WhiteSmoke">
+    <ContentPage.Content>
+        <ScrollView Orientation="Vertical">
+            <StackLayout>
+                <Frame HeightRequest="80" Margin="15,10,15,0" >
+                    <Label Text="Order Details"/>
+                </Frame>
+                <Frame HeightRequest="80" Margin="15,10,15,0" >
+                    <Label Text="Order Details"/>
+                </Frame>
+                <Frame HeightRequest="80" Margin="15,10,15,0" >
+                    <Label Text="Order Details"/>
+                </Frame>
+                <Frame HeightRequest="80" Margin="15,10,15,0" >
+                    <Label Text="Order Details"/>
+                </Frame>
+                <Frame HeightRequest="80" Margin="15,10,15,0" >
+                    <Label Text="Order Details"/>
+                </Frame>
+                <Frame HeightRequest="80" Margin="15,10,15,0" >
+                    <Label Text="Order Details"/>
+                </Frame>
+                <Frame HeightRequest="80" Margin="15,10,15,0" >
+                    <Label Text="Order Details"/>
+                </Frame>
+                <Frame HeightRequest="80" Margin="15,10,15,0" >
+                    <Label Text="Order Details"/>
+                </Frame>
+                <Frame HeightRequest="80" Margin="15,10,15,0" >
+                    <Label Text="Order Details"/>
+                </Frame>
+                <Frame HeightRequest="80" Margin="15,10,15,0" >
+                    <Label Text="Order Details"/>
+                </Frame>
+                
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
