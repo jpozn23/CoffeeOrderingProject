@@ -32,5 +32,10 @@ namespace CoffeeOrderingApp
         {
             await Navigation.PushAsync(new CustomerShoppingCartPage());
         }
+
+        async private void LogOutButton_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new MainPage());
+        }
     }
 }

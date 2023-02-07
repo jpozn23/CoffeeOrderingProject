@@ -16,5 +16,10 @@ namespace CoffeeOrderingApp.Pages
         {
             InitializeComponent();
         }
+
+        private void Checkout_Clicked(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -1,39 +1,38 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="CoffeeOrderingApp.Pages.WorkerOrderPage"
-             BackgroundColor="WhiteSmoke">
+             x:Class="CoffeeOrderingApp.Pages.WorkerOrderPage">
     <ContentPage.Content>
         <ScrollView Orientation="Vertical">
-            <StackLayout>
-                <Frame HeightRequest="80" Margin="15,10,15,0" >
+            <StackLayout BackgroundColor="#DEE4E7">
+                <Frame HeightRequest="100" Margin="15,10,15,0" >
                     <Label Text="Order Details"/>
                 </Frame>
-                <Frame HeightRequest="80" Margin="15,10,15,0" >
+                <Frame HeightRequest="100" Margin="15,10,15,0" >
                     <Label Text="Order Details"/>
                 </Frame>
-                <Frame HeightRequest="80" Margin="15,10,15,0" >
+                <Frame HeightRequest="100" Margin="15,10,15,0" >
                     <Label Text="Order Details"/>
                 </Frame>
-                <Frame HeightRequest="80" Margin="15,10,15,0" >
+                <Frame HeightRequest="100" Margin="15,10,15,0" >
                     <Label Text="Order Details"/>
                 </Frame>
-                <Frame HeightRequest="80" Margin="15,10,15,0" >
+                <Frame HeightRequest="100" Margin="15,10,15,0" >
                     <Label Text="Order Details"/>
                 </Frame>
-                <Frame HeightRequest="80" Margin="15,10,15,0" >
+                <Frame HeightRequest="100" Margin="15,10,15,0" >
                     <Label Text="Order Details"/>
                 </Frame>
-                <Frame HeightRequest="80" Margin="15,10,15,0" >
+                <Frame HeightRequest="100" Margin="15,10,15,0" >
                     <Label Text="Order Details"/>
                 </Frame>
-                <Frame HeightRequest="80" Margin="15,10,15,0" >
+                <Frame HeightRequest="100" Margin="15,10,15,0" >
                     <Label Text="Order Details"/>
                 </Frame>
-                <Frame HeightRequest="80" Margin="15,10,15,0" >
+                <Frame HeightRequest="100" Margin="15,10,15,0" >
                     <Label Text="Order Details"/>
                 </Frame>
-                <Frame HeightRequest="80" Margin="15,10,15,0" >
+                <Frame HeightRequest="100" Margin="15,10,15,0" >
                     <Label Text="Order Details"/>
                 </Frame>
                 

@@ -1,13 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="CoffeeOrderingApp.CustomerHomePage">
+             x:Class="CoffeeOrderingApp.CustomerHomePage"
+             NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
-        <StackLayout BackgroundColor="WhiteSmoke">
+        <StackLayout BackgroundColor="#DEE4E7">
             <Label Text="Welcome Back!" HorizontalTextAlignment="Center"
-                   Margin="5,25,5,15" FontSize="35" />
+                   Margin="5,45,5,5" FontSize="35" TextColor="DarkSlateGray"
+                   FontAttributes="Bold"/>
             <Label Text="Let's Get Started" HorizontalTextAlignment="Center"
-                   FontSize="25"/>
+                   FontSize="25" FontAttributes="Bold" TextColor="DarkSlateGray"/>
 
             <Frame CornerRadius="5" Margin="10,40,10,5" HeightRequest="70">
                 <StackLayout Orientation="Horizontal">
@@ -38,6 +40,11 @@
                             BackgroundColor="White"/>
                 </StackLayout>
             </Frame>
+
+            <Button x:Name="LogOutButton" Clicked="LogOutButton_Clicked"
+                    Text="Log Out" Margin="25" BackgroundColor="White"
+                    BorderColor="Black" BorderWidth="1" FontSize="15"
+                    FontAttributes="Bold"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

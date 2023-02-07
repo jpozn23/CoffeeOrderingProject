@@ -2,23 +2,35 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CoffeeOrderingApp.Pages.WorkerHomePage"
-             BackgroundColor="White">
+             NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
-        <StackLayout Orientation="Vertical">
-            <Label Text="Current Order Details" FontSize="30" 
-                   HorizontalTextAlignment="Center" Margin="0,15,0,0" />
-            <Frame BackgroundColor="white" HeightRequest="320" Margin="5">
-                <Label Text="Order Details" />
+        <StackLayout Orientation="Vertical" BackgroundColor="#DEE4E7">
+            <Label Text="Welcome Back Jordan!" FontSize="32" 
+                   HorizontalTextAlignment="Center" Margin="0,25,0,20"
+                   TextColor="DarkSlateGray" FontAttributes="Bold"/>
+            <Frame BackgroundColor="white" HeightRequest="340" Margin="5,-10,5,5">
+                <StackLayout>
+                    <Label Text="Current Order Details" HorizontalTextAlignment="Center"
+                           FontAttributes="Bold" FontSize="25" Margin="0,-5,0,20"/>
+                    <Label Text="Order Details" />
+                </StackLayout>
             </Frame>
             <Button x:Name="CompleteOrderButton" Clicked="CompleteOrderButton_Clicked"
-                    Text="Complete Order" Margin="5,0,5,0" HeightRequest="50"
+                    Text="Complete Order" Margin="5,5,5,5" HeightRequest="50"
                     BackgroundColor="#33b249" TextColor="White"/>
-            <Button x:Name="ViewOrdersInQueueButton" Clicked="ViewOrdersInQueueButton_Clicked"
-                    Text="View Orders" Margin="5,0,5,0" HeightRequest="50"
-                    BackgroundColor="LightSlateGray" TextColor="White"/>
             <Button x:Name="CancelOrderButton" Clicked="CancelOrderButton_Clicked"
                     Text="Cancel Order" Margin="5,0,5,0" HeightRequest="50"
                     BackgroundColor="#FF4433" TextColor="White"/>
+            <StackLayout Orientation="Horizontal">
+                <Button x:Name="ViewOrdersInQueueButton" Clicked="ViewOrdersInQueueButton_Clicked"
+                        Text="View Orders" Margin="5,5,5,5" HeightRequest="50"
+                        BackgroundColor="LightSlateGray" TextColor="White"
+                        WidthRequest="190"/>
+                <Button x:Name="LogOutButtonButton" Clicked="LogOutButtonButton_Clicked"
+                        Text="Log Out" Margin="5,5,5,5" HeightRequest="50"
+                        BackgroundColor="LightSlateGray" TextColor="White"
+                        WidthRequest="190"/>
+            </StackLayout>
 
         </StackLayout>
     </ContentPage.Content>

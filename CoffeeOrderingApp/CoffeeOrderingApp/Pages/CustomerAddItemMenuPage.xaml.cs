@@ -16,5 +16,10 @@ namespace CoffeeOrderingApp.Pages
         {
             InitializeComponent();
         }
+
+        private void AddItemButton_Clicked(object sender, EventArgs e)
+        {
+
+        }
     }
 }
