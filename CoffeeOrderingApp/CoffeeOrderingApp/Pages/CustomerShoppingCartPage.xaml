@@ -4,7 +4,52 @@
              x:Class="CoffeeOrderingApp.Pages.CustomerShoppingCartPage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Customer Shopping Cart Page" />
+            <Frame BackgroundColor="White">
+                <Label Text="Shopping Cart" FontAttributes="Bold"
+                       FontSize="30" HorizontalTextAlignment="Center"
+                       TextColor="DarkSlateGray"/>
+            </Frame>
+
+            <ScrollView>
+                <StackLayout>
+                    <Frame HeightRequest="100" Margin="5">
+                        
+                    </Frame>
+                    <Frame HeightRequest="100" Margin="5">
+
+                    </Frame>
+                    <Frame HeightRequest="100" Margin="5">
+
+                    </Frame>
+                    <Frame HeightRequest="100" Margin="5">
+
+                    </Frame>
+                    <Frame HeightRequest="100" Margin="5">
+
+                    </Frame>
+                </StackLayout>
+            </ScrollView>
+
+            <Frame Margin="5,2,5,2" HeightRequest="20">
+                <StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Total - $" FontSize="25"
+                               FontAttributes="Bold" 
+                               Margin="100,-6,0,0"/>
+                        <Label x:Name="TotalOrderPriceLabel" FontSize="25"
+                               FontAttributes="Bold" Text="0.00"
+                               Margin="0,-6,0,0"/>
+                    </StackLayout>
+                </StackLayout>
+
+               
+
+            </Frame>
+            <Button x:Name="Checkout" Clicked="Checkout_Clicked"
+                    Text="Checkout" BackgroundColor="#33b249"
+                    FontAttributes="Bold" TextColor="White"
+                    FontSize="15" Margin="5,2,5,5"
+                    HeightRequest="55"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

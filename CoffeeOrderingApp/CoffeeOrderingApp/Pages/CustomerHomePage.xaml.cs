@@ -23,14 +23,18 @@ namespace CoffeeOrderingApp
             await Navigation.PushAsync(new CustomerAddItemMenuPage());
         }
 
-        async private void OrderHistoryButton_Clicked(object sender, EventArgs e)
+        private void OrderHistoryButton_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new CustomerOrderHistoryPage());
         }
 
         async private void ShoppingCartButton_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new CustomerShoppingCartPage());
+        }
+
+        async private void LogOutButton_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new MainPage());
         }
     }
 }
