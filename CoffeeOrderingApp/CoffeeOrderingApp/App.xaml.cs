@@ -6,6 +6,12 @@ namespace CoffeeOrderingApp
 {
     public partial class App : Application
     {
+        public static IPlatformSpecific PlatformSpecific { get; private set; }
+
+        public static void Init(IPlatformSpecific platformSpecificImplementation)
+        {
+            App.PlatformSpecific = platformSpecificImplementation;
+        }
         public App()
         {
             InitializeComponent();
