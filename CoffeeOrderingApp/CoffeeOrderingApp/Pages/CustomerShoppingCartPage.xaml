@@ -10,10 +10,26 @@
                        TextColor="DarkSlateGray"/>
             </Frame>
 
-            <Frame HeightRequest="340">
-                
-            </Frame>
-            
+            <ScrollView>
+                <StackLayout>
+                    <Frame HeightRequest="100" Margin="5">
+                        
+                    </Frame>
+                    <Frame HeightRequest="100" Margin="5">
+
+                    </Frame>
+                    <Frame HeightRequest="100" Margin="5">
+
+                    </Frame>
+                    <Frame HeightRequest="100" Margin="5">
+
+                    </Frame>
+                    <Frame HeightRequest="100" Margin="5">
+
+                    </Frame>
+                </StackLayout>
+            </ScrollView>
+
             <Frame Margin="5,2,5,2" HeightRequest="20">
                 <StackLayout>
                     <StackLayout Orientation="Horizontal">

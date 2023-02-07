@@ -17,9 +17,9 @@ namespace CoffeeOrderingApp.Pages
             InitializeComponent();
         }
 
-        private void AddItemButton_Clicked(object sender, EventArgs e)
+        async private void AddItemButton_Clicked(object sender, EventArgs e)
         {
-
+            await Navigation.PushAsync(new CustomerHomePage());
         }
     }
 }

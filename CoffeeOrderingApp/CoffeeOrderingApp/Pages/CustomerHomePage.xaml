@@ -4,7 +4,7 @@
              x:Class="CoffeeOrderingApp.CustomerHomePage"
              NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
-        <StackLayout BackgroundColor="#DEE4E7">
+        <StackLayout BackgroundColor="GhostWhite">
             <Label Text="Welcome Back!" HorizontalTextAlignment="Center"
                    Margin="5,45,5,5" FontSize="35" TextColor="DarkSlateGray"
                    FontAttributes="Bold"/>
