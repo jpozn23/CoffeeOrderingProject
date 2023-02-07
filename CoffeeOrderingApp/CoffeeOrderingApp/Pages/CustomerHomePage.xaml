@@ -23,6 +23,7 @@
                             FontAttributes="Bold" Margin="0,-15,0,-15"
                             BackgroundColor="White"/>
                 </StackLayout>
+               
             </Frame>
 
             <Frame CornerRadius="5" Margin="10,10,10,5">

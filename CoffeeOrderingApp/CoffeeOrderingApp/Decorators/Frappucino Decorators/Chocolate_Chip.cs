@@ -4,28 +4,25 @@ using System.Text;
 
 namespace CoffeeOrderingApp
 {
-    public class Chocolate_Chip : Decorator
+    public class Chocolate_Chip : Beverage
     {
-        public Chocolate_Chip(Beverage beverage)
+        public Chocolate_Chip(string coffeeSize)
         {
-            this.beverage = beverage;
+            size = coffeeSize;
+            drinktype = "Frappuccino";
         }
 
-        public override String Description()
-        {
-            return "Chocolate Chip " + beverage.Description();
-        }
 
         public override double Cost()
         {
             if (size.Equals("Grande"))
             {
-                return beverage.Cost() + 5.29;
+                return  5.29;
 
             }
             else if (size.Equals("Venti"))
             {
-                return beverage.Cost() + 5.79;
+                return 5.79;
             }
             else
             {

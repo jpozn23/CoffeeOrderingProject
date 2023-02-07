@@ -2,20 +2,18 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace CoffeeOrderingApp
+namespace CoffeeOrderingApp.Base_Beverages
 {
-    public class Frappuccino : Beverage
+    public class IcedCoffeeTea : Beverage
     {
-
-        public Frappuccino()
+        public IcedCoffeeTea()
         {
-            drinktype = "Frappuccino";
+            drinktype = "Iced Coffee and Tea";
         }
 
         public override double Cost()
         {
             return 0.0;
         }
-
     }
 }

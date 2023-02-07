@@ -4,28 +4,25 @@ using System.Text;
 
 namespace CoffeeOrderingApp
 {
-    public class Teavana_Shaken_Iced_Tea : Decorator
+    public class Teavana_Shaken_Iced_Tea : Beverage
     {
-        public Teavana_Shaken_Iced_Tea(Beverage beverage)
+        public Teavana_Shaken_Iced_Tea(string coffeeSize)
         {
-            this.beverage = beverage;
+            size = coffeeSize;
+            drinktype = "Iced Coffee and Tea";
         }
 
-        public override String Description()
-        {
-            return "Teavana Shaken Iced Tea " + beverage.Description();
-        }
         
         public override double Cost()
         {
             if (size.Equals("Grande"))
             {
-                return beverage.Cost() + 2.29;
+                return  2.29;
 
             }
             else if (size.Equals("Venti"))
             {
-                return beverage.Cost() + 2.69;
+                return  2.69;
             }
             else
             {

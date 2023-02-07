@@ -6,16 +6,17 @@
         <StackLayout>
             <Frame>
                 <Label Text="Create Your Drink Below" HorizontalTextAlignment="Center"
-                    FontSize="32" FontAttributes="Bold" Margin="0,0,0,0"/>
+                    FontSize="32" FontAttributes="Bold" Margin="0,0,0,0" />
             </Frame>
             <ScrollView>
                 <StackLayout>
                     <Label Text="Choose Drink Category" HorizontalTextAlignment="center"
-                           FontAttributes="bold" FontSize="28" Margin="0,10,0,0"/>
+                           FontAttributes="bold" FontSize="28" Margin="0,10,0,0" 
+                           />
 
-                    <Picker x:Name="DrinkCategoryPicker"  Title="Select Drink Category" 
+                    <Picker  x:Name="DrinkCategoryPicker"  Title="Select Drink Category" 
                             HorizontalTextAlignment="Center" Margin="0,0,0,-5"
-                            FontAttributes="Bold">
+                            FontAttributes="Bold" SelectedIndexChanged="DrinkCategoryPicker_SelectedIndexChanged" >
                         <Picker.ItemsSource>
                             <x:Array Type = "{x:Type x:String}">
                             <x:String>Espresso</x:String>
@@ -32,14 +33,7 @@
                 <Picker x:Name="DrinkTypePicker"  Title="Select Drink" 
                         HorizontalTextAlignment="Center" Margin="0,0,0,-5"
                         FontAttributes="Bold">
-                    <Picker.ItemsSource>
-                        <x:Array Type = "{x:Type x:String}">
-                            <x:String>Espresso</x:String>
-                            <x:String>Iced Coffee and Tea</x:String>
-                            <x:String>Frappuccinos</x:String>
-                            <x:String>Specialty Beverages</x:String>
-                        </x:Array>
-                    </Picker.ItemsSource>
+                    
                 </Picker>
 
 

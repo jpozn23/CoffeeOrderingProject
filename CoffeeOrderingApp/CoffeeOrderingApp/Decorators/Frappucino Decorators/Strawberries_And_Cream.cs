@@ -4,28 +4,25 @@ using System.Text;
 
 namespace CoffeeOrderingApp
 {
-    public class Strawberries_And_Cream : Decorator
+    public class Strawberries_And_Cream : Beverage
     {
-        public Strawberries_And_Cream(Beverage beverage)
+        public Strawberries_And_Cream(string coffeeSize)
         {
-            this.beverage = beverage;
+            size = coffeeSize;
+            drinktype = "Frappuccino";
         }
 
-        public override String Description()
-        {
-            return "Strawberries & Cream " + beverage.Description();
-        }
-
+      
         public override double Cost()
         {
             if (size.Equals("Grande"))
             {
-                return beverage.Cost() + 5.29;
+                return  5.29;
 
             }
             else if (size.Equals("Venti"))
             {
-                return beverage.Cost() + 5.79;
+                return  5.79;
             }
             else
             {

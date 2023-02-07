@@ -11,14 +11,15 @@ namespace CoffeeOrderingApp
             this.beverage = beverage;
         }
 
-        public override String Description()
-        {
-            return beverage.Description() + " with Espresso substitute";
-        }
-
         public override double Cost()
         {
-           return beverage.Cost() + 2.99;
+            return beverage.Cost() + 0.99;
+        }
+
+        public override List<string> GetAddOns()
+        {
+            beverage.GetAddOns().Add("Espresso");
+            return beverage.GetAddOns();
         }
     }
 }

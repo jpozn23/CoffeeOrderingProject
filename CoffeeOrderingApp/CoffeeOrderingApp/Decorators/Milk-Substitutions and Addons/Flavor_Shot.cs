@@ -11,14 +11,15 @@ namespace CoffeeOrderingApp
             this.beverage = beverage;
         }
 
-        public override String Description()
-        {
-            return beverage.Description() + " with Flavor Shot";
-        }
-
         public override double Cost()
         {
             return beverage.Cost() + 0.99;
+        }
+
+        public override List<string> GetAddOns()
+        {
+            beverage.GetAddOns().Add("Flavor Shot");
+            return beverage.GetAddOns();
         }
     }
 }

@@ -4,28 +4,25 @@ using System.Text;
 
 namespace CoffeeOrderingApp
 {
-    public class Hot_Tea : Decorator
+    public class Hot_Tea : Beverage
     {
-        public Hot_Tea(Beverage beverage)
+        public Hot_Tea(string coffeeSize)
         {
-            this.beverage = beverage;
+            size = coffeeSize;
+            drinktype = "Iced Coffee and Tea";
         }
 
-        public override String Description()
-        {
-            return "Hot Tea " + beverage.Description();
-        }
 
         public override double Cost()
         {
             if (size.Equals("Grande"))
             {
-                return beverage.Cost() + 3.29;
+                return  3.29;
 
             }
             else if (size.Equals("Venti"))
             {
-                return beverage.Cost() + 3.49;
+                return  3.49;
             }
             else
             {

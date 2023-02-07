@@ -4,28 +4,24 @@ using System.Text;
 
 namespace CoffeeOrderingApp
 {
-    public class Chai_Latte : Decorator
+    public class Chai_Latte : Beverage
     {
-        public Chai_Latte(Beverage beverage)
+        public Chai_Latte(string coffeeSize)
         {
-            this.beverage = beverage;
-        }
-
-        public override String Description()
-        {
-            return "Chai Latte " + beverage.Description();
+            size = coffeeSize;
+            drinktype = "Espresso";
         }
 
         public override double Cost()
         {
             if (size.Equals("Grande"))
             {
-                return beverage.Cost() + 4.99;
+                return 4.99;
 
             }
             else if (size.Equals("Venti"))
             {
-                return beverage.Cost() + 5.29;
+                return 5.29;
             }
             else
             {

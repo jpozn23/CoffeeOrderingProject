@@ -9,7 +9,7 @@ namespace CoffeeOrderingApp
 
         public Espresso()
         {
-            description = "Espresso";
+            drinktype = "Espresso";
         }
 
         public override double Cost()
