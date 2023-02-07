@@ -20,18 +20,18 @@ namespace CoffeeOrderingApp
             InitializeComponent();
         }
 
-        async private void LogInButton_Clicked(object sender, EventArgs e)
+        private bool ValidateInput()
         {
-            // Check if they filled in all fields
-
             if (String.IsNullOrEmpty(Username.Text) || String.IsNullOrEmpty(Password.Text))
             {
-                await DisplayAlert("Error", "Invalid Login. All fields must be filled out.", "Ok");
-                return;
+                return false;
             }
+            return true;
+        }
 
-            // Read from file
-
+        private void GetAccounts()
+        {
+            // Get File Path
             String userPath = "";
             if (Device.RuntimePlatform == Device.Android)
             {
@@ -45,47 +45,63 @@ namespace CoffeeOrderingApp
             String myFile = "userAccounts.txt";
             String pathFile = Path.Combine(userPath, myFile);
 
-            Console.WriteLine(pathFile);
-
+            // Read Accounts From File
             if (File.Exists(pathFile))
             {
                 string json = File.ReadAllText(pathFile);
                 accounts = JsonConvert.DeserializeObject<List<User>>(json);
             }
+        }
 
-            // Make sure they have an account
-
-            bool loggedin = false;
-            string customerOrWorker = "";
+        private bool ValidateAccount()
+        {
             foreach (User user in accounts)
             {
                 if (user.username == Convert.ToString(Username.Text) && user.password == Convert.ToString(Password.Text))
                 {
+                    // Set Singleton To Pass User Info
                     Singletons.UserSingleton.Instance.username = user.username;
                     Singletons.UserSingleton.Instance.password = user.password;
                     Singletons.UserSingleton.Instance.firstname = user.firstname;
                     Singletons.UserSingleton.Instance.lastname = user.lastname;
                     Singletons.UserSingleton.Instance.customerOrWorker = user.customerOrWorker;
-                    customerOrWorker = user.customerOrWorker;
-                    loggedin = true;
+
+                    return true;
                 }
             }
-            if (loggedin == true)
+            return false;
+        }
+
+        async private void LogInButton_Clicked(object sender, EventArgs e)
+        {
+            // Validate Input
+            bool validate = ValidateInput();
+            if(!validate)
             {
-                if(customerOrWorker == "Customer")
+                await DisplayAlert("Error", "Invalid Login. All fields must be filled out.", "Ok");
+                return;
+            }
+
+            // Get Accounts
+            GetAccounts();
+
+            // Validate Account
+            bool validateAccount = ValidateAccount();
+            if(!validateAccount)
+            {
+                await DisplayAlert("Error", "Invalid Login. Try again", "Ok");
+                return;
+            } else
+            {
+                if (Singletons.UserSingleton.Instance.customerOrWorker == "Customer")
                 {
                     await Navigation.PushAsync(new CustomerHomePage());
-                } else
+                }
+                else
                 {
                     await Navigation.PushAsync(new WorkerHomePage());
                 }
             }
-            else
-            {
-                await DisplayAlert("Error", "Invalid Login, Try again", "Ok");
-                return;
-            }
-
         }
 
         async private void SignUpButton_Clicked(object sender, EventArgs e)

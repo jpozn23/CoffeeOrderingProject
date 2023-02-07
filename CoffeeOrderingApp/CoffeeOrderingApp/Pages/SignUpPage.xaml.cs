@@ -29,24 +29,26 @@ namespace CoffeeOrderingApp
             RadioButton radioButton = sender as RadioButton;
             customerOrWorker = (string)radioButton.Content;
         }
-        async private void SignUpButton_Clicked(object sender, EventArgs e)
-        {
-            accounts.Clear();
 
-            // Make sure all fields are filled out
+        private int ValidateInput()
+        {
             if (String.IsNullOrEmpty(Firstname.Text) || String.IsNullOrEmpty(Lastname.Text) || String.IsNullOrEmpty(Username.Text)
                 || String.IsNullOrEmpty(Password.Text) || String.IsNullOrEmpty(customerOrWorker))
             {
-                await DisplayAlert("Error", "Invalid Sign Up. All fields must be filled out.", "Ok");
-                return;
+                return 1;
             }
 
-            // Make sure password and confirm password fields are equal
-            if(Convert.ToString(Password.Text) != Convert.ToString(ConfirmPassword.Text)) {
-                await DisplayAlert("Error", "Invalid Sign Up. The password and confirm password fields must be the same .", "Ok");
-                return;
+            if (Convert.ToString(Password.Text) != Convert.ToString(ConfirmPassword.Text))
+            {
+                return 2;
             }
 
+            return 0;
+        }
+
+        private void GetAccounts()
+        {
+            accounts.Clear();
 
             String userPath = "";
             if (Device.RuntimePlatform == Device.Android)
@@ -66,16 +68,34 @@ namespace CoffeeOrderingApp
                 string json = File.ReadAllText(pathFile);
                 accounts = JsonConvert.DeserializeObject<List<User>>(json);
             }
+        }
 
-
+        private bool ValidateUsername()
+        {
             foreach (User user in accounts)
             {
                 if (user.username == Convert.ToString(Username.Text))
                 {
-                    await DisplayAlert("Error", "Username already exists.", "Ok");
-                    return;
+                    return false;
                 }
             }
+            return true;
+        }
+
+        private void UpdateFile()
+        {
+            String userPath = "";
+            if (Device.RuntimePlatform == Device.Android)
+            {
+                userPath = App.PlatformSpecific.GetPublicStoragePath();
+            }
+            else
+            {
+                userPath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
+            }
+
+            String myFile = "userAccounts.txt";
+            String pathFile = Path.Combine(userPath, myFile);
 
             File.Delete(pathFile);
 
@@ -102,10 +122,44 @@ namespace CoffeeOrderingApp
             Singletons.UserSingleton.Instance.lastname = newUser.lastname;
             Singletons.UserSingleton.Instance.customerOrWorker = newUser.customerOrWorker;
 
-            if(newUser.customerOrWorker == "Customer")
+        }
+        async private void SignUpButton_Clicked(object sender, EventArgs e)
+        {
+
+            // Validate Inputs
+            int errormsg = ValidateInput();
+            if(errormsg == 1)
+            {
+                await DisplayAlert("Error", "Invalid Sign Up. All fields must be filled out.", "Ok");
+                return;
+            } else if (errormsg == 2)
+            {
+                await DisplayAlert("Error", "Invalid Sign Up. The password and confirm password fields must be the same .", "Ok");
+                return;
+            } else
+            {
+            }
+
+            // Get Accounts
+            GetAccounts();
+
+            // See if Username Exists
+            bool validUsername = ValidateUsername();
+            if(!validUsername)
+            {
+                await DisplayAlert("Error", "Username already exists.", "Ok");
+                return;
+            }
+
+            // Write New Account To File, Update
+            UpdateFile();
+
+            // Page to be displayed
+            if (Singletons.UserSingleton.Instance.customerOrWorker == "Customer")
             {
                 await Navigation.PushAsync(new CustomerHomePage());
-            } else
+            }
+            else
             {
                 await Navigation.PushAsync(new WorkerHomePage());
             }
