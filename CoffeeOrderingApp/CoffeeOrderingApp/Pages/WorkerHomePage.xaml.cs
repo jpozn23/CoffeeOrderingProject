@@ -17,6 +17,12 @@ namespace CoffeeOrderingApp.Pages
             InitializeComponent();
         }
 
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            NameLabel.Text = Singletons.UserSingleton.Instance.firstname;
+        }
+
 
         private void CompleteOrderButton_Clicked(object sender, EventArgs e)
         {
