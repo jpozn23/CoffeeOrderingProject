@@ -6,7 +6,7 @@
         <StackLayout>
             <Frame>
                 <Label Text="Create Your Drink Below" HorizontalTextAlignment="Center"
-                    FontSize="32" FontAttributes="Bold" Margin="0,0,0,0" />
+                    FontSize="32" FontAttributes="Bold" Margin="0,0,0,0" TextColor="DarkSlateGray" />
             </Frame>
             <ScrollView>
                 <StackLayout>

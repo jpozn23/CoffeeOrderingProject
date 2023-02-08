@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CoffeeOrderingApp
 {
-    class Flavor_Sauce : Decorator
+    public class Flavor_Sauce : Decorator
     {
         public Flavor_Sauce(Beverage beverage)
         {
