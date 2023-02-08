@@ -60,9 +60,9 @@ namespace CoffeeOrderingApp.Pages
 
                     String s = b.GetAddSubs();
                     s = s.Substring(1);
-                    Drink4AddSubsLabel.Text = "$ " + "Details: " + s;
+                    Drink4AddSubsLabel.Text = "Details: " + s;
 
-                    Drink4TotalLabel.Text = b.Cost().ToString();
+                    Drink4TotalLabel.Text = "$ " + b.Cost().ToString();
                 } else if (i == 4)
                 {
                     Drink5NameLabel.Text = "Type: " + b.GetDrinkType() + " - " + b.GetDrinkSize();
