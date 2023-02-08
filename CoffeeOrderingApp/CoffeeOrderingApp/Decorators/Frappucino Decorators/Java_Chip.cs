@@ -6,10 +6,10 @@ namespace CoffeeOrderingApp
 {
     public class Java_Chip : Beverage
     {
+        string size;
         public Java_Chip( string coffeeSize )
         {
             size = coffeeSize;
-            drinktype = "Frappuccino";
         }
 
 
@@ -19,13 +19,28 @@ namespace CoffeeOrderingApp
             {
                 return  5.29;
 
-            } else if ( size.Equals("Venti") )
+            } else if (size.Equals("Venti") )
             {
                 return  5.79;
             } else
             {
                 return 0.0;
             }
+        }
+
+        public override string GetAddSubs()
+        {
+            return "";
+        }
+
+        public override string GetDrinkSize()
+        {
+            return size;
+        }
+
+        public override string GetDrinkType()
+        {
+            return "Frappuccino";
         }
     }
 }

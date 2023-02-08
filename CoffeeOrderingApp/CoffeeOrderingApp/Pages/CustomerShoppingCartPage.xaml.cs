@@ -17,6 +17,29 @@ namespace CoffeeOrderingApp.Pages
             InitializeComponent();
         }
 
+        private void DisplayDrinks()
+        {
+
+        }
+        private void DisplayTotal()
+        {
+            double total = 0;
+            foreach (Beverage b in Singletons.OrderSingleton.Instance.beverages)
+            {
+                total = total + b.Cost();
+            }
+            TotalOrderPriceLabel.Text = total.ToString();
+        }
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+
+            DisplayDrinks();
+
+            DisplayTotal();
+            
+        }
+
         private void Checkout_Clicked(object sender, EventArgs e)
         {
 

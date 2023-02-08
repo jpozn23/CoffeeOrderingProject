@@ -6,10 +6,10 @@ namespace CoffeeOrderingApp
 {
     public class Caramel : Beverage
     {
+        string size;
         public Caramel(string coffeeSize)
         {
             size = coffeeSize;
-            drinktype = "Frappuccino";
         }
 
         
@@ -28,6 +28,20 @@ namespace CoffeeOrderingApp
             {
                 return 0.0;
             }
+        }
+
+        public override string GetAddSubs()
+        {
+            return "";
+        }
+        public override string GetDrinkSize()
+        {
+            return size;
+        }
+
+        public override string GetDrinkType()
+        {
+            return "Frappuccino";
         }
     }
 }

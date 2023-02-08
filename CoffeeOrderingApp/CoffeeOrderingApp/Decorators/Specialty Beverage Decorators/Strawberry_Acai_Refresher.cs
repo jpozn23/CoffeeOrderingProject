@@ -6,10 +6,10 @@ namespace CoffeeOrderingApp
 {
     public class Strawberry_Acai_Refresher : Beverage
     {
+        string size;
         public Strawberry_Acai_Refresher(string coffeeSize)
         {
             size = coffeeSize;
-            drinktype = "Iced Coffee and Tea";
         }
 
 
@@ -28,6 +28,21 @@ namespace CoffeeOrderingApp
             {
                 return 0.0;
             }
+        }
+
+        public override string GetAddSubs()
+        {
+            return "";
+        }
+
+        public override string GetDrinkSize()
+        {
+            return size;
+        }
+
+        public override string GetDrinkType()
+        {
+            return "Specialty Beverage";
         }
     }
 }

@@ -13,19 +13,54 @@
             <ScrollView>
                 <StackLayout>
                     <Frame HeightRequest="100" Margin="5">
-                        
+                        <StackLayout>
+                            <Label Text="Drink Name" x:Name="Drink1NameLabel" 
+                                   FontSize="25" />
+                            <Label Text="Drink Add Ons Subs" 
+                                   FontSize="25" x:Name="Drink1AddSubsLabel" />
+                            <Label Text="$0.00" x:Name="Drink1TotalLabel"
+                                   FontSize="25" HorizontalTextAlignment="End"/>
+                        </StackLayout>
                     </Frame>
                     <Frame HeightRequest="100" Margin="5">
-
+                        <StackLayout>
+                            <Label Text="Drink Name" x:Name="Drink2NameLabel" 
+                                   FontSize="25" />
+                            <Label Text="Drink Add Ons Subs" 
+                                   FontSize="25" x:Name="Drink2AddSubsLabel" />
+                            <Label Text="$0.00" x:Name="Drink2TotalLabel"
+                                   FontSize="25" HorizontalTextAlignment="End"/>
+                        </StackLayout>
                     </Frame>
                     <Frame HeightRequest="100" Margin="5">
-
+                        <StackLayout>
+                            <Label Text="Drink Name" x:Name="Drink3NameLabel" 
+                                   FontSize="25" />
+                            <Label Text="Drink Add Ons Subs" 
+                                   FontSize="25" x:Name="Drink3AddSubsLabel" />
+                            <Label Text="$0.00" x:Name="Drink3TotalLabel"
+                                   FontSize="25" HorizontalTextAlignment="End"/>
+                        </StackLayout>
                     </Frame>
                     <Frame HeightRequest="100" Margin="5">
-
+                        <StackLayout>
+                            <Label Text="Drink Name" x:Name="Drink4NameLabel" 
+                                   FontSize="25" />
+                            <Label Text="Drink Add Ons Subs" 
+                                   FontSize="25" x:Name="Drink4AddSubsLabel" />
+                            <Label Text="$0.00" x:Name="Drink4TotalLabel"
+                                   FontSize="25" HorizontalTextAlignment="End"/>
+                        </StackLayout>
                     </Frame>
                     <Frame HeightRequest="100" Margin="5">
-
+                        <StackLayout>
+                            <Label Text="Drink Name" x:Name="Drink5NameLabel" 
+                                   FontSize="25" />
+                            <Label Text="Drink Add Ons Subs" 
+                                   FontSize="25" x:Name="Drink5AddSubsLabel" />
+                            <Label Text="$0.00" x:Name="Drink5TotalLabel"
+                                   FontSize="25" HorizontalTextAlignment="End"/>
+                        </StackLayout>
                     </Frame>
                 </StackLayout>
             </ScrollView>

@@ -6,10 +6,10 @@ namespace CoffeeOrderingApp
 {
     public class Matcha_Latte : Beverage
     {
+        string size;
         public Matcha_Latte(string coffeeSize)
         {
             size = coffeeSize;
-            drinktype = "Espresso";
         }
 
 
@@ -28,6 +28,21 @@ namespace CoffeeOrderingApp
             {
                 return 0.0;
             }
+        }
+
+        public override string GetAddSubs()
+        {
+            return "";
+        }
+
+        public override string GetDrinkSize()
+        {
+            return size;
+        }
+
+        public override string GetDrinkType()
+        {
+            return "Espresso";
         }
     }
 }

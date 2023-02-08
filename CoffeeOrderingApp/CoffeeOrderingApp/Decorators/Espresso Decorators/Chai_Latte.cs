@@ -6,10 +6,10 @@ namespace CoffeeOrderingApp
 {
     public class Chai_Latte : Beverage
     {
+        string size;
         public Chai_Latte(string coffeeSize)
         {
             size = coffeeSize;
-            drinktype = "Espresso";
         }
 
         public override double Cost()
@@ -27,6 +27,21 @@ namespace CoffeeOrderingApp
             {
                 return 0.0;
             }
+        }
+
+        public override string GetAddSubs()
+        {
+            return "";
+        }
+
+        public override string GetDrinkSize()
+        {
+            return size;
+        }
+
+        public override string GetDrinkType()
+        {
+            return "Espresso";
         }
     }
 }

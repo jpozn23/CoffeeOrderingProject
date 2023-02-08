@@ -6,10 +6,10 @@ namespace CoffeeOrderingApp
 {
     public class Americano : Beverage
     {
+        string size;
         public Americano(string coffeeSize)
         {
             size = coffeeSize;
-            drinktype = "Espresso";
         }
 
         public override double Cost()
@@ -29,5 +29,19 @@ namespace CoffeeOrderingApp
             }
         }
 
+        public override string GetAddSubs()
+        {
+            return "";
+        }
+
+        public override string GetDrinkSize()
+        {
+            return size;
+        }
+
+        public override string GetDrinkType()
+        {
+            return "Espresso";
+        }
     }
 }

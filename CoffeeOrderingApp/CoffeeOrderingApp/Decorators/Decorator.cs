@@ -8,8 +8,5 @@ namespace CoffeeOrderingApp
     {
         public Beverage beverage;
 
-        public abstract List<String> GetAddOns();
-
-
     }
 }

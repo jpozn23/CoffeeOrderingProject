@@ -6,10 +6,10 @@ namespace CoffeeOrderingApp
 {
     public class Iced_Coffee : Beverage
     {
+        string size;
         public Iced_Coffee(string coffeeSize)
         {
             size = coffeeSize;
-            drinktype = "Iced Coffee and Tea";
         }
 
 
@@ -28,6 +28,21 @@ namespace CoffeeOrderingApp
             {
                 return 0.0;
             }
+        }
+
+        public override string GetAddSubs()
+        {
+            return "";
+        }
+
+        public override string GetDrinkSize()
+        {
+            return size;
+        }
+
+        public override string GetDrinkType()
+        {
+            return "Iced Coffee and Tea";
         }
     }
 }

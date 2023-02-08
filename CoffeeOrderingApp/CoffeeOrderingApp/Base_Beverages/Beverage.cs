@@ -6,24 +6,9 @@ namespace CoffeeOrderingApp
 {
     public abstract class Beverage
     {
-        public string size = "Unknown";
-        public string drinktype = "Unknown";
-        private List<string> addons = new List<string>();
-
-        public String GetSize()
-        {
-            return size;
-        }
-
-        public String GetDrinkType()
-        {
-            return drinktype;
-        }
-
-        public List<string> GetAddOns()
-        {
-            return addons;
-        }
+        public abstract string GetAddSubs();
+        public abstract string GetDrinkType();
+        public abstract string GetDrinkSize();
 
         public abstract double Cost();
 

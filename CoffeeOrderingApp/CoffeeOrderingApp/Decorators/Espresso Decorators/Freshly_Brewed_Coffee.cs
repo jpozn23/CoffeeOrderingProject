@@ -6,10 +6,10 @@ namespace CoffeeOrderingApp
 {
     public class Freshly_Brewed_Coffee : Beverage
     {
+        string size;
         public Freshly_Brewed_Coffee(string coffeeSize)
         {
             size = coffeeSize;
-            drinktype = "Espresso";
         }
 
         public override double Cost()
@@ -27,6 +27,21 @@ namespace CoffeeOrderingApp
             {
                 return 0.0;
             }
+        }
+
+        public override string GetAddSubs()
+        {
+            return "";
+        }
+
+        public override string GetDrinkSize()
+        {
+            return size;
+        }
+
+        public override string GetDrinkType()
+        {
+            return "Espresso";
         }
     }
 }

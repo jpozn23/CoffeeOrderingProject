@@ -6,10 +6,10 @@ namespace CoffeeOrderingApp
 {
     public class Pink_Drink : Beverage
     {
+        string size;
         public Pink_Drink(string coffeeSize)
         {
             size = coffeeSize;
-            drinktype = "Iced Coffee and Tea";
         }
 
         public override double Cost()
@@ -27,6 +27,21 @@ namespace CoffeeOrderingApp
             {
                 return 0.0;
             }
+        }
+
+        public override string GetAddSubs()
+        {
+            return "";
+        }
+
+        public override string GetDrinkSize()
+        {
+            return size;
+        }
+
+        public override string GetDrinkType()
+        {
+            return "Specialty Beverage";
         }
     }
 }
