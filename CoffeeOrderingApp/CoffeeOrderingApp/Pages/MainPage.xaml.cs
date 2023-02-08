@@ -55,6 +55,7 @@ namespace CoffeeOrderingApp
 
         private bool ValidateAccount()
         {
+            // Validate if account exists
             foreach (User user in accounts)
             {
                 if (user.username == Convert.ToString(Username.Text) && user.password == Convert.ToString(Password.Text))
@@ -93,6 +94,7 @@ namespace CoffeeOrderingApp
                 return;
             } else
             {
+                // Push Page
                 if (Singletons.UserSingleton.Instance.customerOrWorker == "Customer")
                 {
                     await Navigation.PushAsync(new CustomerHomePage());

@@ -1,5 +1,8 @@
-﻿using System;
+﻿using CoffeeOrderingApp.Classes;
+using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +15,7 @@ namespace CoffeeOrderingApp.Pages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class CustomerShoppingCartPage : ContentPage
     {
+        public List<Order> orders = new List<Order>();
         public CustomerShoppingCartPage()
         {
             InitializeComponent();
@@ -95,15 +99,8 @@ namespace CoffeeOrderingApp.Pages
             
         }
 
-        async private void Checkout_Clicked(object sender, EventArgs e)
+        private void ResetVars()
         {
-            // Write order to file
-
-
-
-            await DisplayAlert("Successful Order", "Your order has been sent.", "Ok");
-
-
             // Reset Singleton, Labels
             List<Beverage> newlist = new List<Beverage>();
             Singletons.OrderSingleton.Instance.beverages = newlist;
@@ -124,8 +121,92 @@ namespace CoffeeOrderingApp.Pages
             Drink5AddSubsLabel.Text = "";
             Drink5TotalLabel.Text = "";
             TotalOrderPriceLabel.Text = "";
+        }
+
+        private Order CreateOrder()
+        {
+            Order order = new Order();
+            order.firstname = Singletons.UserSingleton.Instance.firstname;
+            order.isCompleted = false;
+            foreach(Beverage b in Singletons.OrderSingleton.Instance.beverages)
+            {
+                Drink d = new Drink();
+                d.drinkType = b.GetDrinkType();
+                d.cost = b.Cost();
+
+                String s = b.GetAddSubs();
+                s = s.Substring(1);
+                d.addsubs = s;
+
+                order.beverages.Add(d);
+            }
+            return order;
+        }
+
+        private void WriteOrder(Order order)
+        {
+            // File Path
+            String userPath = "";
+            if (Device.RuntimePlatform == Device.Android)
+            {
+                userPath = App.PlatformSpecific.GetPublicStoragePath();
+            }
+            else
+            {
+                userPath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
+            }
+
+            String myFile = "orders.txt";
+            String pathFile = Path.Combine(userPath, myFile);
+
+            // Read Orders From File
+            if (File.Exists(pathFile))
+            {
+                string json = File.ReadAllText(pathFile);
+                orders = JsonConvert.DeserializeObject<List<Order>>(json);
+            }
+
+            File.Delete(pathFile);
+
+            orders.Add(order);
+
+            // Write new order to file
+            String jsonString;
+            jsonString = JsonConvert.SerializeObject(orders);
+
+            using (var streamWriter = new StreamWriter(pathFile, true))
+            {
+                streamWriter.WriteLine(jsonString);
+            }
+
+        }
+
+        async private void CheckoutButton_Clicked(object sender, EventArgs e)
+        {
+            // Create Order 
+            Order order = CreateOrder();
+
+            // Write Order to file 
+            WriteOrder(order);
+
+            await DisplayAlert("Successful Order", "Your order has been sent.", "Ok");
+
+
+            // Reset Singleton, Labels
+            ResetVars();
 
             await Navigation.PushAsync(new CustomerHomePage());
+        }
+
+        async private void CancelButton_Clicked(object sender, EventArgs e)
+        {
+            await DisplayAlert("Successful", "Your order has been removed.", "Ok");
+            
+            // Reset Singleton, Labels
+            ResetVars();
+
+            await Navigation.PushAsync(new CustomerHomePage());
+
         }
     }
 }

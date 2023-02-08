@@ -20,7 +20,7 @@
                             <StackLayout Orientation="Horizontal">
                                 <Label Text="$" FontSize="20" Margin="290,0,0,0" VerticalTextAlignment="End" />
                                 <Label Text="" x:Name="Drink1TotalLabel"
-                                   FontSize="20" Margin="0,0,0,0" VerticalTextAlignment="End"/>
+                                       FontSize="20" Margin="0,0,0,0" VerticalTextAlignment="End"/>
                             </StackLayout>
                         </StackLayout>
                     </Frame>
@@ -33,7 +33,7 @@
                             <StackLayout Orientation="Horizontal">
                                 <Label Text="$" FontSize="20" Margin="290,0,0,0" VerticalTextAlignment="End" />
                                 <Label Text="" x:Name="Drink2TotalLabel"
-                                   FontSize="20" Margin="0,0,0,0" VerticalTextAlignment="End"/>
+                                       FontSize="20" Margin="0,0,0,0" VerticalTextAlignment="End"/>
                             </StackLayout>
                         </StackLayout>
                     </Frame>
@@ -46,7 +46,7 @@
                             <StackLayout Orientation="Horizontal">
                                 <Label Text="$" FontSize="20" Margin="290,0,0,0" VerticalTextAlignment="End" />
                                 <Label Text="" x:Name="Drink3TotalLabel"
-                                   FontSize="20" Margin="0,0,0,0" VerticalTextAlignment="End"/>
+                                       FontSize="20" Margin="0,0,0,0" VerticalTextAlignment="End"/>
                             </StackLayout>
                         </StackLayout>
                     </Frame>
@@ -59,7 +59,7 @@
                             <StackLayout Orientation="Horizontal">
                                 <Label Text="$" FontSize="20" Margin="290,0,0,0" VerticalTextAlignment="End" />
                                 <Label Text="" x:Name="Drink4TotalLabel"
-                                   FontSize="20" Margin="0,0,0,0" VerticalTextAlignment="End"/>
+                                       FontSize="20" Margin="0,0,0,0" VerticalTextAlignment="End"/>
                             </StackLayout>
                         </StackLayout>
                     </Frame>
@@ -72,7 +72,7 @@
                             <StackLayout Orientation="Horizontal">
                                 <Label Text="$" FontSize="20" Margin="290,0,0,0" VerticalTextAlignment="End" />
                                 <Label Text="" x:Name="Drink5TotalLabel"
-                                   FontSize="20" Margin="0,0,0,0" VerticalTextAlignment="End"/>
+                                       FontSize="20" Margin="0,0,0,0" VerticalTextAlignment="End"/>
                             </StackLayout>
                         </StackLayout>
                     </Frame>
@@ -95,11 +95,15 @@
                
 
             </Frame>
-            <Button x:Name="Checkout" Clicked="Checkout_Clicked"
+            <Button x:Name="CheckoutButton" Clicked="CheckoutButton_Clicked"
                     Text="Checkout" BackgroundColor="#33b249"
                     FontAttributes="Bold" TextColor="White"
-                    FontSize="15" Margin="5,2,5,5"
-                    HeightRequest="55"/>
+                    FontSize="15" Margin="5,2,5,0"
+                    HeightRequest="45"/>
+            <Button x:Name="CancelButton" Clicked="CancelButton_Clicked"
+                    Text="Cancel" BackgroundColor="Red"
+                    FontAttributes="Bold" TextColor="White"
+                    FontSize="15" Margin="5,0,5,5" HeightRequest="45" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

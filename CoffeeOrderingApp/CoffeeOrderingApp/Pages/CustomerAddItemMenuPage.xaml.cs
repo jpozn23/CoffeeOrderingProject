@@ -19,6 +19,8 @@ namespace CoffeeOrderingApp.Pages
 
         private void DrinkCategoryPicker_SelectedIndexChanged(object sender, EventArgs e)
         {
+            // When the Drink Category Selected Changes, Drink Type Drop Menu has to change
+
             if(!String.IsNullOrEmpty(DrinkCategoryPicker.SelectedItem.ToString()))
             {
                 if(DrinkCategoryPicker.SelectedItem.ToString() == "Espresso")
@@ -83,6 +85,7 @@ namespace CoffeeOrderingApp.Pages
 
         private bool ValidateInput()
         {
+            // validate all fields are filled out
             if(DrinkCategoryPicker.SelectedIndex == -1 || DrinkTypePicker.SelectedIndex == -1 ||
                 DrinkSizePicker.SelectedIndex == -1 || DrinkAddOnsSubsPicker1.SelectedIndex == -1 ||
                 DrinkAddOnsSubsPicker2.SelectedIndex == -1 || DrinkAddOnsSubsPicker3.SelectedIndex == -1)
@@ -95,6 +98,8 @@ namespace CoffeeOrderingApp.Pages
         private void CreateDrink(string category, string type, string size, string addsub1, string addsub2, string addsub3)
         {
             Beverage beverage = new Americano(size);
+
+            // Drink Type
             if(type.Equals("Americano"))
             {
                 beverage = new Americano(size);
@@ -169,6 +174,7 @@ namespace CoffeeOrderingApp.Pages
 
             }
 
+            // Drink Add-Ons/Subs #1
             if (addsub1.Equals("Espresso"))
             {
                 beverage = new Espresso_Addon(beverage); 
@@ -192,6 +198,7 @@ namespace CoffeeOrderingApp.Pages
 
             }
 
+            // Drink Add-Ons/Subs #2
             if (addsub2.Equals("Espresso"))
             {
                 beverage = new Espresso_Addon(beverage);
@@ -221,6 +228,7 @@ namespace CoffeeOrderingApp.Pages
 
             }
 
+            // Drink Add-Ons/Subs #3
             if (addsub3.Equals("Espresso"))
             {
                 beverage = new Espresso_Addon(beverage);
@@ -250,11 +258,7 @@ namespace CoffeeOrderingApp.Pages
 
             }
 
-            Console.WriteLine(beverage.Cost());
-            Console.WriteLine(beverage.GetDrinkType());
-            Console.WriteLine(beverage.GetDrinkSize());
-            Console.Write(beverage.GetAddSubs());
-
+            // Add to singleton to pass to shopping cart
             Singletons.OrderSingleton.Instance.beverages.Add(beverage);
 
         }
@@ -279,8 +283,6 @@ namespace CoffeeOrderingApp.Pages
 
             // Create Drink
             CreateDrink(drinkCategory, drinkType, drinkSize, drinkAddSub1, drinkAddSub2, drinkAddSub3);
-
-
 
             await Navigation.PushAsync(new CustomerHomePage());
         }

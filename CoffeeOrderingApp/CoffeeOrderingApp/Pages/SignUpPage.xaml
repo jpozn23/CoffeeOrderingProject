@@ -2,14 +2,14 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CoffeeOrderingApp.SignUpPage"
-             BackgroundColor="White"
-             >
+             BackgroundColor="White" >
 
 
 
     <StackLayout>
         <Image Source="coffee" HeightRequest="100"  />
-        <Label Text="Coffee Ordering App" FontSize="35" HorizontalTextAlignment="Center" Margin="10,-20,10,30" Padding="0"/>
+        <Label Text="Coffee Ordering App" FontSize="35" HorizontalTextAlignment="Center" Margin="10,-20,10,30" 
+               Padding="0"/>
 
         <Frame Margin="30,-20,30,0" HeightRequest="400" BackgroundColor="white">
             <StackLayout>
