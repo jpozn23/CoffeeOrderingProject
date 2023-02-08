@@ -9,7 +9,6 @@ namespace CoffeeOrderingApp
         public abstract string GetAddSubs();
         public abstract string GetDrinkType();
         public abstract string GetDrinkSize();
-
         public abstract double Cost();
 
     }

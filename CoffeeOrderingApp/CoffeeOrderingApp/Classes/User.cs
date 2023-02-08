@@ -10,7 +10,6 @@ namespace CoffeeOrderingApp.Classes
         public string lastname { get; set; }
         public string username { get; set; }
         public string password { get; set; }
-
         public string customerOrWorker { get; set; }
 
     }

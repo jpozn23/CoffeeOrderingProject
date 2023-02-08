@@ -7,6 +7,7 @@ namespace CoffeeOrderingApp.Classes
     public class Drink
     {
         public string drinkType { get; set; }
+        public string drinkSize { get; set; }
         public string addsubs { get; set; }
         public double cost { get; set; }
     }

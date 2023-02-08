@@ -29,49 +29,49 @@ namespace CoffeeOrderingApp.Pages
             foreach(Beverage b in beverages) {
                 if(i == 0)
                 {
-                    Drink1NameLabel.Text = "Type: " + b.GetDrinkType();
+                    Drink1NameLabel.Text = "Type: " + b.GetDrinkType() + " - " + b.GetDrinkSize();
 
                     String s = b.GetAddSubs();
                     s = s.Substring(1);
                     Drink1AddSubsLabel.Text = "Details: " + s;
 
-                    Drink1TotalLabel.Text = b.Cost().ToString();
+                    Drink1TotalLabel.Text = "$ " + b.Cost().ToString();
                 } else if (i == 1)
                 {
-                    Drink2NameLabel.Text = "Type: " + b.GetDrinkType();
+                    Drink2NameLabel.Text = "Type: " + b.GetDrinkType() + " -  " + b.GetDrinkSize();
 
                     String s = b.GetAddSubs();
                     s = s.Substring(1);
                     Drink2AddSubsLabel.Text = "Details: " + s;
 
-                    Drink2TotalLabel.Text = b.Cost().ToString();
+                    Drink2TotalLabel.Text = "$ " + b.Cost().ToString();
                 } else if (i == 2)
                 {
-                    Drink3NameLabel.Text = "Type: " + b.GetDrinkType();
+                    Drink3NameLabel.Text = "Type: " + b.GetDrinkType() + " - " + b.GetDrinkSize();
 
                     String s = b.GetAddSubs();
                     s = s.Substring(1);
                     Drink3AddSubsLabel.Text = "Details: " + s;
 
-                    Drink3TotalLabel.Text = b.Cost().ToString();
+                    Drink3TotalLabel.Text = "$ " + b.Cost().ToString();
                 } else if (i == 3)
                 {
-                    Drink4NameLabel.Text = "Type: " + b.GetDrinkType();
+                    Drink4NameLabel.Text = "Type: " + b.GetDrinkType() + " - " + b.GetDrinkSize();
 
                     String s = b.GetAddSubs();
                     s = s.Substring(1);
-                    Drink4AddSubsLabel.Text = "Details: " + s;
+                    Drink4AddSubsLabel.Text = "$ " + "Details: " + s;
 
                     Drink4TotalLabel.Text = b.Cost().ToString();
                 } else if (i == 4)
                 {
-                    Drink5NameLabel.Text = "Type: " + b.GetDrinkType();
+                    Drink5NameLabel.Text = "Type: " + b.GetDrinkType() + " - " + b.GetDrinkSize();
 
                     String s = b.GetAddSubs();
                     s = s.Substring(1);
                     Drink5AddSubsLabel.Text = "Details: " + s;
 
-                    Drink5TotalLabel.Text = b.Cost().ToString();
+                    Drink5TotalLabel.Text = "$ " + b.Cost().ToString();
                 } else
                 {
 
@@ -87,7 +87,8 @@ namespace CoffeeOrderingApp.Pages
             {
                 total = total + b.Cost();
             }
-            TotalOrderPriceLabel.Text = total.ToString();
+            total = total * 1.06;
+            TotalOrderPriceLabel.Text = String.Format("{0:0.00}", total);
         }
         protected override void OnAppearing()
         {
@@ -128,11 +129,18 @@ namespace CoffeeOrderingApp.Pages
             Order order = new Order();
             order.firstname = Singletons.UserSingleton.Instance.firstname;
             order.isCompleted = false;
-            foreach(Beverage b in Singletons.OrderSingleton.Instance.beverages)
+
+            string dt1 = DateTime.Now.ToString("MM/dd/yyyy h:mm tt");
+            DateTime dt2 = DateTime.Parse(dt1);
+            DateTime dt3 = dt2.AddMinutes(15);
+            order.pickupTime = dt3;
+
+            foreach (Beverage b in Singletons.OrderSingleton.Instance.beverages)
             {
                 Drink d = new Drink();
                 d.drinkType = b.GetDrinkType();
                 d.cost = b.Cost();
+                d.drinkSize = b.GetDrinkSize();
 
                 String s = b.GetAddSubs();
                 s = s.Substring(1);
@@ -189,7 +197,7 @@ namespace CoffeeOrderingApp.Pages
             // Write Order to file 
             WriteOrder(order);
 
-            await DisplayAlert("Successful Order", "Your order has been sent.", "Ok");
+            await DisplayAlert("Successful Order", "Your order will be ready in about 15 minutes.", "Ok");
 
 
             // Reset Singleton, Labels
