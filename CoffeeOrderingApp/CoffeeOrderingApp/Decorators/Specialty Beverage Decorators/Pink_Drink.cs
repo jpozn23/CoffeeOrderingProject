@@ -41,7 +41,7 @@ namespace CoffeeOrderingApp
 
         public override string GetDrinkType()
         {
-            return "Specialty Beverage";
+            return "Specialty Beverage - Pink Drink";
         }
     }
 }

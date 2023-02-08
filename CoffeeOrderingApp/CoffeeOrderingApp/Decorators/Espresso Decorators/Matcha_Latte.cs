@@ -42,7 +42,7 @@ namespace CoffeeOrderingApp
 
         public override string GetDrinkType()
         {
-            return "Espresso";
+            return "Espresso - Matcha Latte";
         }
     }
 }

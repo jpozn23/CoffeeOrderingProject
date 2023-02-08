@@ -42,7 +42,7 @@ namespace CoffeeOrderingApp
 
         public override string GetDrinkType()
         {
-            return "Frappuccino";
+            return "Frappuccino - Strawberries and Cream";
         }
     }
 }

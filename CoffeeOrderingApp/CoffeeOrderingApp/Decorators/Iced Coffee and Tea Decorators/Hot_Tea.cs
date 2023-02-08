@@ -42,7 +42,7 @@ namespace CoffeeOrderingApp
 
         public override string GetDrinkType()
         {
-            return "Iced Coffee and Tea";
+            return "Iced Coffee and Tea - Hot Tea";
         }
     }
 }
