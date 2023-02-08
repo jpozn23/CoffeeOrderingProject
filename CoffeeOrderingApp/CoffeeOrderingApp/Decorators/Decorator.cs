@@ -6,11 +6,7 @@ namespace CoffeeOrderingApp
 {
     public abstract class Decorator : Beverage
     {
-
         public Beverage beverage;
-        public String size;
-
-        public abstract String Description();
 
     }
 }

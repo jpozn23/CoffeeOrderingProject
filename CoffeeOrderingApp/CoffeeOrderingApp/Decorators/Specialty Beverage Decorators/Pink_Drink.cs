@@ -4,33 +4,44 @@ using System.Text;
 
 namespace CoffeeOrderingApp
 {
-    public class Pink_Drink : Decorator
+    public class Pink_Drink : Beverage
     {
-        public Pink_Drink(Beverage beverage)
+        string size;
+        public Pink_Drink(string coffeeSize)
         {
-            this.beverage = beverage;
-        }
-
-        public override String Description()
-        {
-            return "Pink Drink " + beverage.Description();
+            size = coffeeSize;
         }
 
         public override double Cost()
         {
             if (size.Equals("Grande"))
             {
-                return beverage.Cost() + 4.99;
+                return  4.99;
 
             }
             else if (size.Equals("Venti"))
             {
-                return beverage.Cost() + 5.69;
+                return 5.69;
             }
             else
             {
                 return 0.0;
             }
+        }
+
+        public override string GetAddSubs()
+        {
+            return "";
+        }
+
+        public override string GetDrinkSize()
+        {
+            return size;
+        }
+
+        public override string GetDrinkType()
+        {
+            return "Specialty Beverage - Pink Drink";
         }
     }
 }

@@ -4,31 +4,43 @@ using System.Text;
 
 namespace CoffeeOrderingApp
 {
-    public class Java_Chip : Decorator
+    public class Java_Chip : Beverage
     {
-        public Java_Chip( Beverage beverage )
+        string size;
+        public Java_Chip( string coffeeSize )
         {
-            this.beverage = beverage;
+            size = coffeeSize;
         }
 
-        public override String Description()
-        {
-            return "Java Chip " + beverage.Description();
-        }
 
         public override double Cost()
         {
             if (size.Equals("Grande"))
             {
-                return beverage.Cost() + 5.29;
+                return  5.29;
 
-            } else if ( size.Equals("Venti") )
+            } else if (size.Equals("Venti") )
             {
-                return beverage.Cost() + 5.79;
+                return  5.79;
             } else
             {
                 return 0.0;
             }
+        }
+
+        public override string GetAddSubs()
+        {
+            return "";
+        }
+
+        public override string GetDrinkSize()
+        {
+            return size;
+        }
+
+        public override string GetDrinkType()
+        {
+            return "Frappuccino - Java Chip";
         }
     }
 }

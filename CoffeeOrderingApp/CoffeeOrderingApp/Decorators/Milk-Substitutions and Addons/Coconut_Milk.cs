@@ -11,14 +11,26 @@ namespace CoffeeOrderingApp
             this.beverage = beverage;
         }
 
-        public override String Description()
+        public override string GetAddSubs()
         {
-            return beverage.Description() + " with Coconut Milk";
+            return beverage.GetAddSubs() + ", Coconut Milk ";
         }
 
         public override double Cost()
         {
             return beverage.Cost() + 0.99;
         }
+
+        public override string GetDrinkType()
+        {
+            return beverage.GetDrinkType();
+        }
+
+        public override string GetDrinkSize()
+        {
+            return beverage.GetDrinkSize();
+        }
+
+
     }
 }

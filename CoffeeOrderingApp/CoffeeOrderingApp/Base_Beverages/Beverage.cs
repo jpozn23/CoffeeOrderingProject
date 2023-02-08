@@ -6,13 +6,9 @@ namespace CoffeeOrderingApp
 {
     public abstract class Beverage
     {
-        public string description = "Unknown Beverage";
-
-        public String Description()
-        {
-            return description;
-        }
-
+        public abstract string GetAddSubs();
+        public abstract string GetDrinkType();
+        public abstract string GetDrinkSize();
         public abstract double Cost();
 
     }

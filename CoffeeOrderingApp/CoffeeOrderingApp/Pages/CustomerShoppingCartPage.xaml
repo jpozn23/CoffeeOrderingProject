@@ -12,21 +12,57 @@
 
             <ScrollView>
                 <StackLayout>
-                    <Frame HeightRequest="100" Margin="5">
-                        
+                    <Frame HeightRequest="160" Margin="5">
+                        <StackLayout>
+                            <Label Text="Drink 1" FontSize="20" />
+                            <Label Text="" x:Name="Drink1NameLabel" FontSize="20" VerticalTextAlignment="Start" />
+                            <Label Text="" FontSize="20" x:Name="Drink1AddSubsLabel" VerticalTextAlignment="Center" />
+                            <Label Text="" x:Name="Drink1TotalLabel" FontSize="20" Margin="0,0,0,0" 
+                                   VerticalTextAlignment="End"/>
+                        </StackLayout>
                     </Frame>
-                    <Frame HeightRequest="100" Margin="5">
 
+                    <Frame HeightRequest="160" Margin="5">
+                        <StackLayout>
+                            <Label Text="Drink 2" FontSize="20" />
+                            <Label Text="" x:Name="Drink2NameLabel" FontSize="20" VerticalTextAlignment="Start" />
+                            <Label Text="" FontSize="20" x:Name="Drink2AddSubsLabel" VerticalTextAlignment="Center" />
+                            <Label Text="" x:Name="Drink2TotalLabel" FontSize="20" Margin="0,0,0,0" 
+                                   VerticalTextAlignment="End"/>
+                        </StackLayout>
                     </Frame>
-                    <Frame HeightRequest="100" Margin="5">
 
+                    <Frame HeightRequest="160" Margin="5">
+                        <StackLayout>
+                            <Label Text="Drink 3" FontSize="20" />
+                            <Label Text="" x:Name="Drink3NameLabel" FontSize="20" VerticalTextAlignment="Start" />
+                            <Label Text="" FontSize="20" x:Name="Drink3AddSubsLabel" VerticalTextAlignment="Center" />
+                            <Label Text="" x:Name="Drink3TotalLabel" FontSize="20" Margin="0,0,0,0" 
+                                   VerticalTextAlignment="End"/>
+                        </StackLayout>
                     </Frame>
-                    <Frame HeightRequest="100" Margin="5">
 
+                    <Frame HeightRequest="160" Margin="5">
+                        <StackLayout>
+                            <Label Text="Drink 4" FontSize="20" />
+                            <Label Text="" x:Name="Drink4NameLabel" FontSize="20" VerticalTextAlignment="Start" />
+                            <Label Text="" FontSize="20" x:Name="Drink4AddSubsLabel" VerticalTextAlignment="Center" />
+                            <Label Text="" x:Name="Drink4TotalLabel" FontSize="20" Margin="0,0,0,0" 
+                                   VerticalTextAlignment="End"/>
+                        </StackLayout>
                     </Frame>
-                    <Frame HeightRequest="100" Margin="5">
 
+                    <Frame HeightRequest="160" Margin="5">
+                        <StackLayout>
+                            <Label Text="Drink 5" FontSize="20" />
+                            <Label Text="" x:Name="Drink5NameLabel" FontSize="20" VerticalTextAlignment="Start" />
+                            <Label Text="" FontSize="20" x:Name="Drink5AddSubsLabel" VerticalTextAlignment="Center" />
+                            <Label Text="" x:Name="Drink5TotalLabel" FontSize="20" Margin="0,0,0,0" 
+                                   VerticalTextAlignment="End"/>
+                            
+                        </StackLayout>
                     </Frame>
+                    
                 </StackLayout>
             </ScrollView>
 
@@ -45,11 +81,15 @@
                
 
             </Frame>
-            <Button x:Name="Checkout" Clicked="Checkout_Clicked"
+            <Button x:Name="CheckoutButton" Clicked="CheckoutButton_Clicked"
                     Text="Checkout" BackgroundColor="#33b249"
                     FontAttributes="Bold" TextColor="White"
-                    FontSize="15" Margin="5,2,5,5"
-                    HeightRequest="55"/>
+                    FontSize="15" Margin="5,2,5,0"
+                    HeightRequest="45"/>
+            <Button x:Name="CancelButton" Clicked="CancelButton_Clicked"
+                    Text="Cancel" BackgroundColor="Red"
+                    FontAttributes="Bold" TextColor="White"
+                    FontSize="15" Margin="5,0,5,5" HeightRequest="45" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

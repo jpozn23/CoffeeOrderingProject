@@ -4,33 +4,44 @@ using System.Text;
 
 namespace CoffeeOrderingApp
 {
-    public class Freshly_Brewed_Coffee : Decorator
+    public class Freshly_Brewed_Coffee : Beverage
     {
-        public Freshly_Brewed_Coffee(Beverage beverage)
+        string size;
+        public Freshly_Brewed_Coffee(string coffeeSize)
         {
-            this.beverage = beverage;
-        }
-
-        public override String Description()
-        {
-            return "Freshly Brewed Coffee " + beverage.Description();
+            size = coffeeSize;
         }
 
         public override double Cost()
         {
             if (size.Equals("Grande"))
             {
-                return beverage.Cost() + 2.99;
+                return 2.99;
 
             }
             else if (size.Equals("Venti"))
             {
-                return beverage.Cost() + 3.29;
+                return 3.29;
             }
             else
             {
                 return 0.0;
             }
+        }
+
+        public override string GetAddSubs()
+        {
+            return "";
+        }
+
+        public override string GetDrinkSize()
+        {
+            return size;
+        }
+
+        public override string GetDrinkType()
+        {
+            return "Espresso - Freshly Brewed Coffee";
         }
     }
 }

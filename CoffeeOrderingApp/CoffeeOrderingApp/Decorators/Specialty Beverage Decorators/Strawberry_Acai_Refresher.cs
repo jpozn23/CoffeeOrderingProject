@@ -4,33 +4,45 @@ using System.Text;
 
 namespace CoffeeOrderingApp
 {
-    public class Strawberry_Acai_Refresher : Decorator
+    public class Strawberry_Acai_Refresher : Beverage
     {
-        public Strawberry_Acai_Refresher(Beverage beverage)
+        string size;
+        public Strawberry_Acai_Refresher(string coffeeSize)
         {
-            this.beverage = beverage;
+            size = coffeeSize;
         }
 
-        public override String Description()
-        {
-            return "Strawberry Angel Refresher " + beverage.Description();
-        }
 
         public override double Cost()
         {
             if (size.Equals("Grande"))
             {
-                return beverage.Cost() + 3.79;
+                return  3.79;
 
             }
             else if (size.Equals("Venti"))
             {
-                return beverage.Cost() + 4.29;
+                return 4.29;
             }
             else
             {
                 return 0.0;
             }
+        }
+
+        public override string GetAddSubs()
+        {
+            return "";
+        }
+
+        public override string GetDrinkSize()
+        {
+            return size;
+        }
+
+        public override string GetDrinkType()
+        {
+            return "Specialty Beverage - Refresher";
         }
     }
 }

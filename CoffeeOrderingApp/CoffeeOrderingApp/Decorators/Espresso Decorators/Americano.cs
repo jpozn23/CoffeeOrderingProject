@@ -4,28 +4,24 @@ using System.Text;
 
 namespace CoffeeOrderingApp
 {
-    public class Americano : Decorator
+    public class Americano : Beverage
     {
-        public Americano(Beverage beverage)
+        string size;
+        public Americano(string coffeeSize)
         {
-            this.beverage = beverage;
-        }
-
-        public override String Description()
-        {
-            return "Americano " + beverage.Description();
+            size = coffeeSize;
         }
 
         public override double Cost()
         {
             if (size.Equals("Grande"))
             {
-                return beverage.Cost() + 3.29;
+                return 3.29;
 
             }
             else if (size.Equals("Venti"))
             {
-                return beverage.Cost() + 3.89;
+                return 3.89;
             }
             else
             {
@@ -33,5 +29,19 @@ namespace CoffeeOrderingApp
             }
         }
 
+        public override string GetAddSubs()
+        {
+            return "";
+        }
+
+        public override string GetDrinkSize()
+        {
+            return size;
+        }
+
+        public override string GetDrinkType()
+        {
+            return "Espresso - Americano";
+        }
     }
 }

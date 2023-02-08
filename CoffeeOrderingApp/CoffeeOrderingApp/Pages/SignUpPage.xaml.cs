@@ -32,12 +32,14 @@ namespace CoffeeOrderingApp
 
         private int ValidateInput()
         {
+            // validate all fields are filled out
             if (String.IsNullOrEmpty(Firstname.Text) || String.IsNullOrEmpty(Lastname.Text) || String.IsNullOrEmpty(Username.Text)
                 || String.IsNullOrEmpty(Password.Text) || String.IsNullOrEmpty(customerOrWorker))
             {
                 return 1;
             }
 
+            // validate password and confirm password fields are same
             if (Convert.ToString(Password.Text) != Convert.ToString(ConfirmPassword.Text))
             {
                 return 2;
@@ -50,6 +52,7 @@ namespace CoffeeOrderingApp
         {
             accounts.Clear();
 
+            // Get File Path
             String userPath = "";
             if (Device.RuntimePlatform == Device.Android)
             {
@@ -63,6 +66,7 @@ namespace CoffeeOrderingApp
             String myFile = "userAccounts.txt";
             String pathFile = Path.Combine(userPath, myFile);
 
+            // Get accounts
             if (File.Exists(pathFile))
             {
                 string json = File.ReadAllText(pathFile);
@@ -72,6 +76,7 @@ namespace CoffeeOrderingApp
 
         private bool ValidateUsername()
         {
+            // validate username does not already exist
             foreach (User user in accounts)
             {
                 if (user.username == Convert.ToString(Username.Text))
@@ -84,6 +89,7 @@ namespace CoffeeOrderingApp
 
         private void UpdateFile()
         {
+            // File Path
             String userPath = "";
             if (Device.RuntimePlatform == Device.Android)
             {
@@ -99,6 +105,7 @@ namespace CoffeeOrderingApp
 
             File.Delete(pathFile);
 
+            // New User Set
             User newUser = new User();
             newUser.username = Convert.ToString(Username.Text);
             newUser.password = Convert.ToString(Password.Text);
@@ -108,6 +115,7 @@ namespace CoffeeOrderingApp
 
             accounts.Add(newUser);
 
+            // Write new user to file
             String jsonString;
             jsonString = JsonConvert.SerializeObject(accounts);
 
@@ -116,6 +124,7 @@ namespace CoffeeOrderingApp
                 streamWriter.WriteLine(jsonString);
             }
 
+            // Set singleton to pass user info
             Singletons.UserSingleton.Instance.username = newUser.username;
             Singletons.UserSingleton.Instance.password = newUser.password;
             Singletons.UserSingleton.Instance.firstname = newUser.firstname;
