@@ -233,6 +233,14 @@ namespace CoffeeOrderingApp.Pages
 
         async private void CheckoutButton_Clicked(object sender, EventArgs e)
         {
+            // Check to make sure cart not empty
+            if(Singletons.OrderSingleton.Instance.beverages.Count <= 0)
+            {
+                await DisplayAlert("Error", "There are currently no items in your cart.", "Ok");
+                return;
+            }
+
+
             // Create Order 
             Order order = CreateOrder();
 
@@ -250,7 +258,15 @@ namespace CoffeeOrderingApp.Pages
 
         async private void CancelButton_Clicked(object sender, EventArgs e)
         {
-            await DisplayAlert("Successful", "Your order has been removed.", "Ok");
+            // Check to make sure cart not empty
+            if (Singletons.OrderSingleton.Instance.beverages.Count <= 0)
+            {
+                await DisplayAlert("Error", "There are currently no items in your cart.", "Ok");
+                return;
+            } else
+            {
+                await DisplayAlert("Successful", "Your order has been removed.", "Ok");
+            }
             
             // Reset Singleton, Labels
             ResetVars();

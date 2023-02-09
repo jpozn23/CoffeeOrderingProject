@@ -32,7 +32,7 @@ namespace NUnitTestProject
         }
 
         [Test]
-        public void GetBeverageSize_EqualTest()
+        public void GetBeverageSize_Test()
         {
             var size1 = beverage1.GetDrinkSize();
             var size2 = beverage2.GetDrinkSize();
@@ -46,7 +46,7 @@ namespace NUnitTestProject
         }
 
         [Test]
-        public void GetBeverageType_EqualTest()
+        public void GetBeverageType_Test()
         {
             var type1 = beverage1.GetDrinkType();
             var type2 = beverage2.GetDrinkType();
@@ -61,7 +61,7 @@ namespace NUnitTestProject
 
         
         [Test]
-        public void GetBeverageCost_EqualTest()
+        public void GetBeverageCost_Test()
         {
             var cost1 = Math.Round(beverage1.Cost(), 2);
             var cost2 = Math.Round(beverage2.Cost(), 2);
@@ -76,7 +76,7 @@ namespace NUnitTestProject
         
 
         [Test]
-        public void GetBeverageAddsAndSubs_EqualTest()
+        public void GetBeverageAddsAndSubs_Test()
         {
             var addsubs1 = beverage1.GetAddSubs();
             var addsubs2 = beverage2.GetAddSubs();
