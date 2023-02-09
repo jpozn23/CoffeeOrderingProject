@@ -31,46 +31,80 @@ namespace CoffeeOrderingApp.Pages
                 {
                     Drink1NameLabel.Text = "Type: " + b.GetDrinkType() + " - " + b.GetDrinkSize();
 
-
-                    String s = b.GetAddSubs();
-                    s = s.Substring(1);
-                    Drink1AddSubsLabel.Text = "Details: " + s;
+                    if(b.GetAddSubs().Length >= 2)
+                    {
+                        String s = b.GetAddSubs();
+                        s = s.Substring(1);
+                        Drink1AddSubsLabel.Text = "Details: " + s;
+                    } else
+                    {
+                        Drink1AddSubsLabel.Text = "Details: None ";
+                    }
+                    
 
                     Drink1TotalLabel.Text = "$ " + b.Cost().ToString();
                 } else if (i == 1)
                 {
                     Drink2NameLabel.Text = "Type: " + b.GetDrinkType() + " -  " + b.GetDrinkSize();
 
-                    String s = b.GetAddSubs();
-                    s = s.Substring(1);
-                    Drink2AddSubsLabel.Text = "Details: " + s;
+                    if (b.GetAddSubs().Length >= 2)
+                    {
+                        String s = b.GetAddSubs();
+                        s = s.Substring(1);
+                        Drink2AddSubsLabel.Text = "Details: " + s;
+                    }
+                    else
+                    {
+                        Drink2AddSubsLabel.Text = "Details: None ";
+                    }
 
                     Drink2TotalLabel.Text = "$ " + b.Cost().ToString();
                 } else if (i == 2)
                 {
                     Drink3NameLabel.Text = "Type: " + b.GetDrinkType() + " - " + b.GetDrinkSize();
 
-                    String s = b.GetAddSubs();
-                    s = s.Substring(1);
-                    Drink3AddSubsLabel.Text = "Details: " + s;
+                    if (b.GetAddSubs().Length >= 2)
+                    {
+                        String s = b.GetAddSubs();
+                        s = s.Substring(1);
+                        Drink3AddSubsLabel.Text = "Details: " + s;
+                    }
+                    else
+                    {
+                        Drink3AddSubsLabel.Text = "Details: None ";
+                    }
 
                     Drink3TotalLabel.Text = "$ " + b.Cost().ToString();
                 } else if (i == 3)
                 {
                     Drink4NameLabel.Text = "Type: " + b.GetDrinkType() + " - " + b.GetDrinkSize();
 
-                    String s = b.GetAddSubs();
-                    s = s.Substring(1);
-                    Drink4AddSubsLabel.Text = "Details: " + s;
+                    if (b.GetAddSubs().Length >= 2)
+                    {
+                        String s = b.GetAddSubs();
+                        s = s.Substring(1);
+                        Drink4AddSubsLabel.Text = "Details: " + s;
+                    }
+                    else
+                    {
+                        Drink4AddSubsLabel.Text = "Details: None ";
+                    }
 
                     Drink4TotalLabel.Text = "$ " + b.Cost().ToString();
                 } else if (i == 4)
                 {
                     Drink5NameLabel.Text = "Type: " + b.GetDrinkType() + " - " + b.GetDrinkSize();
 
-                    String s = b.GetAddSubs();
-                    s = s.Substring(1);
-                    Drink5AddSubsLabel.Text = "Details: " + s;
+                    if (b.GetAddSubs().Length >= 2)
+                    {
+                        String s = b.GetAddSubs();
+                        s = s.Substring(1);
+                        Drink5AddSubsLabel.Text = "Details: " + s;
+                    }
+                    else
+                    {
+                        Drink5AddSubsLabel.Text = "Details: None ";
+                    }
 
                     Drink5TotalLabel.Text = "$ " + b.Cost().ToString();
                 } else
@@ -143,9 +177,16 @@ namespace CoffeeOrderingApp.Pages
                 d.cost = b.Cost();
                 d.drinkSize = b.GetDrinkSize();
 
-                String s = b.GetAddSubs();
-                s = s.Substring(1);
-                d.addsubs = s;
+                if(b.GetAddSubs().Length > 2)
+                {
+                    String s = b.GetAddSubs();
+                    s = s.Substring(1);
+                    d.addsubs = s;
+                } else
+                {
+                    d.addsubs = "None";
+                }
+                
 
                 order.beverages.Add(d);
             }
