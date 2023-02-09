@@ -31,6 +31,7 @@ namespace CoffeeOrderingApp.Pages
                 {
                     Drink1NameLabel.Text = "Type: " + b.GetDrinkType() + " - " + b.GetDrinkSize();
 
+
                     String s = b.GetAddSubs();
                     s = s.Substring(1);
                     Drink1AddSubsLabel.Text = "Details: " + s;
