@@ -50,7 +50,7 @@
                     </Picker.ItemsSource>
                 </Picker>
             
-                <Label Text="Choose Add-Ons and Substitutions" HorizontalTextAlignment="center"
+                <Label Text="Choose Add-Ons and Substitutions (3)" HorizontalTextAlignment="center"
                        FontAttributes="Bold" FontSize="28" Margin="0,15,0,0"/>
 
                 <Picker x:Name="DrinkAddOnsSubsPicker1"  Title="Select Add-On or Sub 1" 

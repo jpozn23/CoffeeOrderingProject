@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoffeeOrderingApp.iOS", "Co
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoffeeOrderingApp", "CoffeeOrderingApp\CoffeeOrderingApp\CoffeeOrderingApp.csproj", "{574308FD-75D2-47BA-A0B3-4C206190ECBC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NUnitTestProject", "NUnitTestProject\NUnitTestProject.csproj", "{9C2CE5B2-AEA6-492B-BD09-C71A840FB7F2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NUnitTestProject", "NUnitTestProject\NUnitTestProject.csproj", "{9C2CE5B2-AEA6-492B-BD09-C71A840FB7F2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
