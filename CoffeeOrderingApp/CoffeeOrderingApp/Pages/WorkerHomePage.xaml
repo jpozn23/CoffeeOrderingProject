@@ -11,13 +11,45 @@
             <Label x:Name="NameLabel" HorizontalTextAlignment="Center"
                    FontSize="32" TextColor="DarkSlateGray" FontAttributes="Bold"
                    Text="Name" Margin="0,-5,0,10"/>
-            <Frame BackgroundColor="white" HeightRequest="340" Margin="5,-10,5,5">
-                <StackLayout>
-                    <Label Text="Current Order Details" HorizontalTextAlignment="Center"
-                           FontAttributes="Bold" FontSize="25" Margin="0,-5,0,20"/>
-                    <Label Text="Order Details" />
-                </StackLayout>
-            </Frame>
+            <ScrollView>
+                <Frame BackgroundColor="white" HeightRequest="800" Margin="5,-10,5,5">
+                    <StackLayout>
+                        <Label Text="Current Order Details" HorizontalTextAlignment="Center"
+                           FontAttributes="Bold" FontSize="25" Margin="0,-5,0,0"/>
+                        <Label x:Name="CurrentDrinkOrderNameLabel" FontSize="20" FontAttributes="Bold"
+                               HorizontalTextAlignment="Center"/>
+                        <Label x:Name="CurrentDrinkOrderTimeLabel" FontSize="20" FontAttributes="Bold"
+                               HorizontalTextAlignment="Center"/>
+                        <Label x:Name="CurrentDrink1Label" Text="Drink 1" FontSize="20" FontAttributes="Bold"/>
+                        <Label x:Name="CurrentDrink1TypeLabel" FontSize="20" />
+                        <Label x:Name="CurrentDrink1SizeLabel" FontSize="20" />
+                        <Label x:Name="CurrentDrink1AddSubLabel" FontSize="20" />
+
+                        <Label x:Name="CurrentDrink2Label" Text="Drink 2" FontSize="20" FontAttributes="Bold"/>
+                        <Label x:Name="CurrentDrink2TypeLabel" FontSize="20" />
+                        <Label x:Name="CurrentDrink2SizeLabel" FontSize="20" />
+                        <Label x:Name="CurrentDrink2AddSubLabel" FontSize="20" />
+
+                        <Label x:Name="CurrentDrink3Label" Text="Drink 3" FontSize="20" FontAttributes="Bold"/>
+                        <Label x:Name="CurrentDrink3TypeLabel" FontSize="20" />
+                        <Label x:Name="CurrentDrink3SizeLabel" FontSize="20" />
+                        <Label x:Name="CurrentDrink3AddSubLabel" FontSize="20" />
+
+                        <Label x:Name="CurrentDrink4Label" Text="Drink 4" FontSize="20" FontAttributes="Bold"/>
+                        <Label x:Name="CurrentDrink4TypeLabel" FontSize="20" />
+                        <Label x:Name="CurrentDrink4SizeLabel" FontSize="20" />
+                        <Label x:Name="CurrentDrink4AddSubLabel" FontSize="20" />
+
+                        <Label x:Name="CurrentDrink5Label" Text="Drink 5" FontSize="20" FontAttributes="Bold"/>
+                        <Label x:Name="CurrentDrink5TypeLabel" FontSize="20" />
+                        <Label x:Name="CurrentDrink5SizeLabel" FontSize="20" />
+                        <Label x:Name="CurrentDrink5AddSubLabel" FontSize="20" />
+
+
+                    </StackLayout>
+                </Frame>
+            </ScrollView>
+            
             <Button x:Name="CompleteOrderButton" Clicked="CompleteOrderButton_Clicked"
                     Text="Complete Order" Margin="5,5,5,5" HeightRequest="50"
                     BackgroundColor="#33b249" TextColor="White"/>

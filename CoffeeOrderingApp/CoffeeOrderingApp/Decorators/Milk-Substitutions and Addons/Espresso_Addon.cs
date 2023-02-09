@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CoffeeOrderingApp
 {
-    class Espresso_Addon : Decorator
+    public class Espresso_Addon : Decorator
     {
         public Espresso_Addon(Beverage beverage)
         {
