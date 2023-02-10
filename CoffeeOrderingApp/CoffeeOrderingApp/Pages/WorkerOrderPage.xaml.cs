@@ -26,8 +26,63 @@ namespace CoffeeOrderingApp.Pages
         {
             base.OnAppearing();
 
+            ResetVars();
+
             // calls method to get all orders on file that have a completion status of FALSE
             SetLabels();
+        }
+
+        private void ResetVars()
+        {
+            OLOrder1TimeLabel.Text = "";
+            OLOrder1NameLabel.Text = "";
+            OLOrder1NumDrinksLabel.Text = "";
+            OLOrder1TotalLabel.Text = "";
+
+            OLOrder2TimeLabel.Text = "";
+            OLOrder2NameLabel.Text = "";
+            OLOrder2NumDrinksLabel.Text = "";
+            OLOrder2TotalLabel.Text = "";
+
+            OLOrder3TimeLabel.Text = "";
+            OLOrder3NameLabel.Text = "";
+            OLOrder3NumDrinksLabel.Text = "";
+            OLOrder3TotalLabel.Text = "";
+
+            OLOrder4TimeLabel.Text = "";
+            OLOrder4NameLabel.Text = "";
+            OLOrder4NumDrinksLabel.Text = "";
+            OLOrder4TotalLabel.Text = "";
+
+            OLOrder5TimeLabel.Text = "";
+            OLOrder5NameLabel.Text = "";
+            OLOrder5NumDrinksLabel.Text = "";
+            OLOrder5TotalLabel.Text = "";
+
+            OLOrder6TimeLabel.Text = "";
+            OLOrder6NameLabel.Text = "";
+            OLOrder6NumDrinksLabel.Text = "";
+            OLOrder6TotalLabel.Text = "";
+
+            OLOrder7TimeLabel.Text = "";
+            OLOrder7NameLabel.Text = "";
+            OLOrder7NumDrinksLabel.Text = "";
+            OLOrder7TotalLabel.Text = "";
+
+            OLOrder8TimeLabel.Text = "";
+            OLOrder8NameLabel.Text = "";
+            OLOrder8NumDrinksLabel.Text = "";
+            OLOrder8TotalLabel.Text = "";
+
+            OLOrder9TimeLabel.Text = "";
+            OLOrder9NameLabel.Text = "";
+            OLOrder9NumDrinksLabel.Text = "";
+            OLOrder9TotalLabel.Text = "";
+
+            OLOrder10TimeLabel.Text = "";
+            OLOrder10NameLabel.Text = "";
+            OLOrder10NumDrinksLabel.Text = "";
+            OLOrder10TotalLabel.Text = "";
         }
 
         private void SetLabels()
