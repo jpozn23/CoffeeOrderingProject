@@ -138,15 +138,127 @@ namespace CoffeeOrderingApp.Pages
 
         }
 
-
-        private void CompleteOrderButton_Clicked(object sender, EventArgs e)
+        private void WriteToFile()
         {
+            // File Path
+            String userPath = "";
+            if (Device.RuntimePlatform == Device.Android)
+            {
+                userPath = App.PlatformSpecific.GetPublicStoragePath();
+            }
+            else
+            {
+                userPath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
+            }
+
+            String myFile = "orders.txt";
+            String pathFile = Path.Combine(userPath, myFile);
+
+            File.Delete(pathFile);
+
+
+            // Write new order to file
+            String jsonString;
+            jsonString = JsonConvert.SerializeObject(incompleteOrders);
+
+            using (var streamWriter = new StreamWriter(pathFile, true))
+            {
+                streamWriter.WriteLine(jsonString);
+            }
+        }
+
+        private void ResetVars()
+        {
+            CurrentDrinkOrderNameLabel.Text = "";
+            CurrentDrinkOrderTimeLabel.Text = "";
+
+            CurrentDrink1TypeLabel.Text = "";
+            CurrentDrink1SizeLabel.Text = "";
+            CurrentDrink1AddSubLabel.Text = "";
+
+            CurrentDrink2TypeLabel.Text = "";
+            CurrentDrink2SizeLabel.Text = "";
+            CurrentDrink2AddSubLabel.Text = "";
+
+            CurrentDrink3TypeLabel.Text = "";
+            CurrentDrink3SizeLabel.Text = "";
+            CurrentDrink3AddSubLabel.Text = "";
+
+            CurrentDrink4TypeLabel.Text = "";
+            CurrentDrink4SizeLabel.Text = "";
+            CurrentDrink4AddSubLabel.Text = "";
+
+            CurrentDrink5TypeLabel.Text = "";
+            CurrentDrink5SizeLabel.Text = "";
+            CurrentDrink5AddSubLabel.Text = "";
+        }
+
+
+        async private void CompleteOrderButton_Clicked(object sender, EventArgs e)
+        {
+            // Change current item isCompleted
+            int num = 0;
+            foreach(Order order in incompleteOrders)
+            {
+                if(num == 0)
+                {
+                    order.isCompleted = true;
+                }
+                num++;
+            }
+
+            WriteToFile();
+
+            incompleteOrders.Clear();
+
+            ResetVars();
+
+            await DisplayAlert("Successful", "The order has been successfully completed.", "Ok");
+
+            // Make sure singleton list empty
+            Singletons.WorkerOrdersSingleton.Instance.orders.Clear();
+
+            
+
+            // calls method to get all orders on file that have a completion status of FALSE
+            GetOrders();
+
+            // sets current order labels and passes rest of orders to singleton which will be read from in WorkerOrderPage
+            SetOrders();
+
+
 
         }
 
-        private void CancelOrderButton_Clicked(object sender, EventArgs e)
+        async private void CancelOrderButton_Clicked(object sender, EventArgs e)
         {
+            // Change current item isCompleted
+            int num = 0;
+            foreach (Order order in incompleteOrders)
+            {
+                if (num == 0)
+                {
+                    order.isCompleted = true;
+                }
+                num++;
+            }
 
+            WriteToFile();
+
+            incompleteOrders.Clear();
+
+            ResetVars();
+
+            await DisplayAlert("Successful", "The order has been successfully cancelled.", "Ok");
+
+            // Make sure singleton list empty
+            Singletons.WorkerOrdersSingleton.Instance.orders.Clear();
+
+            // calls method to get all orders on file that have a completion status of FALSE
+            GetOrders();
+
+            // sets current order labels and passes rest of orders to singleton which will be read from in WorkerOrderPage
+            SetOrders();
         }
 
         async private void ViewOrdersInQueueButton_Clicked(object sender, EventArgs e)

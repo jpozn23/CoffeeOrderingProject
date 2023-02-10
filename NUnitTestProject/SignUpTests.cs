@@ -2,125 +2,109 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Xamarin.Forms;
 
 namespace NUnitTestProject
 {
     public class SignUpTests
     {
-        public string firstname { get; set; }
-        public string lastname { get; set; }
-        public string username { get; set; }
-        public string password { get; set; }
-        public string confirmPassword { get; set; }
-        public string custOrWorker { get; set; }
-
-        public string firstname2 { get; set; }
-        public string lastname2 { get; set; }
-        public string username2 { get; set; }
-        public string password2 { get; set; }
-        public string confirmPassword2 { get; set; }
-        public string custOrWorker2 { get; set; }
-
-        public string firstname3 { get; set; }
-        public string lastname3 { get; set; }
-        public string username3 { get; set; }
-        public string password3 { get; set; }
-        public string confirmPassword3 { get; set; }
-        public string custOrWorker3 { get; set; }
-
-
+        Entry Firstname = new Entry();
+        Entry Lastname = new Entry();
+        Entry Username = new Entry();
+        Entry Password = new Entry();
+        Entry ConfirmPassword = new Entry();
+        String customerOrWorker;
 
         [SetUp]
         public void Setup()
         {
-            firstname = "Joe";
-            lastname = "Smith";
-            username = "uss2";
-            password = "pw2";
-            confirmPassword = "pw2";
-            custOrWorker = "Worker";
-
-            firstname2 = "";
-            lastname2 = "Smith";
-            username2 = "uss2";
-            password2 = "";
-            confirmPassword2 = "pw2";
-            custOrWorker2 = "Worker";
-
-            firstname3 = "Joe";
-            lastname3 = "Smith";
-            username3 = "uss2";
-            password3 = "pw2";
-            confirmPassword3 = "pw222";
-            custOrWorker3 = "Worker";
         }
 
         [Test]
-        public void VerifySignUpValid_Test()
+        public void CheckEmptyAccount()
         {
-            int errorMsg = 0;
-            
-            if (String.IsNullOrEmpty(firstname) || String.IsNullOrEmpty(lastname) || String.IsNullOrEmpty(username)
-                || String.IsNullOrEmpty(password) || String.IsNullOrEmpty(custOrWorker))
+
+            Firstname.Text = "";
+            Lastname.Text = "";
+            Username.Text = "";
+            Password.Text = "";
+            ConfirmPassword.Text = "";
+            customerOrWorker = "";
+
+
+            if (String.IsNullOrEmpty(Firstname.Text) || String.IsNullOrEmpty(Lastname.Text) || String.IsNullOrEmpty(Username.Text)
+               || String.IsNullOrEmpty(Password.Text) || String.IsNullOrEmpty(customerOrWorker))
             {
-                errorMsg = 1;
-            } else if (Convert.ToString(password) != Convert.ToString(confirmPassword))
-            {
-                errorMsg = 2;
-                
-            } else
-            {
-                errorMsg = 0;
+                Assert.IsEmpty(Firstname.Text);
+                Assert.IsEmpty(Lastname.Text);
+                Assert.Pass();
             }
 
-            Assert.AreEqual(0, errorMsg);
-            
+            // validate password and confirm password fields are same
+            if (Convert.ToString(Password.Text) != Convert.ToString(ConfirmPassword.Text))
+            {
+                Assert.AreNotEqual(Password.Text, ConfirmPassword.Text, "Passwords are not equal.");
+                Assert.Fail();
+            }
+
+            Assert.IsEmpty(Firstname.Text);
+            Assert.Fail();
+
         }
 
         [Test]
-        public void VerifySignUpNotValid_Test()
+        public void CheckNoUsername()
         {
-            int errorMsg = 0;
 
-            if (String.IsNullOrEmpty(firstname2) || String.IsNullOrEmpty(lastname2) || String.IsNullOrEmpty(username2)
-                || String.IsNullOrEmpty(password2) || String.IsNullOrEmpty(custOrWorker2))
-            {
-                errorMsg = 1;
-            }
-            else if (Convert.ToString(password2) != Convert.ToString(confirmPassword2))
-            {
-                errorMsg = 2;
+            Firstname.Text = "Thomas";
+            Lastname.Text = "Beck";
+            Username.Text = "";
+            Password.Text = "gmailpassword";
+            ConfirmPassword.Text = "gmailpassword";
+            customerOrWorker = "Customer";
 
-            }
-            else
+
+            if (String.IsNullOrEmpty(Firstname.Text) || String.IsNullOrEmpty(Lastname.Text) || String.IsNullOrEmpty(Username.Text)
+               || String.IsNullOrEmpty(Password.Text) || String.IsNullOrEmpty(customerOrWorker))
             {
-                errorMsg = 0;
+                Assert.Pass();
             }
 
-            Assert.AreEqual(1, errorMsg);
+            // validate password and confirm password fields are same
+            if (Convert.ToString(Password.Text) != Convert.ToString(ConfirmPassword.Text))
+            {
+                Assert.AreNotEqual(Password.Text, ConfirmPassword.Text, "Passwords are not equal.");
+                Assert.Fail();
+            }
+
+            Assert.Fail();
+
         }
 
         [Test]
-        public void VerifySignUpNotValid2_Test()
+        public void CheckDifferentPassword()
         {
-            int errorMsg = 0;
 
-            if (String.IsNullOrEmpty(firstname3) || String.IsNullOrEmpty(lastname3) || String.IsNullOrEmpty(username3)
-                || String.IsNullOrEmpty(password3) || String.IsNullOrEmpty(custOrWorker3))
-            {
-                errorMsg = 1;
-            }
-            else if (Convert.ToString(password3) != Convert.ToString(confirmPassword3))
-            {
-                errorMsg = 2;
+            Firstname.Text = "Tomar";
+            Lastname.Text = "Azure";
+            Username.Text = "Tomar1732";
+            Password.Text = "gmailpassword";
+            ConfirmPassword.Text = "gmail.password";
+            customerOrWorker = "Worker";
 
-            }
-            else
+
+            if (String.IsNullOrEmpty(Firstname.Text) || String.IsNullOrEmpty(Lastname.Text) || String.IsNullOrEmpty(Username.Text)
+               || String.IsNullOrEmpty(Password.Text) || String.IsNullOrEmpty(customerOrWorker))
             {
-                errorMsg = 0;
+                Assert.Fail();
             }
 
-            Assert.AreEqual(2, errorMsg);
+            // validate password and confirm password fields are same
+            if (Convert.ToString(Password.Text) != Convert.ToString(ConfirmPassword.Text))
+            {
+                Assert.AreNotEqual(Password.Text, ConfirmPassword.Text, "Passwords are not equal.");
+                Assert.Pass();
+            }
         }
 
     }
