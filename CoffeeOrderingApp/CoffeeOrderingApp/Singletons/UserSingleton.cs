@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CoffeeOrderingApp.Classes;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -11,6 +12,7 @@ namespace CoffeeOrderingApp.Singletons
         public string username { get; set; }
         public string password { get; set; }
         public string customerOrWorker { get; set; }
+        public List<Drink> favorites { get; set; }
 
         // singleton stuff
         private static UserSingleton instance = null;

@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
@@ -29,8 +30,32 @@ namespace CoffeeOrderingApp
             return true;
         }
 
+        
+        /*
+        public async Task<List<User>> GetAccountsAsync()
+        {
+            HttpClient client;
+            client = new HttpClient();
+            //var uri = new Uri("https://golfapi1.azurewebsites.net/api/Golf/" + username + "/" + coursename);
+            var uri = new Uri("https://localhost:44324/api/Account");
+            var response = await client.GetAsync(uri);
+            if(response.IsSuccessStatusCode)
+            {
+                var content = await response.Content.ReadAsStringAsync();
+                accounts = JsonConvert.DeserializeObject<List<User>>(content);
+            }
+
+            return accounts;
+        }
+
+        */
+        
+        
+
         private void GetAccounts()
         {
+
+            /*
             // Get File Path
             String userPath = "";
             if (Device.RuntimePlatform == Device.Android)
@@ -51,14 +76,19 @@ namespace CoffeeOrderingApp
                 string json = File.ReadAllText(pathFile);
                 accounts = JsonConvert.DeserializeObject<List<User>>(json);
             }
+
+            */
         }
+
+        
+
 
         private bool ValidateAccount()
         {
             // Validate if account exists
             foreach (User user in accounts)
             {
-                if (user.username == Convert.ToString(Username.Text) && user.password == Convert.ToString(Password.Text))
+                if (user.username.Equals(Convert.ToString(Username.Text)) && user.password.Equals(Convert.ToString(Password.Text)))
                 {
                     // Set Singleton To Pass User Info
                     Singletons.UserSingleton.Instance.username = user.username;
@@ -66,6 +96,7 @@ namespace CoffeeOrderingApp
                     Singletons.UserSingleton.Instance.firstname = user.firstname;
                     Singletons.UserSingleton.Instance.lastname = user.lastname;
                     Singletons.UserSingleton.Instance.customerOrWorker = user.customerOrWorker;
+                    //Singletons.UserSingleton.Instance.favorites = user.favorites;
 
                     return true;
                 }
@@ -84,7 +115,7 @@ namespace CoffeeOrderingApp
             }
 
             // Get Accounts
-            GetAccounts();
+            //await GetAccountsAsync();
 
             // Validate Account
             bool validateAccount = ValidateAccount();

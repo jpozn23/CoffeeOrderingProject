@@ -1,19 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
+using System.Linq;
+using System.Threading.Tasks;
 
-namespace CoffeeOrderingApp.Classes
+namespace CoffeeWebAPI.Classes
 {
-    public class Order
+    public class UserOrder
     {
         public DateTime pickupTime { get; set; }
         public string firstname { get; set; }
 
-        public List<Drink> beverages = new List<Drink>();
+        public List<UserDrink> beverages = new List<UserDrink>();
         public bool isCompleted { get; set; }
 
         public string userName { get; set; }
         public Guid id { get; set; }
-
     }
 }
