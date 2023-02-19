@@ -21,18 +21,6 @@ namespace CoffeeWebAPI.Controllers
             return accounts;
         }
 
-        // GET: api/Account/username
-        [HttpGet("{username}")]
-        public ActionResult<List<UserAccount>> Get(string username)
-        {
-            List<UserAccount> accounts = new List<UserAccount>();
-            accounts = AccountService.GetAll();
-
-            return accounts;
-        }
-
-
-
         // POST api/Account
         [HttpPost]
         public IActionResult Post([FromBody] UserAccount newuser)

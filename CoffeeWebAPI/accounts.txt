@@ -1,0 +1,1 @@
+[{"firstname":"jordan","lastname":"poz","username":"jp23","password":"pw23","customerOrWorker":"customer"},{"firstname":"tyler","lastname":"poz","username":"tp11","password":"pw11","customerOrWorker":"customer"},{"firstname":"steve","lastname":"poz","username":"sp20","password":"pw20","customerOrWorker":"worker"}]

@@ -57,11 +57,11 @@ namespace CoffeeWebAPI.Controllers
         }
 
 
-        // PUT api/<GolfController>/5
+        // PUT api/Order/username/orderid
         [HttpPut("{username}/{orderid}")]
-        public void Put(string username, Guid id, [FromBody] UserOrder order)
+        public void Put(string username, Guid orderid, [FromBody] UserOrder order)
         {
-            OrderService.Update(id, order);
+            OrderService.Update(orderid, order);
         }
 
     }

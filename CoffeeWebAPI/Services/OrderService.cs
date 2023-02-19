@@ -59,10 +59,29 @@ namespace CoffeeWebAPI
         
         public static void Update(Guid id, UserOrder order)
         {
-            var o = orders.FirstOrDefault(o => o.id == id);
-            o = order;
-
             String myFile = "orders.txt";
+
+            if (File.Exists(myFile))
+            {
+                string json = File.ReadAllText(myFile);
+                orders = JsonConvert.DeserializeObject<List<UserOrder>>(json);
+            }
+
+        
+            foreach(UserOrder o in orders)
+            {
+                if(o.id == id)
+                {
+                    o.firstname = order.firstname;
+                    o.pickupTime = order.pickupTime;
+                    o.userName = order.userName;
+                    o.beverages = order.beverages;
+                    o.id = order.id;
+                    o.isCompleted = order.isCompleted;
+                }
+            }
+
+
             String jsonString;
             File.Delete(myFile);
             jsonString = JsonConvert.SerializeObject(orders);
@@ -72,7 +91,5 @@ namespace CoffeeWebAPI
                 streamWriter.WriteLine(jsonString);
             }
         }
-
-        
     }
 }

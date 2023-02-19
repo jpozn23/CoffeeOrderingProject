@@ -27,8 +27,6 @@ namespace CoffeeWebAPI
             return accounts;
         }
 
-        public static UserAccount Get(string username) => accounts.FirstOrDefault(p => p.username == username);
-
         public static void Add(UserAccount user)
         {
             String myFile = "accounts.txt";
