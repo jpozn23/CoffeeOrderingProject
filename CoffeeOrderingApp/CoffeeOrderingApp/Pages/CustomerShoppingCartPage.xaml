@@ -14,51 +14,61 @@
                 <StackLayout>
                     <Frame HeightRequest="160" Margin="5">
                         <StackLayout>
-                            <Label Text="Drink 1" FontSize="20" FontAttributes="Bold" />
-                            <Label Text="" x:Name="Drink1NameLabel" FontSize="20" VerticalTextAlignment="Start" />
-                            <Label Text="" FontSize="20" x:Name="Drink1AddSubsLabel" VerticalTextAlignment="Center" />
+                            <Label Text="Drink 1" FontSize="20" FontAttributes="Bold" TextColor="DarkSlateGray" />
+                            <Label Text="" x:Name="Drink1NameLabel" FontSize="20" VerticalTextAlignment="Start" 
+                                   TextColor="DarkSlateGray" />
+                            <Label Text="" FontSize="20" x:Name="Drink1AddSubsLabel" VerticalTextAlignment="Center" 
+                                   TextColor="DarkSlateGray" />
                             <Label Text="" x:Name="Drink1TotalLabel" FontSize="20" Margin="0,0,0,0" 
-                                   VerticalTextAlignment="End"/>
+                                   VerticalTextAlignment="End" TextColor="DarkSlateGray"/>
                         </StackLayout>
                     </Frame>
 
                     <Frame HeightRequest="160" Margin="5">
                         <StackLayout>
-                            <Label Text="Drink 2" FontSize="20" FontAttributes="Bold" />
-                            <Label Text="" x:Name="Drink2NameLabel" FontSize="20" VerticalTextAlignment="Start" />
-                            <Label Text="" FontSize="20" x:Name="Drink2AddSubsLabel" VerticalTextAlignment="Center" />
+                            <Label Text="Drink 2" FontSize="20" FontAttributes="Bold" TextColor="DarkSlateGray" />
+                            <Label Text="" x:Name="Drink2NameLabel" FontSize="20" VerticalTextAlignment="Start"
+                                   TextColor="DarkSlateGray"/>
+                            <Label Text="" FontSize="20" x:Name="Drink2AddSubsLabel" VerticalTextAlignment="Center"
+                                   TextColor="DarkSlateGray"/>
                             <Label Text="" x:Name="Drink2TotalLabel" FontSize="20" Margin="0,0,0,0" 
-                                   VerticalTextAlignment="End"/>
+                                   VerticalTextAlignment="End" TextColor="DarkSlateGray"/>
                         </StackLayout>
                     </Frame>
 
                     <Frame HeightRequest="160" Margin="5">
                         <StackLayout>
-                            <Label Text="Drink 3" FontSize="20" FontAttributes="Bold" />
-                            <Label Text="" x:Name="Drink3NameLabel" FontSize="20" VerticalTextAlignment="Start" />
-                            <Label Text="" FontSize="20" x:Name="Drink3AddSubsLabel" VerticalTextAlignment="Center" />
+                            <Label Text="Drink 3" FontSize="20" FontAttributes="Bold" TextColor="DarkSlateGray" />
+                            <Label Text="" x:Name="Drink3NameLabel" FontSize="20" VerticalTextAlignment="Start"
+                                   TextColor="DarkSlateGray"/>
+                            <Label Text="" FontSize="20" x:Name="Drink3AddSubsLabel" VerticalTextAlignment="Center"
+                                   TextColor="DarkSlateGray"/>
                             <Label Text="" x:Name="Drink3TotalLabel" FontSize="20" Margin="0,0,0,0" 
-                                   VerticalTextAlignment="End"/>
+                                   VerticalTextAlignment="End" TextColor="DarkSlateGray"/>
                         </StackLayout>
                     </Frame>
 
                     <Frame HeightRequest="160" Margin="5">
                         <StackLayout>
-                            <Label Text="Drink 4" FontSize="20" FontAttributes="Bold" />
-                            <Label Text="" x:Name="Drink4NameLabel" FontSize="20" VerticalTextAlignment="Start" />
-                            <Label Text="" FontSize="20" x:Name="Drink4AddSubsLabel" VerticalTextAlignment="Center" />
+                            <Label Text="Drink 4" FontSize="20" FontAttributes="Bold" TextColor="DarkSlateGray" />
+                            <Label Text="" x:Name="Drink4NameLabel" FontSize="20" VerticalTextAlignment="Start"
+                                   TextColor="DarkSlateGray"/>
+                            <Label Text="" FontSize="20" x:Name="Drink4AddSubsLabel" VerticalTextAlignment="Center"
+                                   TextColor="DarkSlateGray"/>
                             <Label Text="" x:Name="Drink4TotalLabel" FontSize="20" Margin="0,0,0,0" 
-                                   VerticalTextAlignment="End"/>
+                                   VerticalTextAlignment="End" TextColor="DarkSlateGray"/>
                         </StackLayout>
                     </Frame>
 
                     <Frame HeightRequest="160" Margin="5">
                         <StackLayout>
-                            <Label Text="Drink 5" FontSize="20" FontAttributes="Bold" />
-                            <Label Text="" x:Name="Drink5NameLabel" FontSize="20" VerticalTextAlignment="Start" />
-                            <Label Text="" FontSize="20" x:Name="Drink5AddSubsLabel" VerticalTextAlignment="Center" />
+                            <Label Text="Drink 5" FontSize="20" FontAttributes="Bold" TextColor="DarkSlateGray" />
+                            <Label Text="" x:Name="Drink5NameLabel" FontSize="20" VerticalTextAlignment="Start"
+                                   TextColor="DarkSlateGray"/>
+                            <Label Text="" FontSize="20" x:Name="Drink5AddSubsLabel" VerticalTextAlignment="Center"
+                                   TextColor="DarkSlateGray"/>
                             <Label Text="" x:Name="Drink5TotalLabel" FontSize="20" Margin="0,0,0,0" 
-                                   VerticalTextAlignment="End"/>
+                                   VerticalTextAlignment="End" TextColor="DarkSlateGray"/>
                             
                         </StackLayout>
                     </Frame>
@@ -70,11 +80,11 @@
                 <StackLayout>
                     <StackLayout Orientation="Horizontal">
                         <Label Text="Total - $" FontSize="25"
-                               FontAttributes="Bold" 
+                               FontAttributes="Bold" TextColor="DarkSlateGray" 
                                Margin="100,-6,0,0"/>
                         <Label x:Name="TotalOrderPriceLabel" FontSize="25"
                                FontAttributes="Bold" Text="0.00"
-                               Margin="0,-6,0,0"/>
+                               Margin="0,-6,0,0" TextColor="DarkSlateGray"/>
                     </StackLayout>
                 </StackLayout>
 

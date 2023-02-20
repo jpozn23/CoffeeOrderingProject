@@ -11,10 +11,10 @@
             <ScrollView>
                 <StackLayout>
                     <Label Text="Choose Drink Category" HorizontalTextAlignment="center"
-                           FontAttributes="bold" FontSize="28" Margin="0,10,0,0" />
+                           FontAttributes="bold" FontSize="28" Margin="0,10,0,0" TextColor="DarkSlateGray" />
 
                     <Picker  x:Name="DrinkCategoryPicker"  Title="Select Drink Category" 
-                            HorizontalTextAlignment="Center" Margin="0,0,0,-5"
+                            HorizontalTextAlignment="Center" Margin="0,0,0,-5" TextColor="DarkSlateGray"
                             FontAttributes="Bold" SelectedIndexChanged="DrinkCategoryPicker_SelectedIndexChanged" >
                         <Picker.ItemsSource>
                             <x:Array Type = "{x:Type x:String}">
@@ -26,22 +26,22 @@
                     </Picker.ItemsSource>
                 </Picker>
 
-                <Label Text="Choose Drink" HorizontalTextAlignment="center"
+                    <Label Text="Choose Drink" HorizontalTextAlignment="center" TextColor="DarkSlateGray"
                        FontAttributes="bold" FontSize="28" Margin="0,15,0,0"/>
 
                 <Picker x:Name="DrinkTypePicker"  Title="Select Drink" 
                         HorizontalTextAlignment="Center" Margin="0,0,0,-5"
-                        FontAttributes="Bold">
+                        FontAttributes="Bold" TextColor="DarkSlateGray">
                     
                 </Picker>
 
 
-                <Label Text="Choose Size" HorizontalTextAlignment="Center"
+                    <Label Text="Choose Size" HorizontalTextAlignment="Center" TextColor="DarkSlateGray"
                        FontAttributes="Bold" FontSize="28" Margin="0,15,0,0" />
 
                 <Picker x:Name="DrinkSizePicker"  Title="Select Size" 
                         HorizontalTextAlignment="Center" Margin="0,-5,0,0"
-                        FontAttributes="Bold">
+                        FontAttributes="Bold" TextColor="DarkSlateGray">
                     <Picker.ItemsSource>
                         <x:Array Type = "{x:Type x:String}">
                             <x:String>Grande</x:String>
@@ -51,11 +51,11 @@
                 </Picker>
             
                 <Label Text="Choose Add-Ons and Substitutions (3)" HorizontalTextAlignment="center"
-                       FontAttributes="Bold" FontSize="28" Margin="0,15,0,0"/>
+                       FontAttributes="Bold" FontSize="28" Margin="0,15,0,0" TextColor="DarkSlateGray"/>
 
                 <Picker x:Name="DrinkAddOnsSubsPicker1"  Title="Select Add-On or Sub 1" 
                         HorizontalTextAlignment="Center" Margin="0,-5,0,0"
-                        FontAttributes="Bold">
+                        FontAttributes="Bold" TextColor="DarkSlateGray">
                     <Picker.ItemsSource>
                         <x:Array Type = "{x:Type x:String}">
                             <x:String>Espresso</x:String>
@@ -71,7 +71,7 @@
 
                 <Picker x:Name="DrinkAddOnsSubsPicker2"  Title="Select Add-On or Sub 2" 
                         HorizontalTextAlignment="Center" Margin="0,-5,0,0"
-                        FontAttributes="Bold">
+                        FontAttributes="Bold" TextColor="DarkSlateGray">
                     <Picker.ItemsSource>
                         <x:Array Type = "{x:Type x:String}">
                             <x:String>Espresso</x:String>
@@ -87,7 +87,7 @@
 
                 <Picker x:Name="DrinkAddOnsSubsPicker3"  Title="Select Add-On or Sub 3" 
                         HorizontalTextAlignment="Center" Margin="0,-5,0,0"
-                        FontAttributes="Bold">
+                        FontAttributes="Bold" TextColor="DarkSlateGray">
                     <Picker.ItemsSource>
                         <x:Array Type = "{x:Type x:String}">
                             <x:String>Espresso</x:String>
@@ -105,10 +105,22 @@
 
 
 
-        <Button x:Name="AddItemButton" Clicked="AddItemButton_Clicked"
-                Text="Add Drink To Cart"  Margin="5" HeightRequest="57" 
-                BackgroundColor="#4681f4" TextColor="white"
+            <Button x:Name="AddItemButton" Clicked="AddItemButton_Clicked"
+                Text="Add Drink To Cart"  Margin="2" HeightRequest="45" 
+                BackgroundColor="#33b249" TextColor="white"
                 FontSize="15" FontAttributes="Bold"/>
+            <StackLayout Orientation="Horizontal">
+                <Button x:Name="AddItemFavorites" Clicked="AddItemFavorites_Clicked"
+                Text="Add To Favorites"  Margin="2,-2,0,2" HeightRequest="45" 
+                BackgroundColor="#4681f4" TextColor="white" WidthRequest="200"
+                FontSize="13" FontAttributes="Bold"/>
+                <Button x:Name="SelectDrinkFavorites" Clicked="SelectDrinkFavorites_Clicked"
+                Text="Select From Favorites"  Margin="2,-2,2,2" HeightRequest="45" 
+                BackgroundColor="#4681f4" TextColor="white"
+                FontSize="13" FontAttributes="Bold" WidthRequest="200"/>
+            </StackLayout>
+            
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

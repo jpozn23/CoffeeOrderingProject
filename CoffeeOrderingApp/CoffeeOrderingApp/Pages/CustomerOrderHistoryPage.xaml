@@ -4,7 +4,14 @@
              x:Class="CoffeeOrderingApp.Pages.CustomerOrderHistoryPage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Customer Order History Page" />
+            <Frame HeightRequest="50" Margin="5">
+                <Label Text="Order History" FontSize="32" HorizontalTextAlignment="Center"
+                     TextColor="DarkSlateGray" FontAttributes="Bold"/>
+            </Frame>
+
+            
+            
         </StackLayout>
+        
     </ContentPage.Content>
 </ContentPage>

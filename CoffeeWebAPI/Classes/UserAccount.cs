@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
+using System.Linq;
+using System.Threading.Tasks;
 
-namespace CoffeeOrderingApp.Classes
+namespace CoffeeWebAPI.Classes
 {
-    public class User
+    public class UserAccount
     {
         public string firstname { get; set; }
         public string lastname { get; set; }
@@ -12,7 +13,6 @@ namespace CoffeeOrderingApp.Classes
         public string password { get; set; }
         public string customerOrWorker { get; set; }
 
-        // public List<Drink> favorites { get; set; }
-
+        public List<UserDrink> favorites { get; set; }
     }
 }

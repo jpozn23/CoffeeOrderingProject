@@ -13,11 +13,11 @@ using Xamarin.Forms.Xaml;
 namespace CoffeeOrderingApp.Pages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class WorkerOrderPage : ContentPage
+    public partial class WorkerOrderQueuePage : ContentPage
     {
         public List<Order> orders = new List<Order>();
 
-        public WorkerOrderPage()
+        public WorkerOrderQueuePage()
         {
             InitializeComponent();
         }

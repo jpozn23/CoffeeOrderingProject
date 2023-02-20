@@ -287,5 +287,14 @@ namespace CoffeeOrderingApp.Pages
             await Navigation.PushAsync(new CustomerHomePage());
         }
 
+        private void AddItemFavorites_Clicked(object sender, EventArgs e)
+        {
+            
+        }
+
+        async private void SelectDrinkFavorites_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new CustomerFavoritesPage());
+        }
     }
 }
