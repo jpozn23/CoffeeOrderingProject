@@ -36,7 +36,7 @@ namespace CoffeeOrderingApp
         {
             HttpClient client;
             client = new HttpClient();
-            var uri = new Uri("https://golfapi1.azurewebsites.net/api/Golf/" + username + "/" + coursename);
+            //var uri = new Uri("https://golfapi1.azurewebsites.net/api/Golf/" + username + "/" + coursename);
             var response = await client.GetAsync(uri);
             if(response.IsSuccessStatusCode)
             {
@@ -48,6 +48,8 @@ namespace CoffeeOrderingApp
         }
 
         */
+
+        
         
         
 

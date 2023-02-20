@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CoffeeOrderingApp.Pages.WorkerCurrentOrdersPage">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" BackgroundColor="WhiteSmoke">
+            <Frame>
+                <Label Text="Current Order" FontSize="30" HorizontalTextAlignment="Center"
+                       FontAttributes="Bold" TextColor="DarkSlateGray"/>
+            </Frame>
+            <ScrollView>
+                <Frame BackgroundColor="white" HeightRequest="800" Margin="5,-10,5,5">
+                    <StackLayout>
+                        
+                        <Label x:Name="CurrentDrinkOrderNameLabel" FontSize="20" FontAttributes="Bold"
+                               HorizontalTextAlignment="Center" Text="Name"/>
+                        <Label x:Name="CurrentDrinkOrderTimeLabel" FontSize="20" FontAttributes="Bold"
+                               HorizontalTextAlignment="Center" Text="Pickup Time"/>
+                        <Label x:Name="CurrentDrink1Label" Text="Drink 1" FontSize="20" FontAttributes="Bold"/>
+                        <Label x:Name="CurrentDrink1TypeLabel" FontSize="20" />
+                        <Label x:Name="CurrentDrink1SizeLabel" FontSize="20" />
+                        <Label x:Name="CurrentDrink1AddSubLabel" FontSize="20" />
+
+                        <Label x:Name="CurrentDrink2Label" Text="Drink 2" FontSize="20" FontAttributes="Bold"/>
+                        <Label x:Name="CurrentDrink2TypeLabel" FontSize="20" />
+                        <Label x:Name="CurrentDrink2SizeLabel" FontSize="20" />
+                        <Label x:Name="CurrentDrink2AddSubLabel" FontSize="20" />
+
+                        <Label x:Name="CurrentDrink3Label" Text="Drink 3" FontSize="20" FontAttributes="Bold"/>
+                        <Label x:Name="CurrentDrink3TypeLabel" FontSize="20" />
+                        <Label x:Name="CurrentDrink3SizeLabel" FontSize="20" />
+                        <Label x:Name="CurrentDrink3AddSubLabel" FontSize="20" />
+
+                        <Label x:Name="CurrentDrink4Label" Text="Drink 4" FontSize="20" FontAttributes="Bold"/>
+                        <Label x:Name="CurrentDrink4TypeLabel" FontSize="20" />
+                        <Label x:Name="CurrentDrink4SizeLabel" FontSize="20" />
+                        <Label x:Name="CurrentDrink4AddSubLabel" FontSize="20" />
+
+                        <Label x:Name="CurrentDrink5Label" Text="Drink 5" FontSize="20" FontAttributes="Bold"/>
+                        <Label x:Name="CurrentDrink5TypeLabel" FontSize="20" />
+                        <Label x:Name="CurrentDrink5SizeLabel" FontSize="20" />
+                        <Label x:Name="CurrentDrink5AddSubLabel" FontSize="20" />
+
+
+                    </StackLayout>
+                </Frame>
+            </ScrollView>
+            
+            <Button x:Name="CompleteOrderButton" Clicked="CompleteOrderButton_Clicked"
+                    Text="Complete Order" Margin="3,-3,3,3" HeightRequest="45"
+                    BackgroundColor="#33b249" TextColor="White"/>
+            <Button x:Name="CancelOrderButton" Clicked="CancelOrderButton_Clicked"
+                    Text="Cancel Order" Margin="3,-3,3,3" HeightRequest="45"
+                    BackgroundColor="#FF4433" TextColor="White"/>
+            <Button x:Name="ViewOrdersInQueueButton" Clicked="ViewOrdersInQueueButton_Clicked"
+                    Text="View Orders" Margin="3,-3,3,3" HeightRequest="45"
+                    BackgroundColor="LightSlateGray" TextColor="White"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

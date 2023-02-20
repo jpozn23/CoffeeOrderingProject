@@ -20,8 +20,11 @@
     <Compile Update="Pages\CustomerHomePage.xaml.cs">
       <DependentUpon>%(Filename)</DependentUpon>
     </Compile>
-    <Compile Update="Pages\WorkerHomePage.xaml.cs">
-      <DependentUpon>WorkerHomePage.xaml</DependentUpon>
+    <Compile Update="Pages\WorkerCurrentOrdersPage.xaml.cs">
+      <DependentUpon>WorkerCurrentOrdersPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Pages\WorkerOrderQueuePage.xaml.cs">
+      <DependentUpon>WorkerOrderQueuePage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 
@@ -41,13 +44,22 @@
     <EmbeddedResource Update="Pages\MenuPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Pages\WorkerHomePage.xaml">
+    <EmbeddedResource Update="Pages\WorkerCompletedOrdersPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pages\WorkerCurrentOrdersPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Pages\SignUpPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Pages\WorkerOrderPage.xaml">
+    <EmbeddedResource Update="Pages\WorkerHomePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pages\WorkerManageMenuPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pages\WorkerOrderQueuePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
