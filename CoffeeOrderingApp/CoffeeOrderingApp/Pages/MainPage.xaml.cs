@@ -36,8 +36,7 @@ namespace CoffeeOrderingApp
         {
             HttpClient client;
             client = new HttpClient();
-            //var uri = new Uri("https://golfapi1.azurewebsites.net/api/Golf/" + username + "/" + coursename);
-            var uri = new Uri("https://localhost:44324/api/Account");
+            var uri = new Uri("https://golfapi1.azurewebsites.net/api/Golf/" + username + "/" + coursename);
             var response = await client.GetAsync(uri);
             if(response.IsSuccessStatusCode)
             {
@@ -54,8 +53,6 @@ namespace CoffeeOrderingApp
 
         private void GetAccounts()
         {
-
-            /*
             // Get File Path
             String userPath = "";
             if (Device.RuntimePlatform == Device.Android)
@@ -76,13 +73,9 @@ namespace CoffeeOrderingApp
                 string json = File.ReadAllText(pathFile);
                 accounts = JsonConvert.DeserializeObject<List<User>>(json);
             }
-
-            */
         }
 
-        
-
-
+       
         private bool ValidateAccount()
         {
             // Validate if account exists
@@ -115,6 +108,7 @@ namespace CoffeeOrderingApp
             }
 
             // Get Accounts
+            GetAccounts();
             //await GetAccountsAsync();
 
             // Validate Account

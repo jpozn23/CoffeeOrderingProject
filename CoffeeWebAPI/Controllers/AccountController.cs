@@ -28,5 +28,12 @@ namespace CoffeeWebAPI.Controllers
             AccountService.Add(newuser);
             return CreatedAtAction(nameof(Post), new { username = newuser.username }, newuser);
         }
+
+        // PUT api/Account/username
+        [HttpPut("{username}")]
+        public void Put(string username, [FromBody] UserAccount user)
+        {
+            AccountService.Update(username, user);
+        }
     }
 }

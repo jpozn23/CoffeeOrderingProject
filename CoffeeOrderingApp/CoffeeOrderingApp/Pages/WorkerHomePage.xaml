@@ -1,8 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="CoffeeOrderingApp.Pages.WorkerHomePage"
-             NavigationPage.HasNavigationBar="False">
+             x:Class="CoffeeOrderingApp.Pages.WorkerHomePage">
     <ContentPage.Content>
         <StackLayout Orientation="Vertical" BackgroundColor="WhiteSmoke">
             <Label Text="Welcome Back" FontSize="32" 
@@ -51,21 +50,14 @@
             </ScrollView>
             
             <Button x:Name="CompleteOrderButton" Clicked="CompleteOrderButton_Clicked"
-                    Text="Complete Order" Margin="5,5,5,5" HeightRequest="50"
+                    Text="Complete Order" Margin="3,-3,3,3" HeightRequest="45"
                     BackgroundColor="#33b249" TextColor="White"/>
             <Button x:Name="CancelOrderButton" Clicked="CancelOrderButton_Clicked"
-                    Text="Cancel Order" Margin="5,0,5,0" HeightRequest="50"
+                    Text="Cancel Order" Margin="3,-3,3,3" HeightRequest="45"
                     BackgroundColor="#FF4433" TextColor="White"/>
-            <StackLayout Orientation="Horizontal">
-                <Button x:Name="ViewOrdersInQueueButton" Clicked="ViewOrdersInQueueButton_Clicked"
-                        Text="View Orders" Margin="5,5,5,5" HeightRequest="50"
-                        BackgroundColor="LightSlateGray" TextColor="White"
-                        WidthRequest="190"/>
-                <Button x:Name="LogOutButtonButton" Clicked="LogOutButtonButton_Clicked"
-                        Text="Log Out" Margin="5,5,5,5" HeightRequest="50"
-                        BackgroundColor="LightSlateGray" TextColor="White"
-                        WidthRequest="190"/>
-            </StackLayout>
+            <Button x:Name="ViewOrdersInQueueButton" Clicked="ViewOrdersInQueueButton_Clicked"
+                    Text="View Orders" Margin="3,-3,3,3" HeightRequest="45"
+                    BackgroundColor="LightSlateGray" TextColor="White"/>
 
         </StackLayout>
     </ContentPage.Content>
