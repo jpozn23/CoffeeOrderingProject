@@ -12,7 +12,7 @@ namespace CoffeeOrderingApp.Classes
         public DateTime pickupTime { get; set; }
         public bool isCompleted { get; set; }
 
-        public List<Drink> beverages { get; set; }
+        public List<Drink> beverages = new List<Drink>();
 
     }
 }

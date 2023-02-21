@@ -13,6 +13,6 @@ namespace CoffeeWebAPI.Classes
         public DateTime pickupTime { get; set; }
         public bool isCompleted { get; set; }
 
-        public List<UserDrink> beverages { get; set; }
+        public List<UserDrink> beverages = new List<UserDrink>();
     }
 }
