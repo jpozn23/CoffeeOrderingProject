@@ -15,7 +15,9 @@ namespace CoffeeOrderingApp
 {
     public partial class MainPage : ContentPage
     {
-        private List<User> accounts = new List<User>();
+        //readonly String serverURL = "https://10.0.1.218:8080"; // https may give ssl errors
+        readonly String serverURL = "http://192.168.1.13:8090";  //  // Change this to your real IP address.  
+
         public MainPage()
         {
             InitializeComponent();
@@ -30,55 +32,26 @@ namespace CoffeeOrderingApp
             return true;
         }
 
-        
-        /*
-        public async Task<List<User>> GetAccountsAsync()
+
+
+        public async Task<List<User>> GetAccounts()
         {
             HttpClient client;
             client = new HttpClient();
-            //var uri = new Uri("https://golfapi1.azurewebsites.net/api/Golf/" + username + "/" + coursename);
+            var uri = new Uri(serverURL + "/api/Account");
             var response = await client.GetAsync(uri);
-            if(response.IsSuccessStatusCode)
+            List<User> userAccounts = null;
+
+            if (response.IsSuccessStatusCode)
             {
                 var content = await response.Content.ReadAsStringAsync();
-                accounts = JsonConvert.DeserializeObject<List<User>>(content);
+                userAccounts = JsonConvert.DeserializeObject<List<User>>(content);
             }
-
-            return accounts;
-        }
-
-        */
-
-        
-        
-        
-
-        private void GetAccounts()
-        {
-            // Get File Path
-            String userPath = "";
-            if (Device.RuntimePlatform == Device.Android)
-            {
-                userPath = App.PlatformSpecific.GetPublicStoragePath();
-            }
-            else
-            {
-                userPath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
-            }
-
-            String myFile = "userAccounts.txt";
-            String pathFile = Path.Combine(userPath, myFile);
-
-            // Read Accounts From File
-            if (File.Exists(pathFile))
-            {
-                string json = File.ReadAllText(pathFile);
-                accounts = JsonConvert.DeserializeObject<List<User>>(json);
-            }
+            return userAccounts;
         }
 
        
-        private bool ValidateAccount()
+        private bool ValidateAccount(List<User> accounts)
         {
             // Validate if account exists
             foreach (User user in accounts)
@@ -91,7 +64,7 @@ namespace CoffeeOrderingApp
                     Singletons.UserSingleton.Instance.firstname = user.firstname;
                     Singletons.UserSingleton.Instance.lastname = user.lastname;
                     Singletons.UserSingleton.Instance.customerOrWorker = user.customerOrWorker;
-                    //Singletons.UserSingleton.Instance.favorites = user.favorites;
+                    Singletons.UserSingleton.Instance.favorites = user.favorites;
 
                     return true;
                 }
@@ -110,11 +83,10 @@ namespace CoffeeOrderingApp
             }
 
             // Get Accounts
-            GetAccounts();
-            //await GetAccountsAsync();
+            List<User> accounts = await GetAccounts();
 
             // Validate Account
-            bool validateAccount = ValidateAccount();
+            bool validateAccount = ValidateAccount(accounts);
             if(!validateAccount)
             {
                 await DisplayAlert("Error", "Invalid Login. Try again", "Ok");

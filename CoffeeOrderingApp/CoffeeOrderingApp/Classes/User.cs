@@ -12,9 +12,7 @@ namespace CoffeeOrderingApp.Classes
         public string password { get; set; }
         public string customerOrWorker { get; set; }
 
-        // public List<Drink> favorites = new List<Drink>();
-
-        // public List<Order> previousOrders = new List<Order>();
+        public List<Drink> favorites = new List<Drink>();
 
     }
 }

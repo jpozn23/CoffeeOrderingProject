@@ -1,0 +1,1 @@
+[{"favorites":[],"firstname":"Jordan","lastname":"Poznanski","username":"jp23","password":"jp2323","customerOrWorker":"Customer"},{"favorites":[],"firstname":"Tyler","lastname":"Smith","username":"us11","password":"pw11","customerOrWorker":"Worker"}]

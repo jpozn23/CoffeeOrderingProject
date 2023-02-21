@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -15,7 +16,10 @@ namespace CoffeeOrderingApp.Pages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class CustomerShoppingCartPage : ContentPage
     {
-        public List<Order> orders = new List<Order>();
+        //readonly String serverURL = "https://10.0.1.218:8080"; // https may give ssl errors
+        readonly String serverURL = "http://192.168.1.13:8090";  //  // Change this to your real IP address.
+
+
         public CustomerShoppingCartPage()
         {
             InitializeComponent();
@@ -26,24 +30,27 @@ namespace CoffeeOrderingApp.Pages
             List<Beverage> beverages = Singletons.OrderSingleton.Instance.beverages;
 
             int i = 0;
-            foreach(Beverage b in beverages) {
-                if(i == 0)
+            foreach (Beverage b in beverages)
+            {
+                if (i == 0)
                 {
                     Drink1NameLabel.Text = "Type: " + b.GetDrinkType() + " - " + b.GetDrinkSize();
 
-                    if(b.GetAddSubs().Length >= 2)
+                    if (b.GetAddSubs().Length >= 2)
                     {
                         String s = b.GetAddSubs();
                         s = s.Substring(1);
                         Drink1AddSubsLabel.Text = "Details: " + s;
-                    } else
+                    }
+                    else
                     {
                         Drink1AddSubsLabel.Text = "Details: None ";
                     }
-                    
+
 
                     Drink1TotalLabel.Text = "$ " + b.Cost().ToString();
-                } else if (i == 1)
+                }
+                else if (i == 1)
                 {
                     Drink2NameLabel.Text = "Type: " + b.GetDrinkType() + " -  " + b.GetDrinkSize();
 
@@ -59,7 +66,8 @@ namespace CoffeeOrderingApp.Pages
                     }
 
                     Drink2TotalLabel.Text = "$ " + b.Cost().ToString();
-                } else if (i == 2)
+                }
+                else if (i == 2)
                 {
                     Drink3NameLabel.Text = "Type: " + b.GetDrinkType() + " - " + b.GetDrinkSize();
 
@@ -75,7 +83,8 @@ namespace CoffeeOrderingApp.Pages
                     }
 
                     Drink3TotalLabel.Text = "$ " + b.Cost().ToString();
-                } else if (i == 3)
+                }
+                else if (i == 3)
                 {
                     Drink4NameLabel.Text = "Type: " + b.GetDrinkType() + " - " + b.GetDrinkSize();
 
@@ -91,7 +100,8 @@ namespace CoffeeOrderingApp.Pages
                     }
 
                     Drink4TotalLabel.Text = "$ " + b.Cost().ToString();
-                } else if (i == 4)
+                }
+                else if (i == 4)
                 {
                     Drink5NameLabel.Text = "Type: " + b.GetDrinkType() + " - " + b.GetDrinkSize();
 
@@ -107,7 +117,8 @@ namespace CoffeeOrderingApp.Pages
                     }
 
                     Drink5TotalLabel.Text = "$ " + b.Cost().ToString();
-                } else
+                }
+                else
                 {
 
                 }
@@ -132,7 +143,7 @@ namespace CoffeeOrderingApp.Pages
             DisplayDrinks();
 
             DisplayTotal();
-            
+
         }
 
         private void ResetVars()
@@ -162,6 +173,8 @@ namespace CoffeeOrderingApp.Pages
         private Order CreateOrder()
         {
             Order order = new Order();
+            order.id = Guid.NewGuid();
+            order.userName = Singletons.UserSingleton.Instance.username;
             order.firstname = Singletons.UserSingleton.Instance.firstname;
             order.isCompleted = false;
 
@@ -177,64 +190,47 @@ namespace CoffeeOrderingApp.Pages
                 d.cost = b.Cost();
                 d.drinkSize = b.GetDrinkSize();
 
-                if(b.GetAddSubs().Length > 2)
+                if (b.GetAddSubs().Length > 2)
                 {
                     String s = b.GetAddSubs();
                     s = s.Substring(1);
                     d.addsubs = s;
-                } else
+                }
+                else
                 {
                     d.addsubs = "None";
                 }
-                
+
 
                 order.beverages.Add(d);
             }
             return order;
         }
 
-        private void WriteOrder(Order order)
+        public async Task SaveOrder(Order neworder)
         {
-            // File Path
-            String userPath = "";
-            if (Device.RuntimePlatform == Device.Android)
+            HttpClient client;
+            client = new HttpClient();
+            var uri = new Uri(serverURL + "/api/Order");
+
+            String jsonString = JsonConvert.SerializeObject(neworder);
+            StringContent strContent = new StringContent(jsonString, Encoding.UTF8, "application/json");
+
+            var response = await client.PostAsync(uri, strContent);
+
+            if (response.IsSuccessStatusCode)
             {
-                userPath = App.PlatformSpecific.GetPublicStoragePath();
-            }
-            else
-            {
-                userPath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
-            }
-
-            String myFile = "orders.txt";
-            String pathFile = Path.Combine(userPath, myFile);
-
-            // Read Orders From File
-            if (File.Exists(pathFile))
-            {
-                string json = File.ReadAllText(pathFile);
-                orders = JsonConvert.DeserializeObject<List<Order>>(json);
-            }
-
-            File.Delete(pathFile);
-
-            orders.Add(order);
-
-            // Write new order to file
-            String jsonString;
-            jsonString = JsonConvert.SerializeObject(orders);
-
-            using (var streamWriter = new StreamWriter(pathFile, true))
-            {
-                streamWriter.WriteLine(jsonString);
+                
             }
 
         }
 
+
+
         async private void CheckoutButton_Clicked(object sender, EventArgs e)
         {
             // Check to make sure cart not empty
-            if(Singletons.OrderSingleton.Instance.beverages.Count <= 0)
+            if (Singletons.OrderSingleton.Instance.beverages.Count <= 0)
             {
                 await DisplayAlert("Error", "There are currently no items in your cart.", "Ok");
                 return;
@@ -245,7 +241,8 @@ namespace CoffeeOrderingApp.Pages
             Order order = CreateOrder();
 
             // Write Order to file 
-            WriteOrder(order);
+            await SaveOrder(order);
+            
 
             await DisplayAlert("Successful Order", "Your order will be ready in about 15 minutes.", "Ok");
 
@@ -263,11 +260,12 @@ namespace CoffeeOrderingApp.Pages
             {
                 await DisplayAlert("Error", "There are currently no items in your cart.", "Ok");
                 return;
-            } else
+            }
+            else
             {
                 await DisplayAlert("Successful", "Your order has been removed.", "Ok");
             }
-            
+
             // Reset Singleton, Labels
             ResetVars();
 

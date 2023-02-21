@@ -12,7 +12,7 @@ namespace CoffeeOrderingApp.Singletons
         public string username { get; set; }
         public string password { get; set; }
         public string customerOrWorker { get; set; }
-        public List<Drink> favorites { get; set; }
+        public List<Drink> favorites = new List<Drink>();
 
         // singleton stuff
         private static UserSingleton instance = null;
