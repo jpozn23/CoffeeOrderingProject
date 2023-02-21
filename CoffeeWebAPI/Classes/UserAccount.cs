@@ -13,6 +13,6 @@ namespace CoffeeWebAPI.Classes
         public string password { get; set; }
         public string customerOrWorker { get; set; }
 
-        public List<UserDrink> favorites { get; set; }
+        public List<UserDrink> favorites = new List<UserDrink>();
     }
 }

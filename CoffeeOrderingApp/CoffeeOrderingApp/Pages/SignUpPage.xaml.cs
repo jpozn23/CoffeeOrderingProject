@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -16,6 +17,9 @@ namespace CoffeeOrderingApp
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class SignUpPage : ContentPage
     {
+        //readonly String serverURL = "https://10.0.1.218:8080"; // https may give ssl errors
+        readonly String serverURL = "http://192.168.1.13:8090";  //  // Change this to your real IP address.
+
         private List<User> accounts = new List<User>();
         string customerOrWorker = "";
 
@@ -48,33 +52,7 @@ namespace CoffeeOrderingApp
             return 0;
         }
 
-        private void GetAccounts()
-        {
-            accounts.Clear();
-
-            // Get File Path
-            String userPath = "";
-            if (Device.RuntimePlatform == Device.Android)
-            {
-                userPath = App.PlatformSpecific.GetPublicStoragePath();
-            }
-            else
-            {
-                userPath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
-            }
-
-            String myFile = "userAccounts.txt";
-            String pathFile = Path.Combine(userPath, myFile);
-
-            // Get accounts
-            if (File.Exists(pathFile))
-            {
-                string json = File.ReadAllText(pathFile);
-                accounts = JsonConvert.DeserializeObject<List<User>>(json);
-            }
-        }
-
-        private bool ValidateUsername()
+        private bool ValidateUsername(List<User> accounts)
         {
             // validate username does not already exist
             foreach (User user in accounts)
@@ -87,51 +65,49 @@ namespace CoffeeOrderingApp
             return true;
         }
 
-        private void UpdateFile()
+
+        public async Task<List<User>> GetAccounts()
         {
-            // File Path
-            String userPath = "";
-            if (Device.RuntimePlatform == Device.Android)
+            HttpClient client;
+            client = new HttpClient();
+            var uri = new Uri(serverURL + "/api/Account");
+            var response = await client.GetAsync(uri);
+            List<User> userAccounts = null;
+
+            if (response.IsSuccessStatusCode)
             {
-                userPath = App.PlatformSpecific.GetPublicStoragePath();
+                var content = await response.Content.ReadAsStringAsync();
+                userAccounts = JsonConvert.DeserializeObject<List<User>>(content);
             }
-            else
+            return userAccounts;
+        }
+
+        public async Task SaveAccount(User newuser)
+        {
+            HttpClient client;
+            client = new HttpClient();
+            var uri = new Uri(serverURL + "/api/Account");
+
+            String jsonString = JsonConvert.SerializeObject(newuser);
+            StringContent strContent = new StringContent(jsonString, Encoding.UTF8, "application/json");
+
+            var response = await client.PostAsync(uri, strContent);
+
+            if (response.IsSuccessStatusCode)
             {
-                userPath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
+                // Singleton to pass user info
+                Singletons.UserSingleton.Instance.username = newuser.username;
+                Singletons.UserSingleton.Instance.password = newuser.password;
+                Singletons.UserSingleton.Instance.firstname = newuser.firstname;
+                Singletons.UserSingleton.Instance.lastname = newuser.lastname;
+                Singletons.UserSingleton.Instance.customerOrWorker = newuser.customerOrWorker;
+                Singletons.UserSingleton.Instance.favorites = newuser.favorites;
             }
-
-            String myFile = "userAccounts.txt";
-            String pathFile = Path.Combine(userPath, myFile);
-
-            File.Delete(pathFile);
-
-            // New User Set
-            User newUser = new User();
-            newUser.username = Convert.ToString(Username.Text);
-            newUser.password = Convert.ToString(Password.Text);
-            newUser.firstname = Convert.ToString(Firstname.Text);
-            newUser.lastname = Convert.ToString(Lastname.Text);
-            newUser.customerOrWorker = Convert.ToString(customerOrWorker);
-
-            accounts.Add(newUser);
-
-            // Write new user to file
-            String jsonString;
-            jsonString = JsonConvert.SerializeObject(accounts);
-
-            using (var streamWriter = new StreamWriter(pathFile, true))
-            {
-                streamWriter.WriteLine(jsonString);
-            }
-
-            // Set singleton to pass user info
-            Singletons.UserSingleton.Instance.username = newUser.username;
-            Singletons.UserSingleton.Instance.password = newUser.password;
-            Singletons.UserSingleton.Instance.firstname = newUser.firstname;
-            Singletons.UserSingleton.Instance.lastname = newUser.lastname;
-            Singletons.UserSingleton.Instance.customerOrWorker = newUser.customerOrWorker;
 
         }
+
+
+        
         async private void SignUpButton_Clicked(object sender, EventArgs e)
         {
 
@@ -150,18 +126,26 @@ namespace CoffeeOrderingApp
             }
 
             // Get Accounts
-            GetAccounts();
+            List<User> accounts = await GetAccounts();
 
             // See if Username Exists
-            bool validUsername = ValidateUsername();
+            bool validUsername = ValidateUsername(accounts);
             if(!validUsername)
             {
                 await DisplayAlert("Error", "Username already exists.", "Ok");
                 return;
             }
 
-            // Write New Account To File, Update
-            UpdateFile();
+            // Save Account
+            User newuser = new User();
+            newuser.username = Convert.ToString(Username.Text);
+            newuser.password = Convert.ToString(Password.Text);
+            newuser.firstname = Convert.ToString(Firstname.Text);
+            newuser.lastname = Convert.ToString(Lastname.Text);
+            newuser.customerOrWorker = Convert.ToString(customerOrWorker);
+            newuser.favorites = null;
+
+            await SaveAccount(newuser);
 
             // Page to be displayed
             if (Singletons.UserSingleton.Instance.customerOrWorker == "Customer")

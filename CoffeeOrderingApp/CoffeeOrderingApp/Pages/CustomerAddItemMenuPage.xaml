@@ -18,13 +18,13 @@
                             FontAttributes="Bold" SelectedIndexChanged="DrinkCategoryPicker_SelectedIndexChanged" >
                         <Picker.ItemsSource>
                             <x:Array Type = "{x:Type x:String}">
-                            <x:String>Espresso</x:String>
-                            <x:String>Iced Coffee and Tea</x:String>
-                            <x:String>Frappuccinos</x:String>
-                            <x:String>Specialty Beverages</x:String>
-                        </x:Array>
-                    </Picker.ItemsSource>
-                </Picker>
+                                <x:String>Espresso</x:String>
+                                <x:String>Iced Coffee and Tea</x:String>
+                                <x:String>Frappuccinos</x:String>
+                                <x:String>Specialty Beverages</x:String>
+                            </x:Array>
+                        </Picker.ItemsSource>
+                    </Picker>
 
                     <Label Text="Choose Drink" HorizontalTextAlignment="center" TextColor="DarkSlateGray"
                        FontAttributes="bold" FontSize="28" Margin="0,15,0,0"/>
