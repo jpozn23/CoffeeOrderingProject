@@ -13,6 +13,11 @@ namespace CoffeeOrderingApp.Classes
         public bool isCompleted { get; set; }
 
         public List<Drink> beverages = new List<Drink>();
+        public Drink drink1 { get; set; }
+        public Drink drink2 { get; set; }
+        public Drink drink3 { get; set; }
+        public Drink drink4 { get; set; }
+        public Drink drink5 { get; set; }
 
     }
 }

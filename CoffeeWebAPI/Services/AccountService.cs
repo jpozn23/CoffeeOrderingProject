@@ -1,4 +1,5 @@
-﻿using CoffeeWebAPI.Classes;
+﻿
+using CoffeeOrderingApp.Classes;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -10,34 +11,34 @@ namespace CoffeeWebAPI
 {
     public class AccountService
     {
-        static List<UserAccount> accounts { get; set; }
+        static List<User> accounts { get; set; }
         static AccountService()
         {
-            accounts = new List<UserAccount>();
+            accounts = new List<User>();
         }
-        public static List<UserAccount> GetAll()
+        public static List<User> GetAll()
         {
 
             String myFile = "accounts.txt";
             if (File.Exists(myFile))
             {
                 string json = File.ReadAllText(myFile);
-                accounts = JsonConvert.DeserializeObject<List<UserAccount>>(json);
+                accounts = JsonConvert.DeserializeObject<List<User>>(json);
             }
             return accounts;
         }
 
-        public static void Add(UserAccount user)
+        public static void Add(User user)
         {
             String myFile = "accounts.txt";
 
             if (File.Exists(myFile))
             {
                 string json = File.ReadAllText(myFile);
-                accounts = JsonConvert.DeserializeObject<List<UserAccount>>(json);
+                accounts = JsonConvert.DeserializeObject<List<User>>(json);
             }
 
-            UserAccount newuser = user;
+            User newuser = user;
 
             accounts.Add(newuser);
 
@@ -53,18 +54,18 @@ namespace CoffeeWebAPI
 
         }
 
-        public static void Update(string username, UserAccount user)
+        public static void Update(string username, User user)
         {
             String myFile = "accounts.txt";
 
             if (File.Exists(myFile))
             {
                 string json = File.ReadAllText(myFile);
-                accounts = JsonConvert.DeserializeObject<List<UserAccount>>(json);
+                accounts = JsonConvert.DeserializeObject<List<User>>(json);
             }
 
 
-            foreach (UserAccount u in accounts)
+            foreach (User u in accounts)
             {
                 if (u.username == username)
                 {
@@ -74,6 +75,11 @@ namespace CoffeeWebAPI
                     u.password = user.password;
                     u.customerOrWorker = user.customerOrWorker;
                     u.favorites = user.favorites;
+                    u.favdrink1 = user.favdrink1;
+                    u.favdrink2 = user.favdrink2;
+                    u.favdrink3 = user.favdrink3;
+                    u.favdrink4 = user.favdrink4;
+                    u.favdrink5 = user.favdrink5;
                 }
             }
 
