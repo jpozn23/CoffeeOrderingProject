@@ -17,7 +17,14 @@ namespace CoffeeWebAPI.Controllers
         public ActionResult<List<DrinkItem>> Get()
         {
             List<DrinkItem> menuitems = new List<DrinkItem>();
-            menuitems = MenuService.GetAll();
+            //menuitems = MenuService.GetAll();
+            DrinkItem junk = new DrinkItem();
+            junk.category = "coffees";
+            junk.name = "light roast";
+            junk.price = "4.29";
+
+            //menuitems = MenuService.GetAll();
+            menuitems.Add(junk);
 
             return menuitems;
         }
