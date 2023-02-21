@@ -4,7 +4,54 @@
              x:Class="CoffeeOrderingApp.Pages.WorkerManageMenuPage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Manage Menu Page" FontSize="30" />
+            <Frame>
+                <Label Text="Manage Menu" FontSize="30" HorizontalTextAlignment="Center"
+                       TextColor="DarkSlateGray" FontAttributes="Bold"/>
+            </Frame>
+
+            <Frame Margin="10,10,10,0">
+                <StackLayout>
+                    <Label Text="Add Item to Menu" TextColor="DarkSlateGray"
+                       FontSize="20" FontAttributes="Bold"/>
+                    <Picker x:Name="AddItemCategoryPicker"  Title="Select Item Category" 
+                            HorizontalTextAlignment="Center" Margin="0,0,0,-5" TextColor="DarkSlateGray"
+                            FontAttributes="Bold" SelectedIndexChanged="AddItemCategoryPicker_SelectedIndexChanged" >
+                        <Picker.ItemsSource>
+                            <x:Array Type = "{x:Type x:String}">
+                                <x:String>Espresso</x:String>
+                                <x:String>Iced Coffee and Tea</x:String>
+                                <x:String>Frappuccino</x:String>
+                                <x:String>Specialty Beverage</x:String>
+                                <x:String>Add-On or Substitution</x:String>
+                            </x:Array>
+                        </Picker.ItemsSource>
+                    </Picker>
+                    
+                    <Entry x:Name="AddItemName" Placeholder="Item Name" TextColor="DarkSlateGray"
+                           HorizontalTextAlignment="Center"/>
+                    <Entry x:Name="AddItemPrice" Placeholder="Item Price" TextColor="DarkSlateGray"
+                           Keyboard="Numeric" HorizontalTextAlignment="Center"/>
+                    <Button x:Name="AddItemToMenuButton" Clicked="AddItemToMenuButton_Clicked"
+                            BackgroundColor="#4681f4" Text="Add Item" TextColor="White"
+                            FontSize="15" FontAttributes="Bold" HeightRequest="40" Margin="0,5,0,-10"
+                            />
+
+                </StackLayout>
+            </Frame>
+
+            <Frame Margin="10">
+                <StackLayout>
+                    <Label Text="Update Item from Menu" TextColor="DarkSlateGray"
+                       FontSize="20" FontAttributes="Bold"/>
+                    <Entry x:Name="UpdateItemName" Placeholder="Item Name" HorizontalTextAlignment="Center" />
+                    <Entry x:Name="UpdateItemPrice" Placeholder="Item Price" Keyboard="Numeric"
+                           HorizontalTextAlignment="Center"/>
+                    <Button x:Name="UpdateItemFromMenuButton" Clicked="UpdateItemFromMenuButton_Clicked"
+                            BackgroundColor="#4681f4" Text="Update Item" TextColor="White"
+                            FontSize="15" FontAttributes="Bold" HeightRequest="40" Margin="0,5,0,-10"/>
+                </StackLayout>
+            </Frame>
+            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

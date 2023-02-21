@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CoffeeOrderingApp.Classes
 {
-    public class MenuItem
+    public class DrinkItem
     {
         public string category { get; set; }
         public string name { get; set; }

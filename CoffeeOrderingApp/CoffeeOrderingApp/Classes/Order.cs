@@ -6,14 +6,13 @@ namespace CoffeeOrderingApp.Classes
 {
     public class Order
     {
-        public DateTime pickupTime { get; set; }
+        public Guid id { get; set; }
+        public string userName { get; set; }
         public string firstname { get; set; }
-
-        public List<Drink> beverages = new List<Drink>();
+        public DateTime pickupTime { get; set; }
         public bool isCompleted { get; set; }
 
-        public string userName { get; set; }
-        public Guid id { get; set; }
+        public List<Drink> beverages { get; set; }
 
     }
 }
