@@ -20,8 +20,8 @@
                             <x:Array Type = "{x:Type x:String}">
                                 <x:String>Espresso</x:String>
                                 <x:String>Iced Coffee and Tea</x:String>
-                                <x:String>Frappuccinos</x:String>
-                                <x:String>Specialty Beverages</x:String>
+                                <x:String>Frappuccino</x:String>
+                                <x:String>Specialty Beverage</x:String>
                             </x:Array>
                         </Picker.ItemsSource>
                     </Picker>

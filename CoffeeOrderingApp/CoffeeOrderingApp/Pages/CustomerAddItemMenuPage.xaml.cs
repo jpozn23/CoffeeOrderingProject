@@ -23,6 +23,53 @@ namespace CoffeeOrderingApp.Pages
             InitializeComponent();
         }
 
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+
+            if(Singletons.FavoriteSingleton.Instance.drink != null)
+            {
+                //DrinkCategoryPicker.SelectedItem = "Espresso";
+                //DrinkTypePicker.SelectedItem = "Americano";
+                //DrinkSizePicker.SelectedItem = "Grande";
+                //DrinkAddOnsSubsPicker1.SelectedItem = "None";
+                //DrinkAddOnsSubsPicker2.SelectedItem = "None";
+                //DrinkAddOnsSubsPicker3.SelectedItem = "None";
+
+                DrinkSizePicker.SelectedItem = Singletons.FavoriteSingleton.Instance.drink.drinkSize;
+
+                string drinkcatandtype = Singletons.FavoriteSingleton.Instance.drink.drinkType;
+                string[] words = drinkcatandtype.Split('-');
+
+                DrinkCategoryPicker.SelectedItem = words[0].Trim();
+                DrinkTypePicker.SelectedItem = words[1].Trim();
+
+                string drinkaddsubs = Singletons.FavoriteSingleton.Instance.drink.addsubs;
+                string[] words2 = drinkaddsubs.Split(',');
+
+                for(int i = 1; i < words2.Length; i++)
+                {
+                    if(i == 1)
+                    {
+                        DrinkAddOnsSubsPicker1.SelectedItem = words2[1].Trim();
+                    } else if (i == 2)
+                    {
+                        DrinkAddOnsSubsPicker2.SelectedItem = words2[2].Trim();
+                    } else
+                    {
+                        DrinkAddOnsSubsPicker3.SelectedItem = words2[3].Trim();
+                    }
+                }
+
+                Singletons.FavoriteSingleton.Instance.drink = null;
+            } else
+            {
+
+            }
+
+
+        }
+
         private void DrinkCategoryPicker_SelectedIndexChanged(object sender, EventArgs e)
         {
             // When the Drink Category Selected Changes, Drink Type Drop Menu has to change
@@ -52,24 +99,24 @@ namespace CoffeeOrderingApp.Pages
 
                     DrinkTypePicker.ItemsSource = icedCoffeeTea;
 
-                } else if (DrinkCategoryPicker.SelectedItem.ToString() == "Frappuccinos")
+                } else if (DrinkCategoryPicker.SelectedItem.ToString() == "Frappuccino")
                 {
                     var frappuccions = new List<string>();
-                    frappuccions.Add("Caramel Frappuccino");
-                    frappuccions.Add("Chocolate Chip Frappuccino");
-                    frappuccions.Add("Mocha Frappuccino");
-                    frappuccions.Add("Matcha Green Tea Frappuccino");
-                    frappuccions.Add("Strawberries and Cream Frappuccino");
-                    frappuccions.Add("Vanilla Frappuccino");
-                    frappuccions.Add("Java Chip Frappuccino");
-                    frappuccions.Add("Coffee Frappuccino");
+                    frappuccions.Add("Caramel");
+                    frappuccions.Add("Chocolate");
+                    frappuccions.Add("Mocha");
+                    frappuccions.Add("Matcha Green Tea");
+                    frappuccions.Add("Strawberries and Cream");
+                    frappuccions.Add("Vanilla");
+                    frappuccions.Add("Java Chip");
+                    frappuccions.Add("Coffee");
 
                     DrinkTypePicker.ItemsSource = frappuccions;
 
-                } else if (DrinkCategoryPicker.SelectedItem.ToString() == "Specialty Beverages")
+                } else if (DrinkCategoryPicker.SelectedItem.ToString() == "Specialty Beverage")
                 {
                     var specialtyBeverages = new List<string>();
-                    specialtyBeverages.Add("Refreshers");
+                    specialtyBeverages.Add("Refresher");
                     specialtyBeverages.Add("Pink Drink");
                     specialtyBeverages.Add("Hot Cocoa");
                     specialtyBeverages.Add("Medicine Ball");
@@ -79,7 +126,7 @@ namespace CoffeeOrderingApp.Pages
                 } else
                 {
                     var specialtyBeverages = new List<string>();
-                    specialtyBeverages.Add("Refreshers");
+                    specialtyBeverages.Add("Refresher");
                     specialtyBeverages.Add("Pink Drink");
                     specialtyBeverages.Add("Hot Cocoa");
                     specialtyBeverages.Add("Medicine Ball");

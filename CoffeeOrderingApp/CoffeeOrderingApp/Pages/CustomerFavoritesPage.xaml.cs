@@ -105,29 +105,34 @@ namespace CoffeeOrderingApp.Pages
 
         }
 
-        private void FavoriteDrink1Button_Clicked(object sender, EventArgs e)
+        async private void FavoriteDrink1Button_Clicked(object sender, EventArgs e)
         {
             Singletons.FavoriteSingleton.Instance.drink = Singletons.UserSingleton.Instance.favdrink1;
+            await Navigation.PushAsync(new CustomerAddItemMenuPage());
         }
 
-        private void FavoriteDrink2Button_Clicked(object sender, EventArgs e)
+        async private void FavoriteDrink2Button_Clicked(object sender, EventArgs e)
         {
             Singletons.FavoriteSingleton.Instance.drink = Singletons.UserSingleton.Instance.favdrink2;
+            await Navigation.PushAsync(new CustomerAddItemMenuPage());
         }
 
-        private void FavoriteDrink3Button_Clicked(object sender, EventArgs e)
+        async private void FavoriteDrink3Button_Clicked(object sender, EventArgs e)
         {
             Singletons.FavoriteSingleton.Instance.drink = Singletons.UserSingleton.Instance.favdrink3;
+            await Navigation.PushAsync(new CustomerAddItemMenuPage());
         }
 
-        private void FavoriteDrink4Button_Clicked(object sender, EventArgs e)
+        async private void FavoriteDrink4Button_Clicked(object sender, EventArgs e)
         {
             Singletons.FavoriteSingleton.Instance.drink = Singletons.UserSingleton.Instance.favdrink4;
+            await Navigation.PushAsync(new CustomerAddItemMenuPage());
         }
 
-        private void FavoriteDrink5Button_Clicked(object sender, EventArgs e)
+        async private void FavoriteDrink5Button_Clicked(object sender, EventArgs e)
         {
             Singletons.FavoriteSingleton.Instance.drink = Singletons.UserSingleton.Instance.favdrink5;
+            await Navigation.PushAsync(new CustomerAddItemMenuPage());
         }
     }
 }

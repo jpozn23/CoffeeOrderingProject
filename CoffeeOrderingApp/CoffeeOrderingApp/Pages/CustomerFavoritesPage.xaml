@@ -11,25 +11,25 @@
 
             <ScrollView>
                 <StackLayout>
-                    <Frame Margin="10" HeightRequest="240" BorderColor="#4681f4">
+                    <Frame Margin="5" HeightRequest="240" BorderColor="#4681f4">
                         <StackLayout Orientation="Vertical">
                             <Label Text="Favorite Drink 1" FontSize="20" FontAttributes="Bold"
                                 TextColor="DarkSlateGray" />
                             <StackLayout Orientation="Horizontal">
-                                <Label Text="Type: " FontSize="20" TextColor="DarkSlateGray" />
-                                <Label x:Name="FavDrink1TypeLabel" FontSize="20" TextColor="DarkSlateGray"/>
+                                <Label Text="Type: " FontSize="18" TextColor="DarkSlateGray" />
+                                <Label x:Name="FavDrink1TypeLabel" FontSize="18" TextColor="DarkSlateGray"/>
                             </StackLayout>
                             <StackLayout Orientation="Horizontal">
-                                <Label Text="Size: " FontSize="20" TextColor="DarkSlateGray" />
-                                <Label x:Name="FavDrink1SizeLabel" FontSize="20" TextColor="DarkSlateGray" />
+                                <Label Text="Size: " FontSize="18" TextColor="DarkSlateGray" />
+                                <Label x:Name="FavDrink1SizeLabel" FontSize="18" TextColor="DarkSlateGray" />
                             </StackLayout>
                             <StackLayout Orientation="Horizontal">
-                                <Label Text="A/S: " FontSize="20" TextColor="DarkSlateGray" />
-                                <Label x:Name="FavDrink1ASLabel" FontSize="20" TextColor="DarkSlateGray" />
+                                <Label Text="A/S: " FontSize="18" TextColor="DarkSlateGray" />
+                                <Label x:Name="FavDrink1ASLabel" FontSize="18" TextColor="DarkSlateGray" />
                             </StackLayout>
                             <StackLayout Orientation="Horizontal">
-                                <Label Text="Total: $" FontSize="20" TextColor="DarkSlateGray" />
-                                <Label x:Name="FavDrink1TotalLabel" FontSize="20" TextColor="DarkSlateGray" />
+                                <Label Text="Total: $" FontSize="18" TextColor="DarkSlateGray" />
+                                <Label x:Name="FavDrink1TotalLabel" FontSize="18" TextColor="DarkSlateGray" />
                             </StackLayout>
                             <Button x:Name="FavoriteDrink1Button" Clicked="FavoriteDrink1Button_Clicked"
                                     Text="Select" BackgroundColor="#4681f4" TextColor="White"
@@ -37,25 +37,25 @@
                         </StackLayout>
                     </Frame>
 
-                    <Frame Margin="10" HeightRequest="240" BorderColor="#4681f4">
+                    <Frame Margin="5" HeightRequest="240" BorderColor="#4681f4">
                         <StackLayout Orientation="Vertical">
                             <Label Text="Favorite Drink 2" FontSize="20" FontAttributes="Bold"
                                 TextColor="DarkSlateGray" />
                             <StackLayout Orientation="Horizontal">
-                                <Label Text="Type: " FontSize="20" TextColor="DarkSlateGray" />
-                                <Label x:Name="FavDrink2TypeLabel" FontSize="20" TextColor="DarkSlateGray"/>
+                                <Label Text="Type: " FontSize="18" TextColor="DarkSlateGray" />
+                                <Label x:Name="FavDrink2TypeLabel" FontSize="18" TextColor="DarkSlateGray"/>
                             </StackLayout>
                             <StackLayout Orientation="Horizontal">
-                                <Label Text="Size: " FontSize="20" TextColor="DarkSlateGray" />
-                                <Label x:Name="FavDrink2SizeLabel" FontSize="20" TextColor="DarkSlateGray" />
+                                <Label Text="Size: " FontSize="18" TextColor="DarkSlateGray" />
+                                <Label x:Name="FavDrink2SizeLabel" FontSize="18" TextColor="DarkSlateGray" />
                             </StackLayout>
                             <StackLayout Orientation="Horizontal">
-                                <Label Text="A/S: " FontSize="20" TextColor="DarkSlateGray" />
-                                <Label x:Name="FavDrink2ASLabel" FontSize="20" TextColor="DarkSlateGray" />
+                                <Label Text="A/S: " FontSize="18" TextColor="DarkSlateGray" />
+                                <Label x:Name="FavDrink2ASLabel" FontSize="18" TextColor="DarkSlateGray" />
                             </StackLayout>
                             <StackLayout Orientation="Horizontal">
-                                <Label Text="Total: $" FontSize="20" TextColor="DarkSlateGray" />
-                                <Label x:Name="FavDrink2TotalLabel" FontSize="20" TextColor="DarkSlateGray" />
+                                <Label Text="Total: $" FontSize="18" TextColor="DarkSlateGray" />
+                                <Label x:Name="FavDrink2TotalLabel" FontSize="18" TextColor="DarkSlateGray" />
                             </StackLayout>
                             <Button x:Name="FavoriteDrink2Button" Clicked="FavoriteDrink2Button_Clicked"
                                     Text="Select" BackgroundColor="#4681f4" TextColor="White"
@@ -63,25 +63,25 @@
                         </StackLayout>
                     </Frame>
 
-                    <Frame Margin="10" HeightRequest="240" BorderColor="#4681f4">
+                    <Frame Margin="5" HeightRequest="240" BorderColor="#4681f4">
                         <StackLayout Orientation="Vertical">
                             <Label Text="Favorite Drink 3" FontSize="20" FontAttributes="Bold"
                                 TextColor="DarkSlateGray" />
                             <StackLayout Orientation="Horizontal">
-                                <Label Text="Type: " FontSize="20" TextColor="DarkSlateGray" />
-                                <Label x:Name="FavDrink3TypeLabel" FontSize="20" TextColor="DarkSlateGray"/>
+                                <Label Text="Type: " FontSize="18" TextColor="DarkSlateGray" />
+                                <Label x:Name="FavDrink3TypeLabel" FontSize="18" TextColor="DarkSlateGray"/>
                             </StackLayout>
                             <StackLayout Orientation="Horizontal">
-                                <Label Text="Size: " FontSize="20" TextColor="DarkSlateGray" />
-                                <Label x:Name="FavDrink3SizeLabel" FontSize="20" TextColor="DarkSlateGray" />
+                                <Label Text="Size: " FontSize="18" TextColor="DarkSlateGray" />
+                                <Label x:Name="FavDrink3SizeLabel" FontSize="18" TextColor="DarkSlateGray" />
                             </StackLayout>
                             <StackLayout Orientation="Horizontal">
-                                <Label Text="A/S: " FontSize="20" TextColor="DarkSlateGray" />
-                                <Label x:Name="FavDrink3ASLabel" FontSize="20" TextColor="DarkSlateGray" />
+                                <Label Text="A/S: " FontSize="18" TextColor="DarkSlateGray" />
+                                <Label x:Name="FavDrink3ASLabel" FontSize="18" TextColor="DarkSlateGray" />
                             </StackLayout>
                             <StackLayout Orientation="Horizontal">
-                                <Label Text="Total: $" FontSize="20" TextColor="DarkSlateGray" />
-                                <Label x:Name="FavDrink3TotalLabel" FontSize="20" TextColor="DarkSlateGray" />
+                                <Label Text="Total: $" FontSize="18" TextColor="DarkSlateGray" />
+                                <Label x:Name="FavDrink3TotalLabel" FontSize="18" TextColor="DarkSlateGray" />
                             </StackLayout>
                             <Button x:Name="FavoriteDrink3Button" Clicked="FavoriteDrink3Button_Clicked"
                                     Text="Select" BackgroundColor="#4681f4" TextColor="White"
@@ -89,25 +89,25 @@
                         </StackLayout>
                     </Frame>
 
-                    <Frame Margin="10" HeightRequest="240" BorderColor="#4681f4">
+                    <Frame Margin="5" HeightRequest="240" BorderColor="#4681f4">
                         <StackLayout Orientation="Vertical">
                             <Label Text="Favorite Drink 4" FontSize="20" FontAttributes="Bold"
                                 TextColor="DarkSlateGray" />
                             <StackLayout Orientation="Horizontal">
-                                <Label Text="Type: " FontSize="20" TextColor="DarkSlateGray" />
-                                <Label x:Name="FavDrink4TypeLabel" FontSize="20" TextColor="DarkSlateGray"/>
+                                <Label Text="Type: " FontSize="18" TextColor="DarkSlateGray" />
+                                <Label x:Name="FavDrink4TypeLabel" FontSize="18" TextColor="DarkSlateGray"/>
                             </StackLayout>
                             <StackLayout Orientation="Horizontal">
-                                <Label Text="Size: " FontSize="20" TextColor="DarkSlateGray" />
-                                <Label x:Name="FavDrink4SizeLabel" FontSize="20" TextColor="DarkSlateGray" />
+                                <Label Text="Size: " FontSize="18" TextColor="DarkSlateGray" />
+                                <Label x:Name="FavDrink4SizeLabel" FontSize="18" TextColor="DarkSlateGray" />
                             </StackLayout>
                             <StackLayout Orientation="Horizontal">
-                                <Label Text="A/S: " FontSize="20" TextColor="DarkSlateGray" />
-                                <Label x:Name="FavDrink4ASLabel" FontSize="20" TextColor="DarkSlateGray" />
+                                <Label Text="A/S: " FontSize="18" TextColor="DarkSlateGray" />
+                                <Label x:Name="FavDrink4ASLabel" FontSize="18" TextColor="DarkSlateGray" />
                             </StackLayout>
                             <StackLayout Orientation="Horizontal">
-                                <Label Text="Total: $" FontSize="20" TextColor="DarkSlateGray" />
-                                <Label x:Name="FavDrink4TotalLabel" FontSize="20" TextColor="DarkSlateGray" />
+                                <Label Text="Total: $" FontSize="18" TextColor="DarkSlateGray" />
+                                <Label x:Name="FavDrink4TotalLabel" FontSize="18" TextColor="DarkSlateGray" />
                             </StackLayout>
                             <Button x:Name="FavoriteDrink4Button" Clicked="FavoriteDrink4Button_Clicked"
                                     Text="Select" BackgroundColor="#4681f4" TextColor="White"
@@ -115,25 +115,25 @@
                         </StackLayout>
                     </Frame>
 
-                    <Frame Margin="10" HeightRequest="240" BorderColor="#4681f4">
+                    <Frame Margin="5" HeightRequest="240" BorderColor="#4681f4">
                         <StackLayout Orientation="Vertical">
                             <Label Text="Favorite Drink 5" FontSize="20" FontAttributes="Bold"
                                 TextColor="DarkSlateGray" />
                             <StackLayout Orientation="Horizontal">
-                                <Label Text="Type: " FontSize="20" TextColor="DarkSlateGray" />
-                                <Label x:Name="FavDrink5TypeLabel" FontSize="20" TextColor="DarkSlateGray"/>
+                                <Label Text="Type: " FontSize="18" TextColor="DarkSlateGray" />
+                                <Label x:Name="FavDrink5TypeLabel" FontSize="18" TextColor="DarkSlateGray"/>
                             </StackLayout>
                             <StackLayout Orientation="Horizontal">
-                                <Label Text="Size: " FontSize="20" TextColor="DarkSlateGray" />
-                                <Label x:Name="FavDrink5SizeLabel" FontSize="20" TextColor="DarkSlateGray" />
+                                <Label Text="Size: " FontSize="18" TextColor="DarkSlateGray" />
+                                <Label x:Name="FavDrink5SizeLabel" FontSize="18" TextColor="DarkSlateGray" />
                             </StackLayout>
                             <StackLayout Orientation="Horizontal">
-                                <Label Text="A/S: " FontSize="20" TextColor="DarkSlateGray" />
-                                <Label x:Name="FavDrink5ASLabel" FontSize="20" TextColor="DarkSlateGray" />
+                                <Label Text="A/S: " FontSize="18" TextColor="DarkSlateGray" />
+                                <Label x:Name="FavDrink5ASLabel" FontSize="18" TextColor="DarkSlateGray" />
                             </StackLayout>
                             <StackLayout Orientation="Horizontal">
-                                <Label Text="Total: $" FontSize="20" TextColor="DarkSlateGray" />
-                                <Label x:Name="FavDrink5TotalLabel" FontSize="20" TextColor="DarkSlateGray" />
+                                <Label Text="Total: $" FontSize="18" TextColor="DarkSlateGray" />
+                                <Label x:Name="FavDrink5TotalLabel" FontSize="18" TextColor="DarkSlateGray" />
                             </StackLayout>
                             <Button x:Name="FavoriteDrink5Button" Clicked="FavoriteDrink5Button_Clicked"
                                     Text="Select" BackgroundColor="#4681f4" TextColor="White"
