@@ -1,4 +1,4 @@
-﻿using CoffeeWebAPI.Classes;
+﻿using CoffeeOrderingApp.Classes;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -13,9 +13,9 @@ namespace CoffeeWebAPI.Controllers
     {
         // GET: api/Order
         [HttpGet]
-        public ActionResult<List<UserOrder>> Get()
+        public ActionResult<List<Order>> Get()
         {
-            List<UserOrder> orders = new List<UserOrder>();
+            List<Order> orders = new List<Order>();
             orders = OrderService.GetAll();
 
             return orders;
@@ -23,10 +23,10 @@ namespace CoffeeWebAPI.Controllers
 
         // GET: api/Order/username
         [HttpGet("{username}")]
-        public ActionResult<List<UserOrder>> Get(string username)
+        public ActionResult<List<Order>> Get(string username)
         {
-            List<UserOrder> userorders = new List<UserOrder>();
-            foreach (UserOrder order in OrderService.GetAll())
+            List<Order> userorders = new List<Order>();
+            foreach (Order order in OrderService.GetAll())
             {
                 if (order.userName == username)
                 {
@@ -39,10 +39,10 @@ namespace CoffeeWebAPI.Controllers
 
         // GET: api/Order/username/orderid
         [HttpGet("{username}/{orderid}")]
-        public ActionResult<List<UserOrder>> Get(string username, Guid orderid)
+        public ActionResult<List<Order>> Get(string username, Guid orderid)
         {
-            List<UserOrder> userorders = new List<UserOrder>();
-            UserOrder order = OrderService.Get(orderid);
+            List<Order> userorders = new List<Order>();
+            Order order = OrderService.Get(orderid);
             userorders.Add(order);
 
             return userorders;
@@ -50,7 +50,7 @@ namespace CoffeeWebAPI.Controllers
 
         // POST api/Order
         [HttpPost]
-        public IActionResult Post([FromBody] UserOrder neworder)
+        public IActionResult Post([FromBody] Order neworder)
         {
             OrderService.Add(neworder);
             return CreatedAtAction(nameof(Post), new { id = neworder.id }, neworder);
@@ -59,7 +59,7 @@ namespace CoffeeWebAPI.Controllers
 
         // PUT api/Order/username/orderid
         [HttpPut("{username}/{orderid}")]
-        public void Put(string username, Guid orderid, [FromBody] UserOrder order)
+        public void Put(string username, Guid orderid, [FromBody] Order order)
         {
             OrderService.Update(orderid, order);
         }
