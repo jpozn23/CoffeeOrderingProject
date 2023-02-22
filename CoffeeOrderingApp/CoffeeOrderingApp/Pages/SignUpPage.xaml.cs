@@ -18,8 +18,8 @@ namespace CoffeeOrderingApp
     public partial class SignUpPage : ContentPage
     {
         //readonly String serverURL = "https://10.0.1.218:8080"; // https may give ssl errors
-        //readonly String serverURL = "http://192.168.1.13:8090";  //  // Change this to your real IP address.
-        readonly String serverURL = "http://192.168.0.57:8090";  //  // Change this to your real IP address.
+        readonly String serverURL = "http://192.168.1.13:8090";  //  // Change this to your real IP address.  
+        //readonly String serverURL = "http://192.168.0.57:8090";  //  // Change this to your real IP address.  
 
         private List<User> accounts = new List<User>();
         string customerOrWorker = "";

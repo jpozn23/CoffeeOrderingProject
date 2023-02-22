@@ -17,8 +17,8 @@ namespace CoffeeOrderingApp.Pages
     public partial class CustomerShoppingCartPage : ContentPage
     {
         //readonly String serverURL = "https://10.0.1.218:8080"; // https may give ssl errors
-        //readonly String serverURL = "http://192.168.1.13:8090";  //  // Change this to your real IP address.
-        readonly String serverURL = "http://192.168.0.57:8090";  //  // Change this to your real IP address.
+        readonly String serverURL = "http://192.168.1.13:8090";  //  // Change this to your real IP address.  
+        //readonly String serverURL = "http://192.168.0.57:8090";  //  // Change this to your real IP address.  
 
 
         public CustomerShoppingCartPage()
@@ -152,6 +152,11 @@ namespace CoffeeOrderingApp.Pages
             // Reset Singleton, Labels
             List<Beverage> newlist = new List<Beverage>();
             Singletons.OrderSingleton.Instance.beverages = newlist;
+            Singletons.OrderSingleton.Instance.drink1 = null;
+            Singletons.OrderSingleton.Instance.drink2 = null;
+            Singletons.OrderSingleton.Instance.drink3 = null;
+            Singletons.OrderSingleton.Instance.drink4 = null;
+            Singletons.OrderSingleton.Instance.drink5 = null;
 
             Drink1NameLabel.Text = "";
             Drink1AddSubsLabel.Text = "";

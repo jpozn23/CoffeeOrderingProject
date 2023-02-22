@@ -16,8 +16,8 @@ namespace CoffeeOrderingApp.Pages
     public partial class CustomerOrderHistoryPage : ContentPage
     {
         //readonly String serverURL = "https://10.0.1.218:8080"; // https may give ssl errors
-        //readonly String serverURL = "http://192.168.1.13:8090";  //  // Change this to your real IP address.  
-        readonly String serverURL = "http://192.168.0.57:8090";  //  // Change this to your real IP address. 
+        readonly String serverURL = "http://192.168.1.13:8090";  //  // Change this to your real IP address.  
+        //readonly String serverURL = "http://192.168.0.57:8090";  //  // Change this to your real IP address.  
 
         List<Order> previousOrders = new List<Order>();
         String full_name = Singletons.UserSingleton.Instance.firstname + Singletons.UserSingleton.Instance.lastname;
