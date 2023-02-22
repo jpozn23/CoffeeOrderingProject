@@ -1,4 +1,4 @@
-﻿using CoffeeWebAPI.Classes;
+﻿using CoffeeOrderingApp.Classes;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -13,9 +13,9 @@ namespace CoffeeWebAPI.Controllers
     {
         // GET: api/Account
         [HttpGet]
-        public ActionResult<List<UserAccount>> Get()
+        public ActionResult<List<User>> Get()
         {
-            List<UserAccount> accounts = new List<UserAccount>();
+            List<User> accounts = new List<User>();
             accounts = AccountService.GetAll();
 
             return accounts;
@@ -23,7 +23,7 @@ namespace CoffeeWebAPI.Controllers
 
         // POST api/Account
         [HttpPost]
-        public IActionResult Post([FromBody] UserAccount newuser)
+        public IActionResult Post([FromBody] User newuser)
         {
             AccountService.Add(newuser);
             return CreatedAtAction(nameof(Post), new { username = newuser.username }, newuser);
@@ -31,7 +31,7 @@ namespace CoffeeWebAPI.Controllers
 
         // PUT api/Account/username
         [HttpPut("{username}")]
-        public void Put(string username, [FromBody] UserAccount user)
+        public void Put(string username, [FromBody] User user)
         {
             AccountService.Update(username, user);
         }

@@ -66,6 +66,11 @@ namespace CoffeeOrderingApp
                     Singletons.UserSingleton.Instance.lastname = user.lastname;
                     Singletons.UserSingleton.Instance.customerOrWorker = user.customerOrWorker;
                     Singletons.UserSingleton.Instance.favorites = user.favorites;
+                    Singletons.UserSingleton.Instance.favdrink1= user.favdrink1;
+                    Singletons.UserSingleton.Instance.favdrink2 = user.favdrink2;
+                    Singletons.UserSingleton.Instance.favdrink3 = user.favdrink3;
+                    Singletons.UserSingleton.Instance.favdrink4 = user.favdrink4;
+                    Singletons.UserSingleton.Instance.favdrink5 = user.favdrink5;
 
                     return true;
                 }

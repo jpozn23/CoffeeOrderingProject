@@ -1,4 +1,4 @@
-﻿using CoffeeWebAPI.Classes;
+﻿using CoffeeOrderingApp.Classes;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -10,37 +10,37 @@ namespace CoffeeWebAPI
 {
     public class OrderService
     {
-        static List<UserOrder> orders { get; set; }
+        static List<Order> orders { get; set; }
         static OrderService()
         {
-            orders = new List<UserOrder>();
+            orders = new List<Order>();
         }
-        public static List<UserOrder> GetAll()
+        public static List<Order> GetAll()
         {
 
             String myFile = "orders.txt";
             if (File.Exists(myFile))
             {
                 string json = File.ReadAllText(myFile);
-                orders = JsonConvert.DeserializeObject<List<UserOrder>>(json);
+                orders = JsonConvert.DeserializeObject<List<Order>>(json);
             }
             return orders;
         }
 
-        public static UserOrder Get(Guid id) => orders.FirstOrDefault(p => p.id == id);
+        public static Order Get(Guid id) => orders.FirstOrDefault(p => p.id == id);
 
 
-        public static void Add(UserOrder order)
+        public static void Add(Order order)
         {
             String myFile = "orders.txt";
 
             if (File.Exists(myFile))
             {
                 string json = File.ReadAllText(myFile);
-                orders = JsonConvert.DeserializeObject<List<UserOrder>>(json);
+                orders = JsonConvert.DeserializeObject<List<Order>>(json);
             }
 
-            UserOrder neworder = order;
+            Order neworder = order;
 
             orders.Add(neworder);
 
@@ -57,18 +57,18 @@ namespace CoffeeWebAPI
         }
 
         
-        public static void Update(Guid id, UserOrder order)
+        public static void Update(Guid id, Order order)
         {
             String myFile = "orders.txt";
 
             if (File.Exists(myFile))
             {
                 string json = File.ReadAllText(myFile);
-                orders = JsonConvert.DeserializeObject<List<UserOrder>>(json);
+                orders = JsonConvert.DeserializeObject<List<Order>>(json);
             }
 
         
-            foreach(UserOrder o in orders)
+            foreach(Order o in orders)
             {
                 if(o.id == id)
                 {

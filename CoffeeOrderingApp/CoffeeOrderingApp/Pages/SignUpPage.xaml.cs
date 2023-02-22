@@ -103,6 +103,11 @@ namespace CoffeeOrderingApp
                 Singletons.UserSingleton.Instance.lastname = newuser.lastname;
                 Singletons.UserSingleton.Instance.customerOrWorker = newuser.customerOrWorker;
                 Singletons.UserSingleton.Instance.favorites = newuser.favorites;
+                Singletons.UserSingleton.Instance.favdrink1 = newuser.favdrink1;
+                Singletons.UserSingleton.Instance.favdrink2 = newuser.favdrink2;
+                Singletons.UserSingleton.Instance.favdrink3 = newuser.favdrink3;
+                Singletons.UserSingleton.Instance.favdrink4 = newuser.favdrink4;
+                Singletons.UserSingleton.Instance.favdrink5 = newuser.favdrink5;
             }
 
         }
@@ -144,7 +149,6 @@ namespace CoffeeOrderingApp
             newuser.firstname = Convert.ToString(Firstname.Text);
             newuser.lastname = Convert.ToString(Lastname.Text);
             newuser.customerOrWorker = Convert.ToString(customerOrWorker);
-            newuser.favorites = null;
 
             await SaveAccount(newuser);
 

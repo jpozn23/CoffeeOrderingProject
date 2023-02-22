@@ -1,6 +1,9 @@
-﻿using System;
+﻿using CoffeeOrderingApp.Classes;
+using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -12,9 +15,59 @@ namespace CoffeeOrderingApp.Pages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class CustomerAddItemMenuPage : ContentPage
     {
+        //readonly String serverURL = "https://10.0.1.218:8080"; // https may give ssl errors
+        readonly String serverURL = "http://192.168.1.13:8090";  //  // Change this to your real IP address.  
+
         public CustomerAddItemMenuPage()
         {
             InitializeComponent();
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+
+            if(Singletons.FavoriteSingleton.Instance.drink != null)
+            {
+                //DrinkCategoryPicker.SelectedItem = "Espresso";
+                //DrinkTypePicker.SelectedItem = "Americano";
+                //DrinkSizePicker.SelectedItem = "Grande";
+                //DrinkAddOnsSubsPicker1.SelectedItem = "None";
+                //DrinkAddOnsSubsPicker2.SelectedItem = "None";
+                //DrinkAddOnsSubsPicker3.SelectedItem = "None";
+
+                DrinkSizePicker.SelectedItem = Singletons.FavoriteSingleton.Instance.drink.drinkSize;
+
+                string drinkcatandtype = Singletons.FavoriteSingleton.Instance.drink.drinkType;
+                string[] words = drinkcatandtype.Split('-');
+
+                DrinkCategoryPicker.SelectedItem = words[0].Trim();
+                DrinkTypePicker.SelectedItem = words[1].Trim();
+
+                string drinkaddsubs = Singletons.FavoriteSingleton.Instance.drink.addsubs;
+                string[] words2 = drinkaddsubs.Split(',');
+
+                for(int i = 1; i < words2.Length; i++)
+                {
+                    if(i == 1)
+                    {
+                        DrinkAddOnsSubsPicker1.SelectedItem = words2[1].Trim();
+                    } else if (i == 2)
+                    {
+                        DrinkAddOnsSubsPicker2.SelectedItem = words2[2].Trim();
+                    } else
+                    {
+                        DrinkAddOnsSubsPicker3.SelectedItem = words2[3].Trim();
+                    }
+                }
+
+                Singletons.FavoriteSingleton.Instance.drink = null;
+            } else
+            {
+
+            }
+
+
         }
 
         private void DrinkCategoryPicker_SelectedIndexChanged(object sender, EventArgs e)
@@ -46,24 +99,24 @@ namespace CoffeeOrderingApp.Pages
 
                     DrinkTypePicker.ItemsSource = icedCoffeeTea;
 
-                } else if (DrinkCategoryPicker.SelectedItem.ToString() == "Frappuccinos")
+                } else if (DrinkCategoryPicker.SelectedItem.ToString() == "Frappuccino")
                 {
                     var frappuccions = new List<string>();
-                    frappuccions.Add("Caramel Frappuccino");
-                    frappuccions.Add("Chocolate Chip Frappuccino");
-                    frappuccions.Add("Mocha Frappuccino");
-                    frappuccions.Add("Matcha Green Tea Frappuccino");
-                    frappuccions.Add("Strawberries and Cream Frappuccino");
-                    frappuccions.Add("Vanilla Frappuccino");
-                    frappuccions.Add("Java Chip Frappuccino");
-                    frappuccions.Add("Coffee Frappuccino");
+                    frappuccions.Add("Caramel");
+                    frappuccions.Add("Chocolate");
+                    frappuccions.Add("Mocha");
+                    frappuccions.Add("Matcha Green Tea");
+                    frappuccions.Add("Strawberries and Cream");
+                    frappuccions.Add("Vanilla");
+                    frappuccions.Add("Java Chip");
+                    frappuccions.Add("Coffee");
 
                     DrinkTypePicker.ItemsSource = frappuccions;
 
-                } else if (DrinkCategoryPicker.SelectedItem.ToString() == "Specialty Beverages")
+                } else if (DrinkCategoryPicker.SelectedItem.ToString() == "Specialty Beverage")
                 {
                     var specialtyBeverages = new List<string>();
-                    specialtyBeverages.Add("Refreshers");
+                    specialtyBeverages.Add("Refresher");
                     specialtyBeverages.Add("Pink Drink");
                     specialtyBeverages.Add("Hot Cocoa");
                     specialtyBeverages.Add("Medicine Ball");
@@ -73,7 +126,7 @@ namespace CoffeeOrderingApp.Pages
                 } else
                 {
                     var specialtyBeverages = new List<string>();
-                    specialtyBeverages.Add("Refreshers");
+                    specialtyBeverages.Add("Refresher");
                     specialtyBeverages.Add("Pink Drink");
                     specialtyBeverages.Add("Hot Cocoa");
                     specialtyBeverages.Add("Medicine Ball");
@@ -95,7 +148,7 @@ namespace CoffeeOrderingApp.Pages
             return true;
         }
 
-        private void CreateDrink(string category, string type, string size, string addsub1, string addsub2, string addsub3)
+        private Beverage CreateDrink(string category, string type, string size, string addsub1, string addsub2, string addsub3)
         {
             Beverage beverage = new Americano(size);
 
@@ -258,8 +311,7 @@ namespace CoffeeOrderingApp.Pages
 
             }
 
-            // Add to singleton to pass to shopping cart
-            Singletons.OrderSingleton.Instance.beverages.Add(beverage);
+            return beverage;
 
         }
 
@@ -282,14 +334,96 @@ namespace CoffeeOrderingApp.Pages
             string drinkAddSub3 = DrinkAddOnsSubsPicker3.SelectedItem.ToString();
 
             // Create Drink
-            CreateDrink(drinkCategory, drinkType, drinkSize, drinkAddSub1, drinkAddSub2, drinkAddSub3);
+            Beverage b = CreateDrink(drinkCategory, drinkType, drinkSize, drinkAddSub1, drinkAddSub2, drinkAddSub3);
+            
+            // Add to Singleton
+            Singletons.OrderSingleton.Instance.beverages.Add(b);
 
             await Navigation.PushAsync(new CustomerHomePage());
         }
 
-        private void AddItemFavorites_Clicked(object sender, EventArgs e)
+        async private void AddItemFavorites_Clicked(object sender, EventArgs e)
         {
-            
+            // Validate Drink Fields
+            bool validate = ValidateInput();
+            if (!validate)
+            {
+                await DisplayAlert("Error", "All fields must be filled out.", "Ok");
+                return;
+            }
+
+            // Get Drink Values
+            string drinkCategory = DrinkCategoryPicker.SelectedItem.ToString();
+            string drinkType = DrinkTypePicker.SelectedItem.ToString();
+            string drinkSize = DrinkSizePicker.SelectedItem.ToString();
+            string drinkAddSub1 = DrinkAddOnsSubsPicker1.SelectedItem.ToString();
+            string drinkAddSub2 = DrinkAddOnsSubsPicker2.SelectedItem.ToString();
+            string drinkAddSub3 = DrinkAddOnsSubsPicker3.SelectedItem.ToString();
+
+            // Create Drink
+            Beverage b = CreateDrink(drinkCategory, drinkType, drinkSize, drinkAddSub1, drinkAddSub2, drinkAddSub3);
+
+            Drink d = new Drink();
+            d.drinkType = b.GetDrinkType();
+            d.drinkSize = b.GetDrinkSize();
+            d.addsubs = b.GetAddSubs();
+            d.cost = b.Cost();
+
+            // Add to favorites
+            if (Singletons.UserSingleton.Instance.favdrink1 == null)
+            {
+                Singletons.UserSingleton.Instance.favdrink1 = d;
+            } else if (Singletons.UserSingleton.Instance.favdrink2 == null)
+            {
+                Singletons.UserSingleton.Instance.favdrink2 = d;
+            } else if (Singletons.UserSingleton.Instance.favdrink3 == null)
+            {
+                Singletons.UserSingleton.Instance.favdrink3 = d;
+            } else if (Singletons.UserSingleton.Instance.favdrink4 == null)
+            {
+                Singletons.UserSingleton.Instance.favdrink4 = d;
+            } else
+            {
+                Singletons.UserSingleton.Instance.favdrink5 = d;
+            }
+
+            // Update User
+            User user = new User();
+            user.firstname = Singletons.UserSingleton.Instance.firstname;
+            user.lastname = Singletons.UserSingleton.Instance.lastname;
+            user.username = Singletons.UserSingleton.Instance.username;
+            user.password = Singletons.UserSingleton.Instance.password;
+            user.customerOrWorker = Singletons.UserSingleton.Instance.customerOrWorker;
+            user.favorites = Singletons.UserSingleton.Instance.favorites;
+            user.favdrink1 = Singletons.UserSingleton.Instance.favdrink1;
+            user.favdrink2 = Singletons.UserSingleton.Instance.favdrink2;
+            user.favdrink3 = Singletons.UserSingleton.Instance.favdrink3;
+            user.favdrink4 = Singletons.UserSingleton.Instance.favdrink4;
+            user.favdrink5 = Singletons.UserSingleton.Instance.favdrink5;
+
+            await UpdateAccount(user);
+
+            await DisplayAlert("Success", "Order has been added to favorites", "Ok");
+
+        }
+
+        public async Task UpdateAccount(User newuser)
+        {
+            HttpClient client;
+            client = new HttpClient();
+
+            var uri = new Uri(serverURL + "/api/Account/" + Singletons.UserSingleton.Instance.username);
+
+            String jsonString = JsonConvert.SerializeObject(newuser);
+            StringContent strContent = new StringContent(jsonString, Encoding.UTF8, "application/json");
+
+            var response = await client.PutAsync(uri, strContent);
+
+            if (response.IsSuccessStatusCode)
+            {
+               
+            }
+
         }
 
         async private void SelectDrinkFavorites_Clicked(object sender, EventArgs e)
