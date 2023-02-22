@@ -202,9 +202,37 @@ namespace CoffeeOrderingApp.Pages
                     d.addsubs = "None";
                 }
 
-
                 order.beverages.Add(d);
+
+                if (Singletons.OrderSingleton.Instance.drink1 == null)
+                {
+                    Singletons.OrderSingleton.Instance.drink1 = d;
+                }
+                else if (Singletons.OrderSingleton.Instance.drink2 == null)
+                {
+                    Singletons.OrderSingleton.Instance.drink2 = d;
+                }
+                else if (Singletons.OrderSingleton.Instance.drink3 == null)
+                {
+                    Singletons.OrderSingleton.Instance.drink3 = d;
+                }
+                else if (Singletons.OrderSingleton.Instance.drink4 == null)
+                {
+                    Singletons.OrderSingleton.Instance.drink4 = d;
+                }
+                else
+                {
+                    Singletons.OrderSingleton.Instance.drink5 = d;
+                }
+
             }
+
+            order.drink1 = Singletons.OrderSingleton.Instance.drink1;
+            order.drink2 = Singletons.OrderSingleton.Instance.drink2;
+            order.drink3 = Singletons.OrderSingleton.Instance.drink3;
+            order.drink4 = Singletons.OrderSingleton.Instance.drink4;
+            order.drink5 = Singletons.OrderSingleton.Instance.drink5;
+
             return order;
         }
 
