@@ -16,8 +16,8 @@ namespace CoffeeOrderingApp.Pages
     public partial class CustomerAddItemMenuPage : ContentPage
     {
         //readonly String serverURL = "https://10.0.1.218:8080"; // https may give ssl errors
-        //readonly String serverURL = "http://192.168.1.13:8090";  //  // Change this to your real IP address.  
-        readonly String serverURL = "http://192.168.0.57:8090";  //  // Change this to your real IP address.  
+        readonly String serverURL = "http://192.168.1.13:8090";  //  // Change this to your real IP address.  
+        //readonly String serverURL = "http://192.168.0.57:8090";  //  // Change this to your real IP address.  
 
         public CustomerAddItemMenuPage()
         {
@@ -178,28 +178,28 @@ namespace CoffeeOrderingApp.Pages
             } else if (type.Equals("White Chocolate Mocha"))
             {
                 beverage = new White_Chocolate_Mocha(size);
-            } else if (type.Equals("Caramel Frappuccino"))
+            } else if (type.Equals("Caramel"))
             {
                 beverage = new Caramel_Macchiato(size);
-            } else if (type.Equals("Chocolate Chip Frappuccino"))
+            } else if (type.Equals("Chocolate Chip"))
             {
                 beverage = new Chocolate_Chip(size);
-            } else if (type.Equals("Mocha Frappuccino"))
+            } else if (type.Equals("Mocha"))
             {
                 beverage = new Mocha(size);
-            } else if (type.Equals("Matcha Green Tea Frappuccino"))
+            } else if (type.Equals("Matcha Green Tea"))
             {
                 beverage = new Matcha_Green_Tea(size);
-            } else if (type.Equals("Strawberries and Cream Frappuccino"))
+            } else if (type.Equals("Strawberries and Cream"))
             {
                 beverage = new Strawberries_And_Cream(size);
-            } else if (type.Equals("Vanilla Frappuccino"))
+            } else if (type.Equals("Vanilla"))
             {
                 beverage = new Vanilla(size);
-            } else if (type.Equals("Coffee Frappuccino"))
+            } else if (type.Equals("Coffee"))
             {
                 beverage = new Coffee(size);
-            } else if (type.Equals("Java Chip Frappuccino"))
+            } else if (type.Equals("Java Chip"))
             {
                 beverage = new Java_Chip(size);
             } else if (type.Equals("Refreshers"))
