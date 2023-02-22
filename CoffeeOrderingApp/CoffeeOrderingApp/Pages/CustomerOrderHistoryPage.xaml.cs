@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using CoffeeOrderingApp.Classes;
-
+using System.Net.Http;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -15,8 +15,13 @@ namespace CoffeeOrderingApp.Pages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class CustomerOrderHistoryPage : ContentPage
     {
+        //readonly String serverURL = "https://10.0.1.218:8080"; // https may give ssl errors
+        //readonly String serverURL = "http://192.168.1.13:8090";  //  // Change this to your real IP address.  
+        readonly String serverURL = "http://192.168.0.57:8090";  //  // Change this to your real IP address. 
+
         List<Order> previousOrders = new List<Order>();
         String full_name = Singletons.UserSingleton.Instance.firstname + Singletons.UserSingleton.Instance.lastname;
+        String userName = Singletons.UserSingleton.Instance.username;
         String firstName = Singletons.UserSingleton.Instance.firstname;
         String lastName = Singletons.UserSingleton.Instance.lastname;
         
@@ -25,11 +30,11 @@ namespace CoffeeOrderingApp.Pages
             InitializeComponent();
         }
 
-        protected override void OnAppearing()
+        protected async override void OnAppearing()
         {
             base.OnAppearing();
 
-            GetCustomerOrders();
+            await GetCustomerOrders();
 
             DisplayPreviousOrders();
         }
@@ -233,7 +238,25 @@ namespace CoffeeOrderingApp.Pages
             } // END OF FOREACH ORDER IN ORDERS LOOP
         } // END OF DISPLAY ORDERS FUNCTION
 
-        private void GetCustomerOrders()
+
+        public async Task GetCustomerOrders()
+        {
+            previousOrders.Clear();
+
+            HttpClient client;
+            client = new HttpClient();
+            var uri = new Uri(serverURL + "/api/Order/" + userName );
+            var response = await client.GetAsync(uri);
+
+            if (response.IsSuccessStatusCode)
+            {
+                var content = await response.Content.ReadAsStringAsync();
+                previousOrders = JsonConvert.DeserializeObject<List<Order>>(content);
+                Console.WriteLine( previousOrders.Count + " - size " + previousOrders[0].beverages.Count + " - beverage size " );
+            }
+        }
+
+        /*private void GetCustomerOrders()
         {
             previousOrders.Clear();
 
@@ -273,6 +296,6 @@ namespace CoffeeOrderingApp.Pages
             // Just have to make sure write back to file in same order and not reverse
             // incompleteOrders.OrderBy(o => o.pickupTime);
 
-        }
+        }*/
     } // END OF CLASS
 }
