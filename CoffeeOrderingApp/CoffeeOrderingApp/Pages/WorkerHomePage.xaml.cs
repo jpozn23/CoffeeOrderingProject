@@ -28,11 +28,7 @@ namespace CoffeeOrderingApp.Pages
             await Navigation.PushAsync(new WorkerCompletedOrdersPage());
         }
 
-        private void ManageMenuButton_Clicked(object sender, EventArgs e)
-        {
-            //await Navigation.PushAsync(new WorkerManageMenuPage());
-        }
-
+        
         async private void CurrentOrdersButton_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new WorkerCurrentOrdersPage());

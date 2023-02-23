@@ -78,6 +78,11 @@ namespace CoffeeWebAPI
                     o.beverages = order.beverages;
                     o.id = order.id;
                     o.isCompleted = order.isCompleted;
+                    o.drink1 = order.drink1;
+                    o.drink2 = order.drink2;
+                    o.drink3 = order.drink3;
+                    o.drink4 = order.drink4;
+                    o.drink5 = order.drink5;
                 }
             }
 

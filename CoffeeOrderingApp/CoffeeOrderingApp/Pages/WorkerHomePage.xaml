@@ -15,7 +15,7 @@
             <Label Text="Worker" HorizontalTextAlignment="Center"
                    FontSize="25" FontAttributes="Bold" TextColor="DarkSlateGray"/>
 
-            <Frame CornerRadius="5" Margin="10,30,10,5" HeightRequest="60" BorderColor="#4681f4">
+            <Frame CornerRadius="5" Margin="10,70,10,5" HeightRequest="60" BorderColor="#4681f4">
                 <StackLayout Orientation="Horizontal">
                     <Image Source="checkmark_img" HeightRequest="60" />
                     <Button x:Name="CompletedOrdersButton" Clicked="CompletedOrdersButton_Clicked"
@@ -26,17 +26,7 @@
 
             </Frame>
 
-            <Frame CornerRadius="5" Margin="10,10,10,5" BorderColor="#4681f4" >
-                <StackLayout Orientation="Horizontal">
-                    <Image Source="manage_img" HeightRequest="60" Margin="5,-5,0,0" />
-                    <Button x:Name="ManageMenuButton" Clicked="ManageMenuButton_Clicked"
-                            Text="Manage Menu" WidthRequest="290" FontSize="18"
-                            FontAttributes="Bold" Margin="0,-15,0,-15"
-                            BackgroundColor="White"/>
-                </StackLayout>
-            </Frame>
-
-            <Frame CornerRadius="5" Margin="10,10,10,0" BorderColor="#4681f4">
+            <Frame CornerRadius="5" Margin="10,40,10,0" BorderColor="#4681f4">
                 <StackLayout Orientation="Horizontal">
                     <Image Source="order_history_img" HeightRequest="60" />
                     <Button x:Name="CurrentOrdersButton" Clicked="CurrentOrdersButton_Clicked"
@@ -47,7 +37,7 @@
             </Frame>
 
             <Button x:Name="LogOutButton" Clicked="LogOutButton_Clicked" TextColor="White"
-                    Text="Log Out" Margin="25,45,25,25" BackgroundColor="#4681f4" 
+                    Text="Log Out" Margin="25,90,25,25" BackgroundColor="#4681f4" 
                     BorderWidth="1" FontSize="15" FontAttributes="Bold"/>
         </StackLayout>
     </ContentPage.Content>
