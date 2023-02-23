@@ -8,49 +8,25 @@
                 <Frame HeightRequest="125" Margin="15,10,15,0" BorderColor="#4681f4" >
                     <StackLayout>
                         <StackLayout Orientation="Horizontal">
-                            <Label Text="Order ID:  " FontSize="16" FontAttributes="Bold" Margin="0,-2,0,0"  />
-                            <Label x:Name="Order1IDLabel"  FontSize="13" FontAttributes="Bold" />
+                            <Label Text="Order ID:  " FontSize="16" FontAttributes="Bold" Margin="0,-2,0,0"
+                                   TextColor="DarkSlateGray"/>
+                            <Label x:Name="Order1IDLabel"  FontSize="13" FontAttributes="Bold" TextColor="DarkSlateGray" />
                         </StackLayout>
                         <StackLayout Orientation="Horizontal">
-                            <Label Text="Date: " FontSize="16" />
-                            <Label x:Name="Order1TimeLabel" FontSize="16" />
+                            <Label Text="Date: " FontSize="16" TextColor="DarkSlateGray" />
+                            <Label x:Name="Order1TimeLabel" FontSize="16" TextColor="DarkSlateGray" />
                         </StackLayout>
                         <StackLayout Orientation="Horizontal">
-                            <Label Text="Name: " FontSize="16" />
-                            <Label x:Name="Order1NameLabel"  FontSize="16"/>
+                            <Label Text="Name: " FontSize="16" TextColor="DarkSlateGray" />
+                            <Label x:Name="Order1NameLabel"  FontSize="16" TextColor="DarkSlateGray"/>
                         </StackLayout>
                         <StackLayout Orientation="Horizontal">
-                            <Label Text="Number of Drinks: " FontSize="16" />
-                            <Label x:Name="Order1NumDrinksLabel"  FontSize="16" />
+                            <Label Text="Number of Drinks: " FontSize="16" TextColor="DarkSlateGray" />
+                            <Label x:Name="Order1NumDrinksLabel"  FontSize="16" TextColor="DarkSlateGray" />
                         </StackLayout>
                         <StackLayout Orientation="Horizontal">
-                            <Label Text="Total: " FontSize="15" />
-                            <Label x:Name="Order1TotalLabel" Text="$ 0.00" FontSize="16" />
-                        </StackLayout>
-                    </StackLayout>
-                </Frame>
-
-                <Frame HeightRequest="125" Margin="15,10,15,0" BorderColor="#4681f4" >
-                    <StackLayout>
-                        <StackLayout Orientation="Horizontal">
-                            <Label Text="Order ID: " FontSize="16" FontAttributes="Bold" Margin="0,-2,0,0"  />
-                            <Label x:Name="Order2IDLabel"  FontSize="13" FontAttributes="Bold" />
-                        </StackLayout>
-                        <StackLayout Orientation="Horizontal">
-                            <Label Text="Date: " FontSize="16" />
-                            <Label x:Name="Order2TimeLabel" FontSize="16" />
-                        </StackLayout>
-                        <StackLayout Orientation="Horizontal">
-                            <Label Text="Name: " FontSize="16" />
-                            <Label x:Name="Order2NameLabel"  FontSize="16"/>
-                        </StackLayout>
-                        <StackLayout Orientation="Horizontal">
-                            <Label Text="Number of Drinks: " FontSize="16" />
-                            <Label x:Name="Order2NumDrinksLabel"  FontSize="16" />
-                        </StackLayout>
-                        <StackLayout Orientation="Horizontal">
-                            <Label Text="Total: " FontSize="15" />
-                            <Label x:Name="Order2TotalLabel" Text="$ 0.00" FontSize="16" />
+                            <Label Text="Total: " FontSize="15" TextColor="DarkSlateGray" />
+                            <Label x:Name="Order1TotalLabel" Text="$ 0.00" FontSize="16" TextColor="DarkSlateGray" />
                         </StackLayout>
                     </StackLayout>
                 </Frame>
@@ -58,49 +34,24 @@
                 <Frame HeightRequest="125" Margin="15,10,15,0" BorderColor="#4681f4" >
                     <StackLayout>
                         <StackLayout Orientation="Horizontal">
-                            <Label Text="Order ID: " FontSize="16" FontAttributes="Bold" Margin="0,-2,0,0"  />
-                            <Label x:Name="Order3IDLabel"  FontSize="13" FontAttributes="Bold" />
+                            <Label Text="Order ID: " FontSize="16" FontAttributes="Bold" Margin="0,-2,0,0" TextColor="DarkSlateGray"  />
+                            <Label x:Name="Order2IDLabel"  FontSize="13" FontAttributes="Bold" TextColor="DarkSlateGray" />
                         </StackLayout>
                         <StackLayout Orientation="Horizontal">
-                            <Label Text="Date: " FontSize="16" />
-                            <Label x:Name="Order3TimeLabel" FontSize="16" />
+                            <Label Text="Date: " FontSize="16" TextColor="DarkSlateGray" />
+                            <Label x:Name="Order2TimeLabel" FontSize="16" TextColor="DarkSlateGray" />
                         </StackLayout>
                         <StackLayout Orientation="Horizontal">
-                            <Label Text="Name: " FontSize="16" />
-                            <Label x:Name="Order3NameLabel"  FontSize="16"/>
+                            <Label Text="Name: " FontSize="16" TextColor="DarkSlateGray" />
+                            <Label x:Name="Order2NameLabel"  FontSize="16" TextColor="DarkSlateGray"/>
                         </StackLayout>
                         <StackLayout Orientation="Horizontal">
-                            <Label Text="Number of Drinks: " FontSize="16" />
-                            <Label x:Name="Order3NumDrinksLabel"  FontSize="16" />
+                            <Label Text="Number of Drinks: " FontSize="16" TextColor="DarkSlateGray" />
+                            <Label x:Name="Order2NumDrinksLabel"  FontSize="16" TextColor="DarkSlateGray" />
                         </StackLayout>
                         <StackLayout Orientation="Horizontal">
-                            <Label Text="Total: " FontSize="15" />
-                            <Label x:Name="Order3TotalLabel" Text="$ 0.00" FontSize="16" />
-                        </StackLayout>
-                    </StackLayout>
-                </Frame>
-
-                <Frame HeightRequest="125" Margin="15,10,15,0" BorderColor="#4681f4" >
-                    <StackLayout>
-                        <StackLayout Orientation="Horizontal">
-                            <Label Text="Order ID: " FontSize="16" FontAttributes="Bold" Margin="0,-2,0,0"  />
-                            <Label x:Name="Order4IDLabel"  FontSize="13" FontAttributes="Bold" />
-                        </StackLayout>
-                        <StackLayout Orientation="Horizontal">
-                            <Label Text="Date: " FontSize="16" />
-                            <Label x:Name="Order4TimeLabel" FontSize="16" />
-                        </StackLayout>
-                        <StackLayout Orientation="Horizontal">
-                            <Label Text="Name: " FontSize="16" />
-                            <Label x:Name="Order4NameLabel"  FontSize="16"/>
-                        </StackLayout>
-                        <StackLayout Orientation="Horizontal">
-                            <Label Text="Number of Drinks: " FontSize="16" />
-                            <Label x:Name="Order4NumDrinksLabel"  FontSize="16" />
-                        </StackLayout>
-                        <StackLayout Orientation="Horizontal">
-                            <Label Text="Total: " FontSize="15" />
-                            <Label x:Name="Order4TotalLabel" Text="$ 0.00" FontSize="16" />
+                            <Label Text="Total: " FontSize="16" TextColor="DarkSlateGray" />
+                            <Label x:Name="Order2TotalLabel" Text="$ 0.00" FontSize="16" TextColor="DarkSlateGray" />
                         </StackLayout>
                     </StackLayout>
                 </Frame>
@@ -108,49 +59,24 @@
                 <Frame HeightRequest="125" Margin="15,10,15,0" BorderColor="#4681f4" >
                     <StackLayout>
                         <StackLayout Orientation="Horizontal">
-                            <Label Text="Order ID: " FontSize="16" FontAttributes="Bold" Margin="0,-2,0,0"  />
-                            <Label x:Name="Order5IDLabel"  FontSize="13" FontAttributes="Bold" />
+                            <Label Text="Order ID: " FontSize="16" FontAttributes="Bold" Margin="0,-2,0,0" TextColor="DarkSlateGray"  />
+                            <Label x:Name="Order3IDLabel"  FontSize="13" FontAttributes="Bold" TextColor="DarkSlateGray" />
                         </StackLayout>
                         <StackLayout Orientation="Horizontal">
-                            <Label Text="Date: " FontSize="16" />
-                            <Label x:Name="Order5TimeLabel" FontSize="16" />
+                            <Label Text="Date: " FontSize="16" TextColor="DarkSlateGray" />
+                            <Label x:Name="Order3TimeLabel" FontSize="16" TextColor="DarkSlateGray" />
                         </StackLayout>
                         <StackLayout Orientation="Horizontal">
-                            <Label Text="Name: " FontSize="16" />
-                            <Label x:Name="Order5NameLabel"  FontSize="16"/>
+                            <Label Text="Name: " FontSize="16" TextColor="DarkSlateGray" />
+                            <Label x:Name="Order3NameLabel"  FontSize="16" TextColor="DarkSlateGray"/>
                         </StackLayout>
                         <StackLayout Orientation="Horizontal">
-                            <Label Text="Number of Drinks: " FontSize="16" />
-                            <Label x:Name="Order5NumDrinksLabel"  FontSize="16" />
+                            <Label Text="Number of Drinks: " FontSize="16" TextColor="DarkSlateGray" />
+                            <Label x:Name="Order3NumDrinksLabel"  FontSize="16" TextColor="DarkSlateGray" />
                         </StackLayout>
                         <StackLayout Orientation="Horizontal">
-                            <Label Text="Total: " FontSize="15" />
-                            <Label x:Name="Order5TotalLabel" Text="$ 0.00" FontSize="16" />
-                        </StackLayout>
-                    </StackLayout>
-                </Frame>
-
-                <Frame HeightRequest="125" Margin="15,10,15,0" BorderColor="#4681f4" >
-                    <StackLayout>
-                        <StackLayout Orientation="Horizontal">
-                            <Label Text="Order ID: " FontSize="16" FontAttributes="Bold" Margin="0,-2,0,0"  />
-                            <Label x:Name="Order6IDLabel"  FontSize="13" FontAttributes="Bold" />
-                        </StackLayout>
-                        <StackLayout Orientation="Horizontal">
-                            <Label Text="Date: " FontSize="16" />
-                            <Label x:Name="Order6TimeLabel" FontSize="16" />
-                        </StackLayout>
-                        <StackLayout Orientation="Horizontal">
-                            <Label Text="Name: " FontSize="16" />
-                            <Label x:Name="Order6NameLabel"  FontSize="16"/>
-                        </StackLayout>
-                        <StackLayout Orientation="Horizontal">
-                            <Label Text="Number of Drinks: " FontSize="16" />
-                            <Label x:Name="Order6NumDrinksLabel"  FontSize="16" />
-                        </StackLayout>
-                        <StackLayout Orientation="Horizontal">
-                            <Label Text="Total: " FontSize="15" />
-                            <Label x:Name="Order6TotalLabel" Text="$ 0.00" FontSize="16" />
+                            <Label Text="Total: " FontSize="16" TextColor="DarkSlateGray" />
+                            <Label x:Name="Order3TotalLabel" Text="$ 0.00" FontSize="16" TextColor="DarkSlateGray" />
                         </StackLayout>
                     </StackLayout>
                 </Frame>
@@ -158,49 +84,24 @@
                 <Frame HeightRequest="125" Margin="15,10,15,0" BorderColor="#4681f4" >
                     <StackLayout>
                         <StackLayout Orientation="Horizontal">
-                            <Label Text="Order ID: " FontSize="16" FontAttributes="Bold" Margin="0,-2,0,0"  />
-                            <Label x:Name="Order7IDLabel"  FontSize="13" FontAttributes="Bold" />
+                            <Label Text="Order ID: " FontSize="16" FontAttributes="Bold" Margin="0,-2,0,0" TextColor="DarkSlateGray"  />
+                            <Label x:Name="Order4IDLabel"  FontSize="13" FontAttributes="Bold" TextColor="DarkSlateGray" />
                         </StackLayout>
                         <StackLayout Orientation="Horizontal">
-                            <Label Text="Date: " FontSize="16" />
-                            <Label x:Name="Order7TimeLabel" FontSize="16" />
+                            <Label Text="Date: " FontSize="16" TextColor="DarkSlateGray" />
+                            <Label x:Name="Order4TimeLabel" FontSize="16" TextColor="DarkSlateGray" />
                         </StackLayout>
                         <StackLayout Orientation="Horizontal">
-                            <Label Text="Name: " FontSize="16" />
-                            <Label x:Name="Order7NameLabel"  FontSize="16"/>
+                            <Label Text="Name: " FontSize="16" TextColor="DarkSlateGray" />
+                            <Label x:Name="Order4NameLabel"  FontSize="16" TextColor="DarkSlateGray"/>
                         </StackLayout>
                         <StackLayout Orientation="Horizontal">
-                            <Label Text="Number of Drinks: " FontSize="16" />
-                            <Label x:Name="Order7NumDrinksLabel"  FontSize="16" />
+                            <Label Text="Number of Drinks: " FontSize="16" TextColor="DarkSlateGray" />
+                            <Label x:Name="Order4NumDrinksLabel"  FontSize="16" TextColor="DarkSlateGray" />
                         </StackLayout>
                         <StackLayout Orientation="Horizontal">
-                            <Label Text="Total: " FontSize="15" />
-                            <Label x:Name="Order7TotalLabel" Text="$ 0.00" FontSize="16" />
-                        </StackLayout>
-                    </StackLayout>
-                </Frame>
-
-                <Frame HeightRequest="125" Margin="15,10,15,0" BorderColor="#4681f4" >
-                    <StackLayout>
-                        <StackLayout Orientation="Horizontal">
-                            <Label Text="Order ID: " FontSize="16" FontAttributes="Bold" Margin="0,-2,0,0"  />
-                            <Label x:Name="Order8IDLabel"  FontSize="13" FontAttributes="Bold" />
-                        </StackLayout>
-                        <StackLayout Orientation="Horizontal">
-                            <Label Text="Date: " FontSize="16" />
-                            <Label x:Name="Order8TimeLabel" FontSize="16" />
-                        </StackLayout>
-                        <StackLayout Orientation="Horizontal">
-                            <Label Text="Name: " FontSize="16" />
-                            <Label x:Name="Order8NameLabel"  FontSize="16"/>
-                        </StackLayout>
-                        <StackLayout Orientation="Horizontal">
-                            <Label Text="Number of Drinks: " FontSize="16" />
-                            <Label x:Name="Order8NumDrinksLabel"  FontSize="16" />
-                        </StackLayout>
-                        <StackLayout Orientation="Horizontal">
-                            <Label Text="Total: " FontSize="15" />
-                            <Label x:Name="Order8TotalLabel" Text="$ 0.00" FontSize="16" />
+                            <Label Text="Total: " FontSize="16" TextColor="DarkSlateGray" />
+                            <Label x:Name="Order4TotalLabel" Text="$ 0.00" FontSize="16" TextColor="DarkSlateGray" />
                         </StackLayout>
                     </StackLayout>
                 </Frame>
@@ -208,24 +109,24 @@
                 <Frame HeightRequest="125" Margin="15,10,15,0" BorderColor="#4681f4" >
                     <StackLayout>
                         <StackLayout Orientation="Horizontal">
-                            <Label Text="Order ID: " FontSize="16" FontAttributes="Bold" Margin="0,-2,0,0"  />
-                            <Label x:Name="Order9IDLabel"  FontSize="13" FontAttributes="Bold" />
+                            <Label Text="Order ID: " FontSize="16" FontAttributes="Bold" Margin="0,-2,0,0" TextColor="DarkSlateGray"  />
+                            <Label x:Name="Order5IDLabel"  FontSize="13" FontAttributes="Bold" TextColor="DarkSlateGray" />
                         </StackLayout>
                         <StackLayout Orientation="Horizontal">
-                            <Label Text="Date: " FontSize="16" />
-                            <Label x:Name="Order9TimeLabel" FontSize="16" />
+                            <Label Text="Date: " FontSize="16" TextColor="DarkSlateGray" />
+                            <Label x:Name="Order5TimeLabel" FontSize="16" TextColor="DarkSlateGray" />
                         </StackLayout>
                         <StackLayout Orientation="Horizontal">
-                            <Label Text="Name: " FontSize="16" />
-                            <Label x:Name="Order9NameLabel"  FontSize="16"/>
+                            <Label Text="Name: " FontSize="16" TextColor="DarkSlateGray" />
+                            <Label x:Name="Order5NameLabel"  FontSize="16" TextColor="DarkSlateGray"/>
                         </StackLayout>
                         <StackLayout Orientation="Horizontal">
-                            <Label Text="Number of Drinks: " FontSize="16" />
-                            <Label x:Name="Order9NumDrinksLabel"  FontSize="16" />
+                            <Label Text="Number of Drinks: " FontSize="16" TextColor="DarkSlateGray" />
+                            <Label x:Name="Order5NumDrinksLabel"  FontSize="16" TextColor="DarkSlateGray" />
                         </StackLayout>
                         <StackLayout Orientation="Horizontal">
-                            <Label Text="Total: " FontSize="15" />
-                            <Label x:Name="Order9TotalLabel" Text="$ 0.00" FontSize="16" />
+                            <Label Text="Total: " FontSize="16" TextColor="DarkSlateGray" />
+                            <Label x:Name="Order5TotalLabel" Text="$ 0.00" FontSize="16" TextColor="DarkSlateGray" />
                         </StackLayout>
                     </StackLayout>
                 </Frame>
@@ -233,24 +134,124 @@
                 <Frame HeightRequest="125" Margin="15,10,15,0" BorderColor="#4681f4" >
                     <StackLayout>
                         <StackLayout Orientation="Horizontal">
-                            <Label Text="Order ID: " FontSize="16" FontAttributes="Bold" Margin="0,-2,0,0"  />
-                            <Label x:Name="Order10IDLabel"  FontSize="13" FontAttributes="Bold" />
+                            <Label Text="Order ID: " FontSize="16" FontAttributes="Bold" Margin="0,-2,0,0" TextColor="DarkSlateGray"  />
+                            <Label x:Name="Order6IDLabel"  FontSize="13" FontAttributes="Bold" TextColor="DarkSlateGray" />
                         </StackLayout>
                         <StackLayout Orientation="Horizontal">
-                            <Label Text="Date: " FontSize="16" />
-                            <Label x:Name="Order10TimeLabel" FontSize="16" />
+                            <Label Text="Date: " FontSize="16" TextColor="DarkSlateGray" />
+                            <Label x:Name="Order6TimeLabel" FontSize="16" TextColor="DarkSlateGray" />
                         </StackLayout>
                         <StackLayout Orientation="Horizontal">
-                            <Label Text="Name: " FontSize="16" />
-                            <Label x:Name="Order10NameLabel"  FontSize="16"/>
+                            <Label Text="Name: " FontSize="16" TextColor="DarkSlateGray" />
+                            <Label x:Name="Order6NameLabel"  FontSize="16" TextColor="DarkSlateGray"/>
                         </StackLayout>
                         <StackLayout Orientation="Horizontal">
-                            <Label Text="Number of Drinks: " FontSize="16" />
-                            <Label x:Name="Order10NumDrinksLabel"  FontSize="16" />
+                            <Label Text="Number of Drinks: " FontSize="16" TextColor="DarkSlateGray" />
+                            <Label x:Name="Order6NumDrinksLabel"  FontSize="16" TextColor="DarkSlateGray" />
                         </StackLayout>
                         <StackLayout Orientation="Horizontal">
-                            <Label Text="Total: " FontSize="15" />
-                            <Label x:Name="Order10TotalLabel" Text="$ 0.00" FontSize="16" />
+                            <Label Text="Total: " FontSize="16" TextColor="DarkSlateGray" />
+                            <Label x:Name="Order6TotalLabel" Text="$ 0.00" FontSize="16" TextColor="DarkSlateGray" />
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+
+                <Frame HeightRequest="125" Margin="15,10,15,0" BorderColor="#4681f4" >
+                    <StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Order ID: " FontSize="16" FontAttributes="Bold" Margin="0,-2,0,0" TextColor="DarkSlateGray"  />
+                            <Label x:Name="Order7IDLabel"  FontSize="13" FontAttributes="Bold" TextColor="DarkSlateGray"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Date: " FontSize="16" TextColor="DarkSlateGray" />
+                            <Label x:Name="Order7TimeLabel" FontSize="16" TextColor="DarkSlateGray" />
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Name: " FontSize="16" TextColor="DarkSlateGray" />
+                            <Label x:Name="Order7NameLabel"  FontSize="16" TextColor="DarkSlateGray"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Number of Drinks: " FontSize="16" TextColor="DarkSlateGray" />
+                            <Label x:Name="Order7NumDrinksLabel"  FontSize="16" TextColor="DarkSlateGray" />
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Total: " FontSize="16" TextColor="DarkSlateGray" />
+                            <Label x:Name="Order7TotalLabel" Text="$ 0.00" FontSize="16" TextColor="DarkSlateGray" />
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+
+                <Frame HeightRequest="125" Margin="15,10,15,0" BorderColor="#4681f4" >
+                    <StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Order ID: " FontSize="16" FontAttributes="Bold" Margin="0,-2,0,0" TextColor="DarkSlateGray"  />
+                            <Label x:Name="Order8IDLabel"  FontSize="13" FontAttributes="Bold" TextColor="DarkSlateGray" />
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Date: " FontSize="16" TextColor="DarkSlateGray" />
+                            <Label x:Name="Order8TimeLabel" FontSize="16" TextColor="DarkSlateGray" />
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Name: " FontSize="16" TextColor="DarkSlateGray" />
+                            <Label x:Name="Order8NameLabel"  FontSize="16" TextColor="DarkSlateGray"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Number of Drinks: " FontSize="16" TextColor="DarkSlateGray" />
+                            <Label x:Name="Order8NumDrinksLabel"  FontSize="16" TextColor="DarkSlateGray" />
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Total: " FontSize="16" TextColor="DarkSlateGray" />
+                            <Label x:Name="Order8TotalLabel" Text="$ 0.00" FontSize="16" TextColor="DarkSlateGray" />
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+
+                <Frame HeightRequest="125" Margin="15,10,15,0" BorderColor="#4681f4" >
+                    <StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Order ID: " FontSize="16" FontAttributes="Bold" Margin="0,-2,0,0" TextColor="DarkSlateGray"  />
+                            <Label x:Name="Order9IDLabel"  FontSize="13" FontAttributes="Bold" TextColor="DarkSlateGray" />
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Date: " FontSize="16" TextColor="DarkSlateGray" />
+                            <Label x:Name="Order9TimeLabel" FontSize="16" TextColor="DarkSlateGray" />
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Name: " FontSize="16" TextColor="DarkSlateGray" />
+                            <Label x:Name="Order9NameLabel"  FontSize="16" TextColor="DarkSlateGray"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Number of Drinks: " FontSize="16" TextColor="DarkSlateGray" />
+                            <Label x:Name="Order9NumDrinksLabel"  FontSize="16" TextColor="DarkSlateGray" />
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Total: " FontSize="16" TextColor="DarkSlateGray" />
+                            <Label x:Name="Order9TotalLabel" Text="$ 0.00" FontSize="16" TextColor="DarkSlateGray" />
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+
+                <Frame HeightRequest="125" Margin="15,10,15,0" BorderColor="#4681f4" >
+                    <StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Order ID: " FontSize="16" FontAttributes="Bold" Margin="0,-2,0,0" TextColor="DarkSlateGray"  />
+                            <Label x:Name="Order10IDLabel"  FontSize="13" FontAttributes="Bold" TextColor="DarkSlateGray" />
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Date: " FontSize="16" TextColor="DarkSlateGray" />
+                            <Label x:Name="Order10TimeLabel" FontSize="16" TextColor="DarkSlateGray" />
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Name: " FontSize="16" TextColor="DarkSlateGray" />
+                            <Label x:Name="Order10NameLabel"  FontSize="16" TextColor="DarkSlateGray"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Number of Drinks: " FontSize="16" TextColor="DarkSlateGray" />
+                            <Label x:Name="Order10NumDrinksLabel"  FontSize="16" TextColor="DarkSlateGray" />
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Total: " FontSize="16" TextColor="DarkSlateGray" />
+                            <Label x:Name="Order10TotalLabel" Text="$ 0.00" FontSize="16" TextColor="DarkSlateGray" />
                         </StackLayout>
                     </StackLayout>
                 </Frame>
