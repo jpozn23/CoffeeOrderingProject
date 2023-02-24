@@ -175,6 +175,7 @@ namespace CoffeeOrderingApp.Pages
             {
                 if(num == 0)
                 {
+                    // sets completion status of first order in list to true
                     order.isCompleted = true;
                     await SaveCompletedOrder(order);
                 }

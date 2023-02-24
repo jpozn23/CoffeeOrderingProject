@@ -11,11 +11,20 @@
             <ScrollView>
                 <Frame BackgroundColor="white" HeightRequest="800" Margin="5,-10,5,5">
                     <StackLayout>
-                        <Label x:Name="CurrentDrinkOrderIDLabel" FontSize="20" FontAttributes="Bold" />
-                        <Label x:Name="CurrentDrinkOrderNameLabel" FontSize="20" FontAttributes="Bold"
-                               HorizontalTextAlignment="Center" Text="Name"/>
-                        <Label x:Name="CurrentDrinkOrderTimeLabel" FontSize="20" FontAttributes="Bold"
-                               HorizontalTextAlignment="Center" Text="Pickup Time"/>
+                        <Label Text="Order Details" FontSize="20" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="ID: " FontSize="18" FontAttributes="bold" />
+                            <Label x:Name="CurrentDrinkOrderIDLabel" FontSize="14" FontAttributes="Bold"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Name: " FontSize="18" FontAttributes="Bold" />
+                            <Label x:Name="CurrentDrinkOrderNameLabel" FontSize="20" FontAttributes="Bold"/>
+                        </StackLayout>
+                        <StackLayout>
+                            <Label Text="Time: " FontSize="18" FontAttributes="Bold" />
+                            <Label x:Name="CurrentDrinkOrderTimeLabel" FontSize="20" FontAttributes="Bold"/>
+                        </StackLayout>
+                        
                         <Label x:Name="CurrentDrink1Label" Text="Drink 1" FontSize="20" FontAttributes="Bold"/>
                         <Label x:Name="CurrentDrink1TypeLabel" FontSize="20" />
                         <Label x:Name="CurrentDrink1SizeLabel" FontSize="20" />
