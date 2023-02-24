@@ -123,6 +123,7 @@ namespace CoffeeOrderingApp.Pages
 
         private void ResetVars()
         {
+            CurrentDrinkOrderIDLabel.Text = "";
             CurrentDrinkOrderNameLabel.Text = "";
             CurrentDrinkOrderTimeLabel.Text = "";
 
