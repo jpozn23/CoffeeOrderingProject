@@ -11,7 +11,7 @@
             <ScrollView>
                 <Frame BackgroundColor="white" HeightRequest="800" Margin="5,-10,5,5">
                     <StackLayout>
-                        
+                        <Label x:Name="CurrentDrinkOrderIDLabel" FontSize="20" FontAttributes="Bold" />
                         <Label x:Name="CurrentDrinkOrderNameLabel" FontSize="20" FontAttributes="Bold"
                                HorizontalTextAlignment="Center" Text="Name"/>
                         <Label x:Name="CurrentDrinkOrderTimeLabel" FontSize="20" FontAttributes="Bold"
