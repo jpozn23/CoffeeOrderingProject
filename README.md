@@ -1,2 +1,3 @@
-# CoffeeOrderingProject
-Xamarin and Xamarin Forms Mobile Coffee Ordering Application
+# Coffee Ordering Mobile App
+Xamarin and Xamarin Forms, .NET Framework, C#
+
