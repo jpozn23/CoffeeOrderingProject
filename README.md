@@ -4,9 +4,7 @@ Campus Coffee Shops are often faced with an excessive amount of orders between c
 
 ## Technologies
 Languages: C#, XAML (markup) <br>
-Platform: Xamarin <br>
-Frameworks: Xamarin.Forms <br>
-Web API: ASP.NET Core <br>
+Other Tools: Xamarin, Xamarin.Forms, .NET framework, .NET CORE Web API, Visual Studio 2019
 
 
 
