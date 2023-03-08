@@ -16,9 +16,10 @@ namespace CoffeeWebAPI
         {
             accounts = new List<User>();
         }
+
+        // get all accounts
         public static List<User> GetAll()
         {
-
             String myFile = "accounts.txt";
             if (File.Exists(myFile))
             {
@@ -28,8 +29,10 @@ namespace CoffeeWebAPI
             return accounts;
         }
 
+        // add account
         public static void Add(User user)
         {
+            // get all accounts
             String myFile = "accounts.txt";
 
             if (File.Exists(myFile))
@@ -38,12 +41,14 @@ namespace CoffeeWebAPI
                 accounts = JsonConvert.DeserializeObject<List<User>>(json);
             }
 
+            // add account
             User newuser = user;
 
             accounts.Add(newuser);
 
             File.Delete(myFile);
 
+            // rewrite to file
             String jsonString;
             jsonString = JsonConvert.SerializeObject(accounts);
 
@@ -54,8 +59,10 @@ namespace CoffeeWebAPI
 
         }
 
+        // update account
         public static void Update(string username, User user)
         {
+            // get all accounts
             String myFile = "accounts.txt";
 
             if (File.Exists(myFile))
@@ -64,7 +71,7 @@ namespace CoffeeWebAPI
                 accounts = JsonConvert.DeserializeObject<List<User>>(json);
             }
 
-
+            // find and update account
             foreach (User u in accounts)
             {
                 if (u.username == username)
@@ -83,7 +90,7 @@ namespace CoffeeWebAPI
                 }
             }
 
-
+            // rewrite to file
             String jsonString;
             File.Delete(myFile);
             jsonString = JsonConvert.SerializeObject(accounts);

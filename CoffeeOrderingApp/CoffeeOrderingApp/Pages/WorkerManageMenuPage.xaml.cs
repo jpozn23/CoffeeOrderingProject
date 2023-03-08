@@ -15,9 +15,9 @@ namespace CoffeeOrderingApp.Pages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class WorkerManageMenuPage : ContentPage
     {
-        //readonly String serverURL = "https://10.0.1.218:8080"; // https may give ssl errors
-        readonly String serverURL = "http://192.168.1.13:8090";  //  // Change this to your real IP address.  
-        //readonly String serverURL = "http://192.168.0.57:8090";  //  // Change this to your real IP address.  
+        // Change this to your real IP address.  run ipconfig /all in a command prompt
+        readonly String serverURL = "http://192.168.1.12:8090";
+
 
         public string category = null;
         public WorkerManageMenuPage()
@@ -47,14 +47,7 @@ namespace CoffeeOrderingApp.Pages
 
         private void AddItemToMenuButton_Clicked(object sender, EventArgs e)
         {
-            // validate all fields are filled
-            //bool value = ValidateInput();
-
-            DrinkItem newitem = new DrinkItem();
-            
-
-            // Save Item
-            //await SaveMenuItem(newitem);
+           // do nothing
         }
 
         private void UpdateItemFromMenuButton_Clicked(object sender, EventArgs e)

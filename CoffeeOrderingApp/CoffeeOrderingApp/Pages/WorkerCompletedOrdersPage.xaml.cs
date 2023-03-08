@@ -15,9 +15,8 @@ namespace CoffeeOrderingApp.Pages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class WorkerCompletedOrdersPage : ContentPage
     {
-        //readonly String serverURL = "https://10.0.1.218:8080"; // https may give ssl errors
-        readonly String serverURL = "http://192.168.1.13:8090";  //  // Change this to your real IP address.  
-        //readonly String serverURL = "http://192.168.0.57:8090";  //  // Change this to your real IP address.  
+        // Change this to your real IP address.  run ipconfig /all in a command prompt
+        readonly String serverURL = "http://192.168.1.12:8090";
 
         public WorkerCompletedOrdersPage()
         {
@@ -49,6 +48,8 @@ namespace CoffeeOrderingApp.Pages
 
         public async Task<List<Order>> GetOrders()
         {
+            // get all orders
+
             HttpClient client;
             client = new HttpClient();
             var uri = new Uri(serverURL + "/api/Order");
@@ -67,6 +68,8 @@ namespace CoffeeOrderingApp.Pages
 
         public void DisplayOrders(List<Order> orders)
         {
+            // display all orders to ui
+
             int orderNum = 0;
             foreach(Order o in orders)
             {

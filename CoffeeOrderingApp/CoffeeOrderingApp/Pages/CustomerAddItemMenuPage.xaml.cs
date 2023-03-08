@@ -15,10 +15,9 @@ namespace CoffeeOrderingApp.Pages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class CustomerAddItemMenuPage : ContentPage
     {
-        //readonly String serverURL = "https://10.0.1.218:8080"; // https may give ssl errors
-        readonly String serverURL = "http://192.168.1.13:8090";  //  // Change this to your real IP address.  
-        //readonly String serverURL = "http://192.168.0.57:8090";  //  // Change this to your real IP address.  
-
+        // Change this to your real IP address.  run ipconfig /all in a command prompt
+        readonly String serverURL = "http://192.168.1.12:8090"; 
+ 
         public CustomerAddItemMenuPage()
         {
             InitializeComponent();
@@ -28,14 +27,9 @@ namespace CoffeeOrderingApp.Pages
         {
             base.OnAppearing();
 
+            // Auto fill fields if favorite drink selected
             if(Singletons.FavoriteSingleton.Instance.drink != null)
             {
-                //DrinkCategoryPicker.SelectedItem = "Espresso";
-                //DrinkTypePicker.SelectedItem = "Americano";
-                //DrinkSizePicker.SelectedItem = "Grande";
-                //DrinkAddOnsSubsPicker1.SelectedItem = "None";
-                //DrinkAddOnsSubsPicker2.SelectedItem = "None";
-                //DrinkAddOnsSubsPicker3.SelectedItem = "None";
 
                 DrinkSizePicker.SelectedItem = Singletons.FavoriteSingleton.Instance.drink.drinkSize;
 

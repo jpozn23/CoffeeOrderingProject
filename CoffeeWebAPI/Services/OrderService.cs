@@ -15,6 +15,8 @@ namespace CoffeeWebAPI
         {
             orders = new List<Order>();
         }
+
+        // get all orders
         public static List<Order> GetAll()
         {
 
@@ -27,11 +29,14 @@ namespace CoffeeWebAPI
             return orders;
         }
 
+        // get specific order
         public static Order Get(Guid id) => orders.FirstOrDefault(p => p.id == id);
 
 
+        // add order
         public static void Add(Order order)
         {
+            // get all orders from file
             String myFile = "orders.txt";
 
             if (File.Exists(myFile))
@@ -40,12 +45,14 @@ namespace CoffeeWebAPI
                 orders = JsonConvert.DeserializeObject<List<Order>>(json);
             }
 
+            // add order
             Order neworder = order;
 
             orders.Add(neworder);
 
             File.Delete(myFile);
 
+            // rewrite to file
             String jsonString;
             jsonString = JsonConvert.SerializeObject(orders);
 
@@ -56,9 +63,10 @@ namespace CoffeeWebAPI
 
         }
 
-        
+        // update order
         public static void Update(Guid id, Order order)
         {
+            // get all orders
             String myFile = "orders.txt";
 
             if (File.Exists(myFile))
@@ -67,7 +75,7 @@ namespace CoffeeWebAPI
                 orders = JsonConvert.DeserializeObject<List<Order>>(json);
             }
 
-        
+            // get and update order
             foreach(Order o in orders)
             {
                 if(o.id == id)
@@ -86,7 +94,7 @@ namespace CoffeeWebAPI
                 }
             }
 
-
+            // rewrite to file
             String jsonString;
             File.Delete(myFile);
             jsonString = JsonConvert.SerializeObject(orders);

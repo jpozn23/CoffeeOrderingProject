@@ -21,7 +21,8 @@ namespace CoffeeOrderingApp.Pages
         {
             base.OnAppearing();
 
-            // Set Vars
+            // Set favorite drinks if exist
+
             if(Singletons.UserSingleton.Instance.favdrink1 != null)
             {
                 FavDrink1TypeLabel.Text = Singletons.UserSingleton.Instance.favdrink1.drinkType;
